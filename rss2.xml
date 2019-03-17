@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 17 Mar 2019 13:48:34 GMT</pubDate>
+    <pubDate>Sun, 17 Mar 2019 14:21:27 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>快让我冷静一下</title>
+      <link>http://yoursite.com/2019/03/17/%E5%BF%AB%E8%AE%A9%E6%88%91%E5%86%B7%E9%9D%99%E4%B8%80%E4%B8%8B/</link>
+      <guid>http://yoursite.com/2019/03/17/%E5%BF%AB%E8%AE%A9%E6%88%91%E5%86%B7%E9%9D%99%E4%B8%80%E4%B8%8B/</guid>
+      <pubDate>Sun, 17 Mar 2019 14:18:36 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;呜呜呜，太激动了，我快要抑制不住自己的兴奋了&lt;br&gt;在经过so many bugs后我的博客终于问世了&lt;br&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>呜呜呜，太激动了，我快要抑制不住自己的兴奋了<br>在经过so many bugs后我的博客终于问世了<br><a id="more"></a><br>本来第一次已经搭建好了，可是在做主题美化时不知道哪里出了问题，导致页面无法正常显示了，对于我一个菜鸟而言，感觉还是直接重来比较快捷，索性把GitHub上的仓库给删了，重新来过。<br>第二次搭建时自然比第一次轻松了许多，在网上找了很多大佬的博客，一步一步地来，虽然中间的坑很多，但终于大致完成了美化工作<br>最后买了个域名，将GitHub域名关联起来，由于昨天没有认证，搞了半天都不知道问题在哪儿。今天晚上又来搞了一下，啊啊啊，终于完成了，太激动了<br>还有一个评论功能没有添加，好像有点麻烦，过段时间再来搞吧</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/03/17/%E5%BF%AB%E8%AE%A9%E6%88%91%E5%86%B7%E9%9D%99%E4%B8%80%E4%B8%8B/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>王子</title>
