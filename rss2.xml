@@ -8,8 +8,40 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 02 Apr 2019 14:29:10 GMT</pubDate>
+    <pubDate>Thu, 11 Apr 2019 14:40:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>爬虫设置随机请求头和代理</title>
+      <link>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/</link>
+      <guid>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/</guid>
+      <pubDate>Thu, 11 Apr 2019 13:55:39 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了&lt;br&gt;&lt;img src=&quot;/2019/04/11/爬虫设置随机请求头和代理/img2.jpeg&quot; align=&quot;center&quot;&gt;&lt;br&gt;终于，今天晚上好好地静下来慢慢捋了一下代码！&lt;br&gt;终于，似乎从这个坑出来了！&lt;br&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img2.jpeg" align="center"><br>终于，今天晚上好好地静下来慢慢捋了一下代码！<br>终于，似乎从这个坑出来了！<br><a id="more"></a><br>先来说说用requests库设置吧，随机请求头我用的是fake-useragent这个包<br>先用<span href="http://www.httpbin.org/get">httpbin.org/get</span>这个网址测试了一下<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img3.png" align="center"><br>就这样设置就可以正确输出了，<br>开始我设置的时候居然直接写的 headers=ua.random 我真的要哭死啊！！！<br>一定要记得构造字典！！！</p><p>设置代理，我买的蘑菇代理，感觉还挺划算的，按数量买1000个6块钱，毕竟测试也用不完这么多，永久有效，爬完某宝后我都还剩700多个；按数量感觉不太划算，一天2000个6块钱吧，不过我也用不完，当然如果你需求大的话另当别论，土豪也请随意哈哈哈<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img4.png" align="center"><br>这里的坑也很多啊，请求了好多次后都不成功，我把ip打印了一下，好像确实有点问题，不过还是不知道问题确切所在，所以又打印了一下长度，果然！！！里面有个换行符和回车！！！我的娘啊！！！我枯了<br>皇天不负有心人，终于搞好了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img5.jpeg" align="center"></p><p>接下来终于在scrapy框架里面设置这两个中间件了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img6.png" align="center"><br>在网上看到好多方法，自己也懵逼，试了一下，这样也行的：<br>request.headers[‘User-Agent’] = self.ua.random<br>不过我真是傻！这样好像是真的不行！不行！会报错的！<br>request.meta[‘headers’] = {‘User-Agent’: ua.random}<br>因为有些请求是不需要代理的，所以查了一下说什么重写make_requests_from_url()方法，设置meta={‘download_timeout’: 10}，但是不知道为什么我的就是不行，所以干脆没有设置了，如果有大佬知道是怎么回事可不可以告诉我一下啊。</p><p>另外我是想运行这个代理池的，但是老是报错，实在不知怎么回事啊[泪奔]<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img7.png" align="center"></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>scrapy爬取某宝商品信息</title>
+      <link>http://yoursite.com/2019/04/11/scrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF/</link>
+      <guid>http://yoursite.com/2019/04/11/scrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF/</guid>
+      <pubDate>Thu, 11 Apr 2019 13:00:52 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;在多次踩坑后，终于写好我的爬虫了。&lt;br&gt;说说我遇到的问题:&lt;br&gt;第一就是在scrapy框架里设置随机请求头中间件&lt;br&gt;第二也是中间件，代理中间件，关于这两点可以参考我的博客：&lt;br&gt;这两个问题真的困扰了我超级久啊。&lt;br&gt;解决好这两个问题好，我的爬虫终于运行起来啦啦啦&lt;br&gt;&lt;img src=&quot;/2019/04/11/scrapy爬取某宝商品信息/img1.jpeg&quot; align=&quot;center&quot;&gt;&lt;br&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>在多次踩坑后，终于写好我的爬虫了。<br>说说我遇到的问题:<br>第一就是在scrapy框架里设置随机请求头中间件<br>第二也是中间件，代理中间件，关于这两点可以参考我的博客：<br>这两个问题真的困扰了我超级久啊。<br>解决好这两个问题好，我的爬虫终于运行起来啦啦啦<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img1.jpeg" align="center"><br><a id="more"></a><br>贴一下我的部分代码，嘿嘿嘿</p><p><strong style="font-size: 24px; color: #000000">目录</strong><br>文件夹结构<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img9.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">taobao.py</strong><br>重写 start_requests() 方法<br>parse()方法 解析商品信息<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img3.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">items.py</strong><br>你要存储的字段<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img8.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">middlewares.py</strong><br>随机请求头 UserAgentMiddleware<br>代理 ProxyMiddleware<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img4.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">settings.py</strong><br><img src="/2019/04/11/scrapy爬取某宝商品信息/img6.png" align="center"><br><img src="/2019/04/11/scrapy爬取某宝商品信息/img7.png"></p><p><strong style="font-size: 24px; color: #000000">pipelines.py</strong><br>存储数据到Mongodb<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img5.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">run.py</strong><br>最后就可以运行啦 python run.py<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img10.png" align="center"></p><p>代码地址：</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/11/scrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>爬虫遇坑微信</title>
@@ -61,23 +93,6 @@
       <content:encoded><![CDATA[<p>呜呜呜，太激动了，我快要抑制不住自己的兴奋了<br>在经过so many bugs后我的博客终于问世了<br><a id="more"></a><br>本来第一次已经搭建好了，可是在做主题美化时不知道哪里出了问题，导致页面无法正常显示了，对于我一个菜鸟而言，感觉还是直接重来比较快捷，索性把GitHub上的仓库给删了，重新来过。<br>第二次搭建时自然比第一次轻松了许多，在网上找了很多大佬的博客，一步一步地来，虽然中间的坑很多，但终于大致完成了美化工作<br>最后买了个域名，将GitHub域名关联起来，由于昨天没有认证，搞了半天都不知道问题在哪儿。今天晚上又来搞了一下，啊啊啊，终于完成了，太激动了<br>还有一个评论功能没有添加，好像有点麻烦，过段时间再来搞吧</p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/03/17/%E5%BF%AB%E8%AE%A9%E6%88%91%E5%86%B7%E9%9D%99%E4%B8%80%E4%B8%8B/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>王子</title>
-      <link>http://yoursite.com/2019/03/17/%E7%8E%8B%E5%AD%90/</link>
-      <guid>http://yoursite.com/2019/03/17/%E7%8E%8B%E5%AD%90/</guid>
-      <pubDate>Sun, 17 Mar 2019 12:16:46 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;我的博客终于搭建好了，呜呜呜，哭唧唧搭，忍不住要发第一篇博文&lt;/p&gt;
-&lt;p&gt;在这春天，总是有人让我记起高中时我们班的那位“王子”（真名：王子X）。他恰如我笔下所描绘的那样……&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>我的博客终于搭建好了，呜呜呜，哭唧唧搭，忍不住要发第一篇博文</p><p>在这春天，总是有人让我记起高中时我们班的那位“王子”（真名：王子X）。他恰如我笔下所描绘的那样……<br><a id="more"></a><br><img src="/2019/03/17/王子/11.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>他的身上总是能散发出一种味道，那味道是。。。<br>他走路总是有一种气质，摇摇欲坠，翩翩欲倒<br>他擦鼻涕有一种独特的方式，袖子一提，手横起一揩，没了<br>他总是有吃不完的辣条[羡慕]，偶尔嘴上还留有油渍<br>他能修电脑，总是受到语文老师独一无二的青睐，比如，某天，偷偷地（不，不知他有什么独特的方法）溜出校门去买午餐还是晚餐来着，坐在某幢楼的角落秀色可餐的吃起来，然后…就被我们语文老师逮个正着<br>语文老师用自己婀娜的身姿，迷人的手势，忍俊不禁的笑容向我们讲及这件事<br>高一还是高二来着，我们十分有幸分到了一个小组，当时班主任叫我们给自己组想一个口号，别的小组都是什么“赶莺超美”（传说中我们班的学霸），而我们组的却是：<br><img src="/2019/03/17/王子/10.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br><span style="color: #FF6666; font-size: 24px">清新口气，你我更亲近</span><br><img src="/2019/03/17/王子/8.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>然而…<br>如今…<br>历史总是惊人的相似…<br>我…have no words<br><img src="/2019/03/17/王子/3.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>我犹记得，高中学校外有一家饰品店，外面拉了一条横幅，大意是“一直被模仿，从未被超越”<br>yes，目前，他奶奶的，我深刻地把前半句话理解得透彻透底<br>most important！<br>THIS IS NOT THE FIRST TIME!!!<br><img src="/2019/03/17/王子/7.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>莫非？我的idea太好了？<br>我常常因为自己过于优秀而感到苦恼</p><p>我抄你个奶奶的腿儿的</p><p>最后！是王子走进了这家店吗？？？</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/03/17/%E7%8E%8B%E5%AD%90/#disqus_thread</comments>
     </item>
     
   </channel>

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[爬虫设置随机请求头和代理]]></title>
+    <url>%2F2019%2F04%2F11%2F%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86%2F</url>
+    <content type="text"><![CDATA[我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了终于，今天晚上好好地静下来慢慢捋了一下代码！终于，似乎从这个坑出来了！先来说说用requests库设置吧，随机请求头我用的是fake-useragent这个包先用httpbin.org/get这个网址测试了一下就这样设置就可以正确输出了，开始我设置的时候居然直接写的 headers=ua.random 我真的要哭死啊！！！一定要记得构造字典！！！ 设置代理，我买的蘑菇代理，感觉还挺划算的，按数量买1000个6块钱，毕竟测试也用不完这么多，永久有效，爬完某宝后我都还剩700多个；按数量感觉不太划算，一天2000个6块钱吧，不过我也用不完，当然如果你需求大的话另当别论，土豪也请随意哈哈哈这里的坑也很多啊，请求了好多次后都不成功，我把ip打印了一下，好像确实有点问题，不过还是不知道问题确切所在，所以又打印了一下长度，果然！！！里面有个换行符和回车！！！我的娘啊！！！我枯了皇天不负有心人，终于搞好了 接下来终于在scrapy框架里面设置这两个中间件了在网上看到好多方法，自己也懵逼，试了一下，这样也行的：request.headers[‘User-Agent’] = self.ua.random不过我真是傻！这样好像是真的不行！不行！会报错的！request.meta[‘headers’] = {‘User-Agent’: ua.random}因为有些请求是不需要代理的，所以查了一下说什么重写make_requests_from_url()方法，设置meta={‘download_timeout’: 10}，但是不知道为什么我的就是不行，所以干脆没有设置了，如果有大佬知道是怎么回事可不可以告诉我一下啊。 另外我是想运行这个代理池的，但是老是报错，实在不知怎么回事啊[泪奔]]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学校</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scrapy爬取某宝商品信息]]></title>
+    <url>%2F2019%2F04%2F11%2Fscrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF%2F</url>
+    <content type="text"><![CDATA[在多次踩坑后，终于写好我的爬虫了。说说我遇到的问题:第一就是在scrapy框架里设置随机请求头中间件第二也是中间件，代理中间件，关于这两点可以参考我的博客：这两个问题真的困扰了我超级久啊。解决好这两个问题好，我的爬虫终于运行起来啦啦啦贴一下我的部分代码，嘿嘿嘿 目录文件夹结构 taobao.py重写 start_requests() 方法parse()方法 解析商品信息 items.py你要存储的字段 middlewares.py随机请求头 UserAgentMiddleware代理 ProxyMiddleware settings.py pipelines.py存储数据到Mongodb run.py最后就可以运行啦 python run.py 代码地址：]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学校</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[爬虫遇坑微信]]></title>
     <url>%2F2019%2F04%2F02%2F%E9%81%87%E5%9D%91%E5%BE%AE%E4%BF%A1%2F</url>
     <content type="text"><![CDATA[今天在爬微信公总号的文章，买了个代理还是没搞好，哎，真的郁闷死了。感觉我快要放弃了，但是放弃了我又能做什么呢？我又怎么可以这么轻易地说放弃呢？果然我还是一事无成。以为自己有多大本领呢？其实，什么都不会罢了！哎，好难过]]></content>
