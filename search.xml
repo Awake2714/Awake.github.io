@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[scrapy爬取某宝商品信息]]></title>
     <url>%2F2019%2F04%2F11%2Fscrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF%2F</url>
-    <content type="text"><![CDATA[在多次踩坑后，终于写好我的爬虫了。说说我遇到的问题:第一就是在scrapy框架里设置随机请求头中间件第二也是中间件，代理中间件，关于这两点可以参考我的博客：这两个问题真的困扰了我超级久啊。解决好这两个问题好，我的爬虫终于运行起来啦啦啦贴一下我的部分代码，嘿嘿嘿 目录文件夹结构 taobao.py重写 start_requests() 方法parse()方法 解析商品信息 items.py你要存储的字段 middlewares.py随机请求头 UserAgentMiddleware代理 ProxyMiddleware settings.py pipelines.py存储数据到Mongodb run.py最后就可以运行啦 python run.py 代码地址：]]></content>
+    <content type="text"><![CDATA[在多次踩坑后，终于写好我的爬虫了。说说我遇到的问题:第一就是在scrapy框架里设置随机请求头中间件第二也是中间件，代理中间件，关于这两点可以参考我的博客：这两个问题真的困扰了我超级久啊。解决好这两个问题好，我的爬虫终于运行起来啦啦啦贴一下我的部分代码，嘿嘿嘿 目录文件夹结构 taobao.py重写 start_requests() 方法parse()方法 解析商品信息 items.py你要存储的字段 middlewares.py随机请求头 UserAgentMiddleware代理 ProxyMiddleware settings.py pipelines.py存储数据到Mongodb run.py最后就可以运行啦 python run.py运行起来的时候是这样的哈哈哈 代码地址：https://github.com/Awake2714/Taobao]]></content>
       <categories>
         <category>学习</category>
       </categories>

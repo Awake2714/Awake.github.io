@@ -100,17 +100,17 @@
 <meta property="og:site_name" content="Awake&#39;s Blog">
 <meta property="og:description" content="我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了终于，今天晚上好好地静下来慢慢捋了一下代码！终于，似乎从这个坑出来了！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img2.jpeg">
+<meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img3.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img4.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img5.jpeg">
+<meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img5.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img6.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img7.png">
-<meta property="og:updated_time" content="2019-04-11T14:40:48.660Z">
+<meta property="og:updated_time" content="2019-04-11T14:55:15.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫设置随机请求头和代理">
 <meta name="twitter:description" content="我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了终于，今天晚上好好地静下来慢慢捋了一下代码！终于，似乎从这个坑出来了！">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img2.jpeg">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/11/爬虫设置随机请求头和代理/img2.jpg">
 
 
 
@@ -425,8 +425,8 @@
       
 
       
-        <p>我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img2.jpeg" align="center"><br>终于，今天晚上好好地静下来慢慢捋了一下代码！<br>终于，似乎从这个坑出来了！<br><a id="more"></a><br>先来说说用requests库设置吧，随机请求头我用的是fake-useragent这个包<br>先用<span href="http://www.httpbin.org/get">httpbin.org/get</span>这个网址测试了一下<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img3.png" align="center"><br>就这样设置就可以正确输出了，<br>开始我设置的时候居然直接写的 headers=ua.random 我真的要哭死啊！！！<br>一定要记得构造字典！！！</p>
-<p>设置代理，我买的蘑菇代理，感觉还挺划算的，按数量买1000个6块钱，毕竟测试也用不完这么多，永久有效，爬完某宝后我都还剩700多个；按数量感觉不太划算，一天2000个6块钱吧，不过我也用不完，当然如果你需求大的话另当别论，土豪也请随意哈哈哈<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img4.png" align="center"><br>这里的坑也很多啊，请求了好多次后都不成功，我把ip打印了一下，好像确实有点问题，不过还是不知道问题确切所在，所以又打印了一下长度，果然！！！里面有个换行符和回车！！！我的娘啊！！！我枯了<br>皇天不负有心人，终于搞好了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img5.jpeg" align="center"></p>
+        <p>我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img2.jpg" align="center"><br>终于，今天晚上好好地静下来慢慢捋了一下代码！<br>终于，似乎从这个坑出来了！<br><a id="more"></a><br>先来说说用requests库设置吧，随机请求头我用的是fake-useragent这个包<br>先用<span href="http://www.httpbin.org/get">httpbin.org/get</span>这个网址测试了一下<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img3.png" align="center"><br>就这样设置就可以正确输出了，<br>开始我设置的时候居然直接写的 headers=ua.random 我真的要哭死啊！！！<br>一定要记得构造字典！！！</p>
+<p>设置代理，我买的蘑菇代理，感觉还挺划算的，按数量买1000个6块钱，毕竟测试也用不完这么多，永久有效，爬完某宝后我都还剩700多个；按数量感觉不太划算，一天2000个6块钱吧，不过我也用不完，当然如果你需求大的话另当别论，土豪也请随意哈哈哈<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img4.png" align="center"><br>这里的坑也很多啊，请求了好多次后都不成功，我把ip打印了一下，好像确实有点问题，不过还是不知道问题确切所在，所以又打印了一下长度，果然！！！里面有个换行符和回车！！！我的娘啊！！！我枯了<br>皇天不负有心人，终于搞好了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img5.jpg" align="center"></p>
 <p>接下来终于在scrapy框架里面设置这两个中间件了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img6.png" align="center"><br>在网上看到好多方法，自己也懵逼，试了一下，这样也行的：<br>request.headers[‘User-Agent’] = self.ua.random<br>不过我真是傻！这样好像是真的不行！不行！会报错的！<br>request.meta[‘headers’] = {‘User-Agent’: ua.random}<br>因为有些请求是不需要代理的，所以查了一下说什么重写make_requests_from_url()方法，设置meta={‘download_timeout’: 10}，但是不知道为什么我的就是不行，所以干脆没有设置了，如果有大佬知道是怎么回事可不可以告诉我一下啊。</p>
 <p>另外我是想运行这个代理池的，但是老是报错，实在不知怎么回事啊[泪奔]<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img7.png" align="center"></p>
 
