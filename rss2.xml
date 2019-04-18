@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 11 Apr 2019 14:55:15 GMT</pubDate>
+    <pubDate>Thu, 18 Apr 2019 13:49:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>利用scrapy框架下载煎蛋网图片</title>
+      <link>http://yoursite.com/2019/04/18/jandan/</link>
+      <guid>http://yoursite.com/2019/04/18/jandan/</guid>
+      <pubDate>Thu, 18 Apr 2019 13:21:30 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;每次写完代码后都感觉自己人老珠黄啊，该拿什么拯救我的老脸？？&lt;br&gt;&lt;img src=&quot;/2019/04/18/jandan/7.png&quot;&gt;&lt;br&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>每次写完代码后都感觉自己人老珠黄啊，该拿什么拯救我的老脸？？<br><img src="/2019/04/18/jandan/7.png"><br><a id="more"></a></p><h2 id="spider-py"><a href="#spider-py" class="headerlink" title="spider.py"></a>spider.py</h2><p>这部分很简单，只需要获取图片链接和下一页的链接就可以了<br><img src="/2019/04/18/jandan/4.png"></p><h2 id="item-py"><a href="#item-py" class="headerlink" title="item.py"></a>item.py</h2><blockquote><p>import scrapy<br>class JiandanItem(scrapy.Item):<br>&ensp;&ensp;&ensp;&ensp;img = scrapy.Field()</p></blockquote><h2 id="pipelines-py"><a href="#pipelines-py" class="headerlink" title="pipelines.py"></a>pipelines.py</h2><p>这一部分比较重要，scrapy提供了ImagesPipeline，我们只需要继承自这个类，重写其中的一些方法，scrapy就会为我们下载图片了。<br><img src="/2019/04/18/jandan/6.png"></p><h2 id="settings-py"><a href="#settings-py" class="headerlink" title="settings.py"></a>settings.py</h2><p>在settings.py里开启相关配置<br><img src="/2019/04/18/jandan/3.png"><br><img src="/2019/04/18/jandan/2.png"></p><h2 id="部分图片展示"><a href="#部分图片展示" class="headerlink" title="部分图片展示"></a>部分图片展示</h2><p>因为煎蛋网反爬措施没那么厉害，所以很快“唰唰唰”的就下载完了<br>一共四千多张图片，慢慢欣赏吧    biu~ (๑´ڡ`๑)<br><img src="/2019/04/18/jandan/1.jpg"></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/18/jandan/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>爬虫设置随机请求头和代理</title>
@@ -73,23 +89,6 @@
       <content:encoded><![CDATA[<p>呜呜呜，太激动了，我快要抑制不住自己的兴奋了<br>在经过so many bugs后我的博客终于问世了<br><a id="more"></a><br>本来第一次已经搭建好了，可是在做主题美化时不知道哪里出了问题，导致页面无法正常显示了，对于我一个菜鸟而言，感觉还是直接重来比较快捷，索性把GitHub上的仓库给删了，重新来过。<br>第二次搭建时自然比第一次轻松了许多，在网上找了很多大佬的博客，一步一步地来，虽然中间的坑很多，但终于大致完成了美化工作<br>最后买了个域名，将GitHub域名关联起来，由于昨天没有认证，搞了半天都不知道问题在哪儿。今天晚上又来搞了一下，啊啊啊，终于完成了，太激动了<br>还有一个评论功能没有添加，好像有点麻烦，过段时间再来搞吧</p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/03/17/%E5%BF%AB%E8%AE%A9%E6%88%91%E5%86%B7%E9%9D%99%E4%B8%80%E4%B8%8B/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>王子</title>
-      <link>http://yoursite.com/2019/03/17/%E7%8E%8B%E5%AD%90/</link>
-      <guid>http://yoursite.com/2019/03/17/%E7%8E%8B%E5%AD%90/</guid>
-      <pubDate>Sun, 17 Mar 2019 12:16:46 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;我的博客终于搭建好了，呜呜呜，哭唧唧搭，忍不住要发第一篇博文&lt;/p&gt;
-&lt;p&gt;在这春天，总是有人让我记起高中时我们班的那位“王子”（真名：王子X）。他恰如我笔下所描绘的那样……&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>我的博客终于搭建好了，呜呜呜，哭唧唧搭，忍不住要发第一篇博文</p><p>在这春天，总是有人让我记起高中时我们班的那位“王子”（真名：王子X）。他恰如我笔下所描绘的那样……<br><a id="more"></a><br><img src="/2019/03/17/王子/11.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>他的身上总是能散发出一种味道，那味道是。。。<br>他走路总是有一种气质，摇摇欲坠，翩翩欲倒<br>他擦鼻涕有一种独特的方式，袖子一提，手横起一揩，没了<br>他总是有吃不完的辣条[羡慕]，偶尔嘴上还留有油渍<br>他能修电脑，总是受到语文老师独一无二的青睐，比如，某天，偷偷地（不，不知他有什么独特的方法）溜出校门去买午餐还是晚餐来着，坐在某幢楼的角落秀色可餐的吃起来，然后…就被我们语文老师逮个正着<br>语文老师用自己婀娜的身姿，迷人的手势，忍俊不禁的笑容向我们讲及这件事<br>高一还是高二来着，我们十分有幸分到了一个小组，当时班主任叫我们给自己组想一个口号，别的小组都是什么“赶莺超美”（传说中我们班的学霸），而我们组的却是：<br><img src="/2019/03/17/王子/10.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br><span style="color: #FF6666; font-size: 24px">清新口气，你我更亲近</span><br><img src="/2019/03/17/王子/8.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>然而…<br>如今…<br>历史总是惊人的相似…<br>我…have no words<br><img src="/2019/03/17/王子/3.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>我犹记得，高中学校外有一家饰品店，外面拉了一条横幅，大意是“一直被模仿，从未被超越”<br>yes，目前，他奶奶的，我深刻地把前半句话理解得透彻透底<br>most important！<br>THIS IS NOT THE FIRST TIME!!!<br><img src="/2019/03/17/王子/7.jpg" alt="我是你爸爸" style="width: 200px; height: 200px" align="center"><br>莫非？我的idea太好了？<br>我常常因为自己过于优秀而感到苦恼</p><p>我抄你个奶奶的腿儿的</p><p>最后！是王子走进了这家店吗？？？</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/03/17/%E7%8E%8B%E5%AD%90/#disqus_thread</comments>
     </item>
     
   </channel>
