@@ -92,22 +92,22 @@
 
 
 
-<meta name="description" content="眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。感觉好久都没写爬虫了，也不知道自己在做什么Django也学得一塌糊涂，数据分析也都是bug！I want to do die！等等，我还不能死！我的英语教资面试还没准备！Stop!看了一下网易云，以陈雪凝的《绿色》为例，F12键找到了这个R_SO_4_134">
+<meta name="description" content="眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。感觉好！不能这么丧！振作！快醒醒！起来撸代码啦！">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网易云单曲评论">
 <meta property="og:url" content="http://yoursite.com/2019/05/02/网易云单曲评论/index.html">
 <meta property="og:site_name" content="Awake&#39;s Blog">
-<meta property="og:description" content="眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。感觉好久都没写爬虫了，也不知道自己在做什么Django也学得一塌糊涂，数据分析也都是bug！I want to do die！等等，我还不能死！我的英语教资面试还没准备！Stop!看了一下网易云，以陈雪凝的《绿色》为例，F12键找到了这个R_SO_4_134">
+<meta property="og:description" content="眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。感觉好！不能这么丧！振作！快醒醒！起来撸代码啦！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/05/02/网易云单曲评论/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/02/网易云单曲评论/2.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/02/网易云单曲评论/3.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/02/网易云单曲评论/4.png">
-<meta property="og:updated_time" content="2019-05-02T11:50:48.249Z">
+<meta property="og:updated_time" content="2019-05-02T12:16:36.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易云单曲评论">
-<meta name="twitter:description" content="眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。感觉好久都没写爬虫了，也不知道自己在做什么Django也学得一塌糊涂，数据分析也都是bug！I want to do die！等等，我还不能死！我的英语教资面试还没准备！Stop!看了一下网易云，以陈雪凝的《绿色》为例，F12键找到了这个R_SO_4_134">
+<meta name="twitter:description" content="眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。感觉好！不能这么丧！振作！快醒醒！起来撸代码啦！">
 <meta name="twitter:image" content="http://yoursite.com/2019/05/02/网易云单曲评论/1.png">
 
 
@@ -423,7 +423,7 @@
       
 
       
-        <p>眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。<br>感觉好久都没写爬虫了，也不知道自己在做什么Django也学得一塌糊涂，数据分析也都是bug！I want to do die！等等，我还不能死！我的英语教资面试还没准备！<br>Stop!<br>看了一下网易云，以陈雪凝的《绿色》为例，F12键找到了这个R_SO_4_1345848098?csrf_token=，并且点开发现了里面就是我们想要的评论数据，<br><img src="/2019/05/02/网易云单曲评论/1.png"><br>再查看请求头,这个requet url：<a href="https://music.163.com/weapi/v1/resource/comments/R_SO_4_1345848098?csrf_token=" target="_blank" rel="noopener">https://music.163.com/weapi/v1/resource/comments/R_SO_4_1345848098?csrf_token=</a><br>看request method是以post方式提交的<br><img src="/2019/05/02/网易云单曲评论/2.png"><br>然后我屁颠儿屁颠儿地点了个翻页，在评论翻页的时候这个request url并没有刷新！！！<br>没有刷新那这个翻页的操作怎么做？<br>是用selenium还是…？<br>看下面的表单数据应该是经过加密的，所以我在网上百度了一下，果然有大佬破解这个算法加密，参考：<a href="https://www.zhihu.com/question/36081767" target="_blank" rel="noopener">https://www.zhihu.com/question/36081767</a><br><img src="/2019/05/02/网易云单曲评论/3.png"><img src="/2019/05/02/网易云单曲评论/4.png"><br>这是算法解密的代码，都是大佬们牛逼啊！<br>我就稍微改了一下，并且把数据存储到MongoDB</p>
+        <p>眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。<br>感觉好！不能这么丧！振作！快醒醒！起来撸代码啦！<br><a id="more"></a><br>看了一下网易云，以陈雪凝的《绿色》为例，F12键找到了这个R_SO_4_1345848098?csrf_token=，并且点开发现了里面就是我们想要的评论数据<br><img src="/2019/05/02/网易云单曲评论/1.png"><br>再查看请求头,这个requet url：<br><a href="https://music.163.com/weapi/v1/resource/comments/R_SO_4_1345848098?csrf_token=" target="_blank" rel="noopener">https://music.163.com/weapi/v1/resource/comments/R_SO_4_1345848098?csrf_token=</a><br>看request method是以post方式提交的<br><img src="/2019/05/02/网易云单曲评论/2.png"><br>然后我屁颠儿屁颠儿地点了个翻页，在评论翻页的时候这个request url并没有刷新！！！<br>没有刷新那这个翻页的操作怎么做？<br>是用selenium还是…？<br>看下面的表单数据应该是经过加密的，所以我在网上百度了一下，果然有大佬破解这个算法加密，参考：<a href="https://www.zhihu.com/question/36081767" target="_blank" rel="noopener">https://www.zhihu.com/question/36081767</a><br><img src="/2019/05/02/网易云单曲评论/3.png"><img src="/2019/05/02/网易云单曲评论/4.png"><br>这是算法解密的代码，都是大佬们牛逼啊！<br>我就稍微改了一下，并且把数据存储到MongoDB</p>
 <p>完整代码地址见：<a href="https://github.com/Awake2714/WangyiComment" target="_blank" rel="noopener">https://github.com/Awake2714/WangyiComment</a></p>
 <p>不过有点问题的是，我发现在爬到400多页的时候就没数据了，虽然代码一直在跑，而且也没有被ban，但是就是没拿到数据，所以这是怎么回事？是不是像豆瓣一样，评论只能拿取500条？有没有小伙伴知道呀？</p>
 
