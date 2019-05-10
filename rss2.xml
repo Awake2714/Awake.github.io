@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 02 May 2019 12:19:10 GMT</pubDate>
+    <pubDate>Fri, 10 May 2019 10:01:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>小舒的最近两天</title>
+      <link>http://yoursite.com/2019/05/10/%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/</link>
+      <guid>http://yoursite.com/2019/05/10/%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/</guid>
+      <pubDate>Fri, 10 May 2019 09:24:21 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;众生皆苦，我也苦&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>众生皆苦，我也苦<a id="more"></a><br>暴躁小舒，在线怼人，连hr都怼了，我怕是不想活了。<br>想了一下这篇博客的标题应该叫什么好，是“小舒与简历斗智斗勇”，还是“小舒与招聘网站殊死搏斗”，最后还是想了这个。<br>啊，我真的好丧啊，从一大早就开始丧了。大多数时候，痛苦和悲哀都来自于家庭，我真的好想离他们远远的啊。我自己也很烦啊，摆脱就不要再给我传递这些令人头疼的消息了吧。<br>我觉得我真的要放弃了，我做了这么久的努力都是白费的，在找实习的时候一个都找不到。我们本来就是普罗大众，谈什么改变命运，改变不了的。我不想再努力了，放弃的时候真的很舒服。一时堕落一时爽，一直堕落一直爽。<br>你知道吗？我昨天玩屎了，想不到吧，哈哈哈，其实我就吃了个芒果，但是吃个芒果就跟他妈玩屎一样，弄得我一身都是。不过任何人都逃不过真香定律，虽然确实很恶心，但是真的好吃呀，我说的是芒果好吃。<br>昨天和老王差点吵架了，他感觉我很幼稚，很无理取闹吧，但是他应该不知道我有多喜欢他吧。我很想他，上课想、看书想、睡觉也想，我想跟他说话，我也想跟他撒娇，明明我就不是这种人，遇到他居然变成这样了，我好讨厌自己啊啊啊啊。我买了四本故事书，本来是要寄给他让他给我讲睡前故事的，他肯定害怕我是女骗子，所以只有买来自己给他讲睡前故事了，这个男人坏的很呐。<br>如果哪天我不愿意跟他撒娇了，那么他也和其他人没什么区别了，不过，现在，娘爱你（づ￣3￣）づ╭❤～</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/05/10/%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>五月伊始</title>
@@ -73,22 +89,6 @@
       <content:encoded><![CDATA[<p>我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img2.jpg" align="center"><br>终于，今天晚上好好地静下来慢慢捋了一下代码！<br>终于，似乎从这个坑出来了！<br><a id="more"></a><br>先来说说用requests库设置吧，随机请求头我用的是fake-useragent这个包<br>先用<span href="http://www.httpbin.org/get">httpbin.org/get</span>这个网址测试了一下<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img3.png" align="center"><br>就这样设置就可以正确输出了，<br>开始我设置的时候居然直接写的 headers=ua.random 我真的要哭死啊！！！<br>一定要记得构造字典！！！</p><p>设置代理，我买的蘑菇代理，感觉还挺划算的，按数量买1000个6块钱，毕竟测试也用不完这么多，永久有效，爬完某宝后我都还剩700多个；按数量感觉不太划算，一天2000个6块钱吧，不过我也用不完，当然如果你需求大的话另当别论，土豪也请随意哈哈哈<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img4.png" align="center"><br>这里的坑也很多啊，请求了好多次后都不成功，我把ip打印了一下，好像确实有点问题，不过还是不知道问题确切所在，所以又打印了一下长度，果然！！！里面有个换行符和回车！！！我的娘啊！！！我枯了<br>皇天不负有心人，终于搞好了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img5.jpg" align="center"></p><p>接下来终于在scrapy框架里面设置这两个中间件了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img6.png" align="center"><br>在网上看到好多方法，自己也懵逼，试了一下，这样也行的：<br>request.headers[‘User-Agent’] = self.ua.random<br>不过我真是傻！这样好像是真的不行！不行！会报错的！<br>request.meta[‘headers’] = {‘User-Agent’: ua.random}<br>因为有些请求是不需要代理的，所以查了一下说什么重写make_requests_from_url()方法，设置meta={‘download_timeout’: 10}，但是不知道为什么我的就是不行，所以干脆没有设置了，如果有大佬知道是怎么回事可不可以告诉我一下啊。</p><p>另外我是想运行这个代理池的，但是老是报错，实在不知怎么回事啊[泪奔]<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img7.png" align="center"></p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>scrapy爬取某宝商品信息</title>
-      <link>http://yoursite.com/2019/04/11/scrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF/</link>
-      <guid>http://yoursite.com/2019/04/11/scrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF/</guid>
-      <pubDate>Thu, 11 Apr 2019 13:00:52 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;在多次踩坑后，终于写好我的爬虫了。&lt;br&gt;说说我遇到的问题:&lt;br&gt;第一就是在scrapy框架里设置随机请求头中间件&lt;br&gt;第二也是中间件，代理中间件，关于这两点可以参考我的博客：&lt;br&gt;&lt;a href=&quot;http://www.shuxuelian.top/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;爬虫设置随机请求头和代理&lt;/a&gt;&lt;br&gt;这两个问题真的困扰了我超级久啊。&lt;br&gt;解决好这两个问题好，我的爬虫终于运行起来啦啦啦&lt;br&gt;&lt;img src=&quot;/2019/04/11/scrapy爬取某宝商品信息/img1.jpg&quot; align=&quot;center&quot; style=&quot;width: 400px; height: 400px&quot;&gt;&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>在多次踩坑后，终于写好我的爬虫了。<br>说说我遇到的问题:<br>第一就是在scrapy框架里设置随机请求头中间件<br>第二也是中间件，代理中间件，关于这两点可以参考我的博客：<br><a href="http://www.shuxuelian.top/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/#more" target="_blank" rel="noopener">爬虫设置随机请求头和代理</a><br>这两个问题真的困扰了我超级久啊。<br>解决好这两个问题好，我的爬虫终于运行起来啦啦啦<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img1.jpg" align="center" style="width: 400px; height: 400px"><br><a id="more"></a><br>贴一下我的部分代码，嘿嘿嘿</p><p><strong style="font-size: 24px; color: #000000">目录</strong><br>文件夹结构<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img9.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">taobao.py</strong><br>重写 start_requests() 方法<br>parse()方法 解析商品信息<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img3.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">items.py</strong><br>你要存储的字段<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img8.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">middlewares.py</strong><br>随机请求头 UserAgentMiddleware<br>代理 ProxyMiddleware<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img4.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">settings.py</strong><br><img src="/2019/04/11/scrapy爬取某宝商品信息/img6.png" align="center"><br><img src="/2019/04/11/scrapy爬取某宝商品信息/img7.png"></p><p><strong style="font-size: 24px; color: #000000">pipelines.py</strong><br>存储数据到Mongodb<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img5.png" align="center"></p><p><strong style="font-size: 24px; color: #000000">run.py</strong><br>最后就可以运行啦 python run.py<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img10.png" align="center"><br>运行结束后的部分数据是这样的哈哈哈<br><img src="/2019/04/11/scrapy爬取某宝商品信息/img11.png"></p><p>代码地址：<a href="https://github.com/Awake2714/Taobao" target="_blank" rel="noopener">https://github.com/Awake2714/Taobao</a></p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/04/11/scrapy%E7%88%AC%E5%8F%96%E6%9F%90%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF/#disqus_thread</comments>
     </item>
     
   </channel>
