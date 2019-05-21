@@ -8,13 +8,61 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 10 May 2019 10:01:59 GMT</pubDate>
+    <pubDate>Tue, 21 May 2019 07:00:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
+      <title>Python中的赋值、浅拷贝和深拷贝</title>
+      <link>http://yoursite.com/2019/05/21/11_Python%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D/</link>
+      <guid>http://yoursite.com/2019/05/21/11_Python%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D/</guid>
+      <pubDate>Tue, 21 May 2019 06:23:17 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;今天看了很多爬虫面试题，太尴尬了，几乎都不会，红红火火恍恍惚惚哈哈哈哈，所以我赶紧来查漏补缺了——学习Python中的拷贝啦！每天默念三遍：我爱学习！我爱学习！我爱学习！&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>今天看了很多爬虫面试题，太尴尬了，几乎都不会，红红火火恍恍惚惚哈哈哈哈，所以我赶紧来查漏补缺了——学习Python中的拷贝啦！每天默念三遍：我爱学习！我爱学习！我爱学习！<a id="more"></a></p><ol><li>Python中的赋值只是引用了变量，不会占用新的内存</li><li>浅拷贝有三种形式：</li></ol><ul><li>完全切片</li><li>list()函数</li><li>copy模块中的copy()函数</li></ul><ol start="3"><li>深拷贝：copy模块中的deepcopy()函数</li></ol><blockquote><p>import copy<br>a = [1,2,3,4,[‘x’,’y’]]<br>b = a # 赋值<br># 浅拷贝<br>c = a[:] # 1、切片<br>d = list(a) # 2、工厂函数<br>e = copy.copy(a) # 3、copy函数<br># 深拷贝<br>f = copy.deepcopy(a)<br>print(id(a),id(b),id(c),id(d),id(f),id(e))<br>>>> 69613192 69613192 69613704 69614728 69613768 69614792<br>a.append(5)<br>print(a) # a添加了一个元素<br>>>> [1, 2, 3, 4, [‘x’, ‘y’], 5]<br>print(b) # b跟着添加了一个元素<br>>>> [1, 2, 3, 4, [‘x’, ‘y’], 5]<br>print(c) # c、d、e保持不变<br>>>> [1, 2, 3, 4, [‘x’, ‘y’]]<br>print(d)<br>>>> [1, 2, 3, 4, [‘x’, ‘y’]]<br>print(e)<br>>>> [1, 2, 3, 4, [‘x’, ‘y’]]<br>print(f) # f保持不变<br>>>> [1, 2, 3, 4, [‘x’, ‘y’]]</p></blockquote><p>我们在这里定义了一个列表a，a里面第五个元素嵌套了一个列表，使用a.append()函数给a添加了一个元素。被赋值的b跟着添加了一个元素，并打印了a、b的id，说明被赋值的b只是对a的引用，被浅拷贝的c、d、e和被深拷贝的f都没有发生变化。</p><blockquote><p>print(‘*‘*30)<br>a[4].append(‘z’)<br>print(a) # a索引为4所在的列表内部添加了一个元素z<br>>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’], 5]<br>print(b) # b索引为4的元素内部跟着添加了一个元素z<br>>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’], 5]<br>print(c) # c、d、e的内部元素添加了元素z<br>>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’]]<br>print(d)<br>>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’]]<br>print(e)<br>>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’]]<br>print(f) # f纹丝不动，没有添加任何值<br>>>> [1, 2, 3, 4, [‘x’, ‘y’]]<br>print(id(a),id(b),id(c),id(d),id(f),id(e))</p></blockquote><p>在这里，我们对a嵌套的列表进行了追加元素的操作，被赋值的b和被浅拷贝的c、d、e都发生了变化，而f依然保持不变。</p><p>总结：</p><ul><li>不管是对变量外层还是内层进行操作，赋值都会跟着变化</li><li>只有对变量内层元素进行操作时，浅拷贝才会发生变化</li><li>无论原列表如何变化，深拷贝保持不变</li></ul>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/05/21/11_Python%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Python爬取腾讯四川新闻</title>
+      <link>http://yoursite.com/2019/05/20/10_%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB/</link>
+      <guid>http://yoursite.com/2019/05/20/10_%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB/</guid>
+      <pubDate>Mon, 20 May 2019 14:21:44 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;周六我去参加初中英语教师资格的面试了，然而，我很怂，在结结巴巴答完结构化问题之后，居然告诉考官：我放弃！考官都震惊了！我真的很怂啊，我觉得我的教案写得非常巴适，可是当你站在讲台上的时候真的什么都讲不出来，也不是紧张，感觉就是很尴尬，匆匆说完原因后我就离场了，虽然我一大早就起床了，在大姨妈问候你的情况下，还排了很久的队，成为考场的最后一位考生。可能我真的不适合，或者又是因为我缺乏这种公开站在大家面前的锻炼。我妈说我只会纸上谈兵，我难得一次赞成她的观点。&lt;br&gt;So much for that day！We should stop here and go to study ‘Python Spider’！&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>周六我去参加初中英语教师资格的面试了，然而，我很怂，在结结巴巴答完结构化问题之后，居然告诉考官：我放弃！考官都震惊了！我真的很怂啊，我觉得我的教案写得非常巴适，可是当你站在讲台上的时候真的什么都讲不出来，也不是紧张，感觉就是很尴尬，匆匆说完原因后我就离场了，虽然我一大早就起床了，在大姨妈问候你的情况下，还排了很久的队，成为考场的最后一位考生。可能我真的不适合，或者又是因为我缺乏这种公开站在大家面前的锻炼。我妈说我只会纸上谈兵，我难得一次赞成她的观点。<br>So much for that day！We should stop here and go to study ‘Python Spider’！<a id="more"></a><br>在堕(受)落(到)了(hr)两(打)周(击)两周后，终于奋发图强，开始了正儿八经的学习！我爱学习！</p><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul><li>为了练习Selenium和Beautiful Soup</li><li>为了获取腾讯四川新闻的相关数据</li></ul><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在谷歌浏览器中打开网址 <a href="https://new.qq.com/d/cd" target="_blank" rel="noopener">https://new.qq.com/d/cd</a>  你会发现页面是通过ajax加载的，可以查看网页源代码发现并没有数据，这时可以你可以尝试找接口或者用selenium + chrome的方式来动态爬取页面数据，今天为了练习selenium，所以就用了selenium来抓取。</p><h2 id="开始抓取"><a href="#开始抓取" class="headerlink" title="开始抓取"></a>开始抓取</h2><ol><li>先导入需要的模块，然后定义了一个腾讯新闻爬虫类，设置了chromedriver的路径</li><li>定义了一个get_one_page()方法，向 <a href="https://new.qq.com/d/cd" target="_blank" rel="noopener">https://new.qq.com/d/cd</a>  发送请求。这里定义了一个循环，让代码一直执行下拉操作。一直滑，滑到页面底端，你可以看到页面是是这样的，所以我们在循环内部设置了一个判断方法，当出现“返回腾讯网这几个字的时候，我们就让它停掉。<br><img src="/2019/05/20/10_腾讯新闻爬虫/5.png"><br><img src="/2019/05/20/10_腾讯新闻爬虫/4.png"></li><li>第二个方法parse_one_page()，用Beautiful Soup库解析页面，获取新闻标题链接，因为在爬取过程中报了Index Error，所以我们在这里进行了异常处理<br><img src="/2019/05/20/10_腾讯新闻爬虫/6.png"></li><li>get_second_page()方法，用requests库发起请求，解析页面，获取文章标题，文章内容和发布时间<br><img src="/2019/05/20/10_腾讯新闻爬虫/7.png"></li><li>save_to_mongo()方法，用pymongo连接数据库，将数据存储到数据库Tencent下的集合News内<br><img src="/2019/05/20/10_腾讯新闻爬虫/8.png"></li></ol><h2 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h2><p><img src="/2019/05/20/10_腾讯新闻爬虫/1.png"></p><h2 id="调用API"><a href="#调用API" class="headerlink" title="调用API"></a>调用API</h2><p><img src="/2019/05/20/10_腾讯新闻爬虫/3.png"><br><img src="/2019/05/20/10_腾讯新闻爬虫/2.png"><br>如果你不想用selenium，你可以获取接口数据，shift+f12，看到这个rcd?开头的文件，右边就是一条条新闻的相关数据，查看他的headers，找到请求的url，有个page参数可实现翻页操作。</p><p>每天进步一点点，年薪百万！！！</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/05/20/10_%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Python爬取腾讯四川新闻</title>
+      <link>http://yoursite.com/2019/05/20/10-%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB/</link>
+      <guid>http://yoursite.com/2019/05/20/10-%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB/</guid>
+      <pubDate>Mon, 20 May 2019 14:21:44 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;周六我去参加初中英语教师资格的面试了，然而，我很怂，在结结巴巴答完结构化问题之后，居然告诉考官：我放弃！考官都震惊了！我真的很怂啊，我觉得我的教案写得非常巴适，可是当你站在讲台上的时候真的什么都讲不出来，也不是紧张，感觉就是很尴尬，匆匆说完原因后我就离场了，虽然我一大早就起床了，在大姨妈问候你的情况下，还排了很久的队，成为考场的最后一位考生。可能我真的不适合，或者又是因为我缺乏这种公开站在大家面前的锻炼。我妈说我只会纸上谈兵，我难得一次赞成她的观点。&lt;br&gt;So much for that day！We should stop here and go to study ‘Python Spider’！&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>周六我去参加初中英语教师资格的面试了，然而，我很怂，在结结巴巴答完结构化问题之后，居然告诉考官：我放弃！考官都震惊了！我真的很怂啊，我觉得我的教案写得非常巴适，可是当你站在讲台上的时候真的什么都讲不出来，也不是紧张，感觉就是很尴尬，匆匆说完原因后我就离场了，虽然我一大早就起床了，在大姨妈问候你的情况下，还排了很久的队，成为考场的最后一位考生。可能我真的不适合，或者又是因为我缺乏这种公开站在大家面前的锻炼。我妈说我只会纸上谈兵，我难得一次赞成她的观点。<br>So much for that day！We should stop here and go to study ‘Python Spider’！<a id="more"></a><br>在堕(受)落(到)了(hr)两(打)周(击)两周后，终于奋发图强，开始了正儿八经的学习！我爱学习！</p><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul><li>为了练习Selenium和Beautiful Soup</li><li>为了爬取腾讯四川新闻</li></ul><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>在谷歌浏览器中打开网址 <a href="https://new.qq.com/d/cd" target="_blank" rel="noopener">https://new.qq.com/d/cd</a>  你会发现页面是通过ajax加载的，可以查看网页源代码发现并没有数据，这时可以你可以尝试找接口或者用selenium + chrome的方式来动态爬取页面数据，今天为了练习selenium，所以就用了selenium来爬取。</li><li></li></ol>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/05/20/10-%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>小舒的最近两天</title>
-      <link>http://yoursite.com/2019/05/10/%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/</link>
-      <guid>http://yoursite.com/2019/05/10/%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/</guid>
+      <link>http://yoursite.com/2019/05/10/05_%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/</link>
+      <guid>http://yoursite.com/2019/05/10/05_%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/</guid>
       <pubDate>Fri, 10 May 2019 09:24:21 GMT</pubDate>
       <description>
       
@@ -24,13 +72,13 @@
       
       <content:encoded><![CDATA[<p>众生皆苦，我也苦<a id="more"></a><br>暴躁小舒，在线怼人，连hr都怼了，我怕是不想活了。<br>想了一下这篇博客的标题应该叫什么好，是“小舒与简历斗智斗勇”，还是“小舒与招聘网站殊死搏斗”，最后还是想了这个。<br>啊，我真的好丧啊，从一大早就开始丧了。大多数时候，痛苦和悲哀都来自于家庭，我真的好想离他们远远的啊。我自己也很烦啊，摆脱就不要再给我传递这些令人头疼的消息了吧。<br>我觉得我真的要放弃了，我做了这么久的努力都是白费的，在找实习的时候一个都找不到。我们本来就是普罗大众，谈什么改变命运，改变不了的。我不想再努力了，放弃的时候真的很舒服。一时堕落一时爽，一直堕落一直爽。<br>你知道吗？我昨天玩屎了，想不到吧，哈哈哈，其实我就吃了个芒果，但是吃个芒果就跟他妈玩屎一样，弄得我一身都是。不过任何人都逃不过真香定律，虽然确实很恶心，但是真的好吃呀，我说的是芒果好吃。<br>昨天和老王差点吵架了，他感觉我很幼稚，很无理取闹吧，但是他应该不知道我有多喜欢他吧。我很想他，上课想、看书想、睡觉也想，我想跟他说话，我也想跟他撒娇，明明我就不是这种人，遇到他居然变成这样了，我好讨厌自己啊啊啊啊。我买了四本故事书，本来是要寄给他让他给我讲睡前故事的，他肯定害怕我是女骗子，所以只有买来自己给他讲睡前故事了，这个男人坏的很呐。<br>如果哪天我不愿意跟他撒娇了，那么他也和其他人没什么区别了，不过，现在，娘爱你（づ￣3￣）づ╭❤～</p>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/05/10/%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/05/10/05_%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99/#disqus_thread</comments>
     </item>
     
     <item>
       <title>五月伊始</title>
-      <link>http://yoursite.com/2019/05/02/%E4%BA%94%E6%9C%88%E4%BC%8A%E5%A7%8B/</link>
-      <guid>http://yoursite.com/2019/05/02/%E4%BA%94%E6%9C%88%E4%BC%8A%E5%A7%8B/</guid>
+      <link>http://yoursite.com/2019/05/02/09_%E4%BA%94%E6%9C%88%E4%BC%8A%E5%A7%8B/</link>
+      <guid>http://yoursite.com/2019/05/02/09_%E4%BA%94%E6%9C%88%E4%BC%8A%E5%A7%8B/</guid>
       <pubDate>Thu, 02 May 2019 13:21:30 GMT</pubDate>
       <description>
       
@@ -40,55 +88,7 @@
       
       <content:encoded><![CDATA[<p>我以为世界在等着我长大，没想到是时间推着我向前<br><a id="more"></a><br>感觉时间飞逝啊！上一次写博客已经是很久前的事了吧！四月已经结束了！五月又匆匆忙忙地来了！我还是没有什么进步。<br>这个月计算机二级的成绩也要出来了，英语教师资格证面试也快了，最重要的是，七月就要去实习了，五月就要报名是集中实习还是分散实习了，所以我，得开始准备面试了。不管是爬虫还是新闻，简历都备起来了。在写简历的时候才发现自己什么也写不上去。<br>可是生活还是要继续啊，我在努力啊。我也想把年薪过万变成现实啊，想去旅游，想带奶奶吃好吃的，想带弟弟玩好玩的。<br>最近，我是被恋爱冲昏了头脑吧，不！我还没恋呢，不过为什么我那么依赖他，居然在他面前变成了一个小女生？？？what fuck？？？我怎么会变成这种人？？？我不能这样啊，我要好好学习啊，不能浪费时间了。<br>今天他说带我回家过年，虽然我知道可能是玩笑话，不过我还是认真的告诉了他我不愿意。<br>我不是觉得自己要和很优秀（高富帅）的人在一起，毕竟我自己也不怎样，好男人又没瞎眼，毕竟物以类聚，人以群分，可是我还是不想结婚，不是和谁的问题，是我不想。我想象不出来自己结婚后是怎样的？我都怀疑自己要单身一辈子了！<br>也遇不到一个合适的，我觉得就应该听妈妈的话，好好地去相亲，毕竟妈妈看上的人家都不是很差。</p><p>不不不！谈什么儿女情长，在这个年龄就应该巨富！！！好好努力吧，老老实实写代码，勤勤恳恳找实习！</p><p>（づ￣3￣）づ╭❤～</p>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/05/02/%E4%BA%94%E6%9C%88%E4%BC%8A%E5%A7%8B/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>网易云单曲评论</title>
-      <link>http://yoursite.com/2019/05/02/%E7%BD%91%E6%98%93%E4%BA%91%E5%8D%95%E6%9B%B2%E8%AF%84%E8%AE%BA/</link>
-      <guid>http://yoursite.com/2019/05/02/%E7%BD%91%E6%98%93%E4%BA%91%E5%8D%95%E6%9B%B2%E8%AF%84%E8%AE%BA/</guid>
-      <pubDate>Thu, 02 May 2019 11:05:14 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。&lt;br&gt;感觉好！不能这么丧！振作！快醒醒！起来撸代码啦！&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>眼看着7月份就要去实习了，还不知道做什么呢，什么都还不会呢，打算着找个爬虫的实习吧，但是我这点水平应该不行吧，所以又来写了个网易单曲评论爬虫。<br>感觉好！不能这么丧！振作！快醒醒！起来撸代码啦！<br><a id="more"></a><br>看了一下网易云，以陈雪凝的《绿色》为例，F12键找到了这个R_SO_4_1345848098?csrf_token=，并且点开发现了里面就是我们想要的评论数据<br><img src="/2019/05/02/网易云单曲评论/1.png"><br>再查看请求头,这个requet url：<br><a href="https://music.163.com/weapi/v1/resource/comments/R_SO_4_1345848098?csrf_token=" target="_blank" rel="noopener">https://music.163.com/weapi/v1/resource/comments/R_SO_4_1345848098?csrf_token=</a><br>看request method是以post方式提交的<br><img src="/2019/05/02/网易云单曲评论/2.png"><br>然后我屁颠儿屁颠儿地点了个翻页，在评论翻页的时候这个request url并没有刷新！！！<br>没有刷新那这个翻页的操作怎么做？<br>是用selenium还是…？<br>看下面的表单数据应该是经过加密的，所以我在网上百度了一下，果然有大佬破解这个算法加密，参考：<a href="https://www.zhihu.com/question/36081767" target="_blank" rel="noopener">https://www.zhihu.com/question/36081767</a><br><img src="/2019/05/02/网易云单曲评论/3.png"><img src="/2019/05/02/网易云单曲评论/4.png"><br>这是算法解密的代码，都是大佬们牛逼啊！<br>我就稍微改了一下，并且把数据存储到MongoDB</p><p>完整代码地址见：<a href="https://github.com/Awake2714/WangyiComment" target="_blank" rel="noopener">https://github.com/Awake2714/WangyiComment</a></p><p>不过有点问题的是，我发现在爬到400多页的时候就没数据了，虽然代码一直在跑，而且也没有被ban，但是就是没拿到数据，所以这是怎么回事？是不是像豆瓣一样，评论只能拿取500条？有没有小伙伴知道呀？</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/05/02/%E7%BD%91%E6%98%93%E4%BA%91%E5%8D%95%E6%9B%B2%E8%AF%84%E8%AE%BA/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>利用scrapy框架下载煎蛋网图片</title>
-      <link>http://yoursite.com/2019/04/18/jandan/</link>
-      <guid>http://yoursite.com/2019/04/18/jandan/</guid>
-      <pubDate>Thu, 18 Apr 2019 13:21:30 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;每次写完代码后都感觉自己人老珠黄啊，该拿什么拯救我的老脸？？&lt;br&gt;&lt;img src=&quot;/2019/04/18/jandan/7.png&quot;&gt;&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>每次写完代码后都感觉自己人老珠黄啊，该拿什么拯救我的老脸？？<br><img src="/2019/04/18/jandan/7.png"><br><a id="more"></a></p><h2 id="spider-py"><a href="#spider-py" class="headerlink" title="spider.py"></a>spider.py</h2><p>这部分很简单，只需要获取图片链接和下一页的链接就可以了<br><img src="/2019/04/18/jandan/4.png"></p><h2 id="item-py"><a href="#item-py" class="headerlink" title="item.py"></a>item.py</h2><blockquote><p>import scrapy<br>class JiandanItem(scrapy.Item):<br>&ensp;&ensp;&ensp;&ensp;img = scrapy.Field()</p></blockquote><h2 id="pipelines-py"><a href="#pipelines-py" class="headerlink" title="pipelines.py"></a>pipelines.py</h2><p>这一部分比较重要，scrapy提供了ImagesPipeline，我们只需要继承自这个类，重写其中的一些方法，scrapy就会为我们下载图片了。<br><img src="/2019/04/18/jandan/6.png"></p><h2 id="settings-py"><a href="#settings-py" class="headerlink" title="settings.py"></a>settings.py</h2><p>在settings.py里开启相关配置<br><img src="/2019/04/18/jandan/3.png"><br><img src="/2019/04/18/jandan/2.png"></p><h2 id="部分图片展示"><a href="#部分图片展示" class="headerlink" title="部分图片展示"></a>部分图片展示</h2><p>因为煎蛋网反爬措施没那么厉害，所以很快“唰唰唰”的就下载完了<br>一共四千多张图片，慢慢欣赏吧    biu~ (๑´ڡ`๑)<br><img src="/2019/04/18/jandan/1.jpg"></p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/04/18/jandan/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>爬虫设置随机请求头和代理</title>
-      <link>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/</link>
-      <guid>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/</guid>
-      <pubDate>Thu, 11 Apr 2019 13:55:39 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了&lt;br&gt;&lt;img src=&quot;/2019/04/11/爬虫设置随机请求头和代理/img2.jpg&quot; align=&quot;center&quot;&gt;&lt;br&gt;终于，今天晚上好好地静下来慢慢捋了一下代码！&lt;br&gt;终于，似乎从这个坑出来了！&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>我在设置爬虫代理和请求头时，真是遇到了很多坑啊，自己一个人自学，又没人交流，自己又是一个没有耐心的人，简直要爆炸了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img2.jpg" align="center"><br>终于，今天晚上好好地静下来慢慢捋了一下代码！<br>终于，似乎从这个坑出来了！<br><a id="more"></a><br>先来说说用requests库设置吧，随机请求头我用的是fake-useragent这个包<br>先用<span href="http://www.httpbin.org/get">httpbin.org/get</span>这个网址测试了一下<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img3.png" align="center"><br>就这样设置就可以正确输出了，<br>开始我设置的时候居然直接写的 headers=ua.random 我真的要哭死啊！！！<br>一定要记得构造字典！！！</p><p>设置代理，我买的蘑菇代理，感觉还挺划算的，按数量买1000个6块钱，毕竟测试也用不完这么多，永久有效，爬完某宝后我都还剩700多个；按数量感觉不太划算，一天2000个6块钱吧，不过我也用不完，当然如果你需求大的话另当别论，土豪也请随意哈哈哈<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img4.png" align="center"><br>这里的坑也很多啊，请求了好多次后都不成功，我把ip打印了一下，好像确实有点问题，不过还是不知道问题确切所在，所以又打印了一下长度，果然！！！里面有个换行符和回车！！！我的娘啊！！！我枯了<br>皇天不负有心人，终于搞好了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img5.jpg" align="center"></p><p>接下来终于在scrapy框架里面设置这两个中间件了<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img6.png" align="center"><br>在网上看到好多方法，自己也懵逼，试了一下，这样也行的：<br>request.headers[‘User-Agent’] = self.ua.random<br>不过我真是傻！这样好像是真的不行！不行！会报错的！<br>request.meta[‘headers’] = {‘User-Agent’: ua.random}<br>因为有些请求是不需要代理的，所以查了一下说什么重写make_requests_from_url()方法，设置meta={‘download_timeout’: 10}，但是不知道为什么我的就是不行，所以干脆没有设置了，如果有大佬知道是怎么回事可不可以告诉我一下啊。</p><p>另外我是想运行这个代理池的，但是老是报错，实在不知怎么回事啊[泪奔]<br><img src="/2019/04/11/爬虫设置随机请求头和代理/img7.png" align="center"></p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/04/11/%E7%88%AC%E8%99%AB%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E4%BB%A3%E7%90%86/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/05/02/09_%E4%BA%94%E6%9C%88%E4%BC%8A%E5%A7%8B/#disqus_thread</comments>
     </item>
     
   </channel>
