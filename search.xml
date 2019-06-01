@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python装饰器]]></title>
+    <url>%2F2019%2F06%2F01%2F16_%E8%A3%85%E9%A5%B0%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[Python的装饰器是在不影响原有函数的功能的基础上，还能添加新的功能如果理解到了闭包，那么就能很好理解装饰器了。要使用一个装饰器，就在函数上方添加一行代码：@装饰器 写一个装饰器函数 def func1(func): #外部闭包函数是被装饰的函数对象&nbsp;&nbsp;&nbsp;&nbsp;print(‘mua~’)&nbsp;&nbsp;&nbsp;&nbsp;def func2():&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘hi’)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func() #返回外部函数接受的被装饰函数的调用&nbsp;&nbsp;&nbsp;&nbsp;return func2 #返回了函数对象@func1def myprint():&nbsp;&nbsp;&nbsp;&nbsp;print(‘hello’)myprint() # func1(myprint)() #接受被装饰的函数作为参数，并继续调用一次>&gt;&gt;mua~>&gt;&gt;hi>&gt;&gt;hello 定义一个func1函数，内部嵌套func2并返回func2函数对象；在func2内部返回了对func()的调用在这里我们就对myprint函数使用了装饰器函数func1，@func1 相当于执行func1(myprint)()：将myprint函数对象作为参数传给func1并执行了一次调用，得到一条print语句和返回的func2对象，又执行了func2()，返回func()的调用，这里的func就是func1接受过来的参数myprint 这个装饰器除了执行被装饰的函数myprint的代码，还执行了func1内部的代码 带参数的装饰器函数 def func1(sex):&nbsp;&nbsp;&nbsp;&nbsp;def func2(func):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def func3():&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sex == ‘man’:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘不能生孩子’)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sex == ‘woman’:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘可以生孩子 ‘)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func3&nbsp;&nbsp;&nbsp;&nbsp;return func2@func1(sex=’man’)def man():&nbsp;&nbsp;&nbsp;&nbsp;print(‘好好上班’)@func1(sex=’woman’)def woman():&nbsp;&nbsp;&nbsp;&nbsp;print(‘好好上班’)man()woman()>&gt;&gt;不能生孩子>&gt;&gt;好好上班>&gt;&gt;可以生孩子>&gt;&gt;好好上班 如果要给装饰器函数传入参数，可以在上面所示的装饰器外部再写一个函数，这个函数用来接收参数 被装饰的函数带参数 def func1(func):&nbsp;&nbsp;&nbsp;&nbsp;def func2(a,b):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(a,b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a+=5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b+=5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func(a,b)&nbsp;&nbsp;&nbsp;&nbsp;return func2@func1def mysum(a,b):&nbsp;&nbsp;&nbsp;&nbsp;print(a+b)mysum(1, 2)>&gt;&gt;1 2>&gt;&gt;13 如果被装饰的函数需要带参数，只需要在最内部的函数传入参数即可 总结： 写一个普通的装饰器，最外部的函数用来接收函数对象，内部的函数不需要其他参数，用来返回函数调用； 写一个带参数的装饰器，在1的基础上再最外部封装一个函数，用来接收装饰器函数的参数； 写一个带参数的被装饰的函数的装饰器，最内的函数用来接收参数并返回函数的调用。我表达不好，推荐B站一个将闭包和装饰器讲得很好的教程：https://www.bilibili.com/video/av18586448?t=2207]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python函数闭包]]></title>
+    <url>%2F2019%2F06%2F01%2F15_%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[函数闭包是内部函数对外部函数作用域里的变量的引用 函数内的属性都是有生命周期的，都是在函数执行期间 闭包内的闭包函数私有化了变量，完成了数据的封装，类似于面向对象 def func(): #外部函数&nbsp;&nbsp;&nbsp;&nbsp;a = 1 #外部函数作用域里的变量&nbsp;&nbsp;&nbsp;&nbsp;print(‘this is func’)&nbsp;&nbsp;&nbsp;&nbsp;def func1(num): #内部函数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘this is func1’)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num+a)&nbsp;&nbsp;&nbsp;&nbsp;return func1 #函数var = func() #运行外部函数，内部函数就被创建var(2)>&gt;&gt;this is func>&gt;&gt;this is func1>&gt;&gt;3 在func里嵌套了一个func1，将func()函数的调用赋值给var，执行一条print语句，并接收func返回的func1函数对象，这时的var就相当于func1，var(2)传入参数2，调用func1，执行func1内部的代码 mylist = [1,2,3,4,5]def func(obj):&nbsp;&nbsp;&nbsp;&nbsp;print(‘func:’, obj)&nbsp;&nbsp;&nbsp;&nbsp;def func1():&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj[0] += 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘func1:’, obj)&nbsp;&nbsp;&nbsp;&nbsp;return func1var = func(mylist)var()var()var()>&gt;&gt;func: [1, 2, 3, 4, 5]>&gt;&gt;func1: [2, 2, 3, 4, 5]>&gt;&gt;func1: [3, 2, 3, 4, 5]>&gt;&gt;func1: [4, 2, 3, 4, 5] 在这里，首先我们定义了一个mylist列表；其次定义了一个func函数，传入参数obj，执行一条print语句，在函数内部嵌套了一个func1，并将func1对象返回。在func1里，改变object索引为0的值，接着打印了obj。将mylist作为参数传给func，这里的var如上面的例子一样，相当于func1，接着调用了三次var()，可以看到每一次调用后打印的obj都在上一次调用的基础上加了1.我表达不好，推荐B站一个将闭包和装饰器讲得很好的教程：https://www.bilibili.com/video/av18586448?t=2207]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[lambda匿名函数]]></title>
+    <url>%2F2019%2F06%2F01%2F14_lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[lambda匿名函数学习 lambda [arg1 [,arg2,…..argn]]:expression 用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。 lambda的格式：冒号前是参数，可以有多个，用逗号隔开，冒号右边的为表达式。lambda返回值是一个函数的地址，也就是函数对象。 lambda与map一起使用 x = [1, 2, 3, 4]results = list(map(lambda x: x*x, x))print()>&gt;&gt;[1, 4, 9, 16] 把lambda赋值给一个变量，再利用变量来调用函数 results = lambda x, y: x+yprint(results(5, 6))>&gt;&gt;11 根据age对字典排序 infors=[{“name”:”wang”,”age”:10},{“name”:”xiaoming”,”age”:20},{“name”:”banzhang”,”age”:10}]infors.sort(key=lambda x:x[‘age’])print(infors)>&gt;&gt;[{‘age’: 10, ‘name’: ‘wang’}, {‘age’: 10, ‘name’: ‘banzhang’}, {‘age’: 20, ‘name’: ‘xiaoming’}] 把lambda作为函数返回 def add(x,y):&nbsp;&nbsp;&nbsp;&nbsp;return lambda: x+y]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[map()函数]]></title>
+    <url>%2F2019%2F06%2F01%2F13_map%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[map()是Python内置的高阶函数 map函数的原型是map(function, iterable, …)，它返回一个列表 将function应用于iterable的每个元素，参数iterable是一个可迭代的对象，例如：列表，元祖，字符串 后面的省略号表示可以传很多个iterable，并行从这些参数中取元素，并调用function。 function为内置函数：将a的每个元素转化为字符串 a = [1, 2, 3, 4]fruit = list(map(str, a))print(fruit)>&gt;&gt;[‘1’, ‘2’, ‘3’, ‘4’] function为自定义函数：将a内的每个元素应用multiplication方法 def multiplication(a):&nbsp;&nbsp;&nbsp;&nbsp;b = a*a&nbsp;&nbsp;&nbsp;&nbsp;return bresults = list(map(multiplication, a))print(results)>&gt;&gt;[1, 4, 9, 16] 自定义函数传入多个参数：并行从x、y中取出元素，传入add函数中 x = [1, 2, 3]y = [4, 5, 6]def add(x, y):&nbsp;&nbsp;&nbsp;&nbsp;return x+yending = list(map(add, x, y))print(ending)>&gt;&gt;[5, 7, 9] 传入的参数元素个数不一致，map函数按元素最少的参数返回值 x = [1, 2, 3]y = [4, 5, 6, 7]def x_y(x, y):&nbsp;&nbsp;&nbsp;&nbsp;return x, youtcome = list(map(x_y, x, y))print(outcome)>&gt;&gt;[(1, 4), (2, 5), (3, 6)]]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[列表去重]]></title>
+    <url>%2F2019%2F06%2F01%2F12_%E5%88%97%E8%A1%A8%E5%8E%BB%E9%87%8D%2F</url>
+    <content type="text"><![CDATA[列表去重有这几种方法： 使用内置的set去重 a = [‘b’, ‘a’, ‘b’, ‘d’, ‘c’, ‘a’]b = list(set(a))print(b)>&gt;&gt;[‘a’, ‘b’, ‘c’, ‘d’] 使用字典 c = list({}.fromkeys(a).keys())print(c)>&gt;&gt;[‘a’, ‘b’, ‘c’, ‘d’] 使用以上两种方法，可以观察到输出后的列表元素的顺序被打乱了，如果想要列表保持原来的顺序，可以这样做： b.sort(key=a.index)print(‘排序后的b：’,b)d = sorted(c, key=a.index)print(‘排序后的c：’,d)>&gt;&gt;排序后的b： [‘b’, ‘a’, ‘d’, ‘c’]>&gt;&gt;排序后的c： [‘b’, ‘a’, ‘d’, ‘c’] 列表去重，不改变原列表的顺序 d = []for x in a:&nbsp;&nbsp;&nbsp;&nbsp;if not x in d:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d.append(x)print(d)>&gt;&gt;d： [‘b’, ‘a’, ‘d’, ‘c’] 列表推导式的写法 f = []g = [f.append(y) for y in a if y not in f]print(‘f:’,f)>&gt;&gt;f: [‘b’, ‘a’, ‘d’, ‘c’]]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[糟糕的五月]]></title>
+    <url>%2F2019%2F05%2F31%2F17_%E7%B3%9F%E7%B3%95%E7%9A%84%E4%BA%94%E6%9C%88%2F</url>
+    <content type="text"><![CDATA[糟糕的五月，糟糕的学习，糟糕的爱情。五月，并不是多么绚烂多姿，相反，糟糕得一塌糊涂。学习，没有任何进步，爱情，刚结束不靠谱的网恋。我想，大概是从班里发的实习单位汇总开始，学习就乱了阵脚。学习，没有好的计划，或者又常常把计划打乱。爬虫没有一点进步，数据分析也太难做不走，英语六级真是错得惨不忍睹。我常常很慌，心情也是大起大落，脾气也不好，尤其是对室友，每次发完脾气后又很后悔。我想，大概是从他的出现开始，我就变了，从女汉子变得小鸟依人。习惯了一个人的我，居然也想像个孩子一样黏着他。可能是我太作了，一天到晚就像黏着对方，一天到晚就在瞎几把乱想是不是他不爱我，可能我这样捣蛋的次数太多了，惹得他厌烦了。我只是想让你多陪陪我啊。也可能他真的不爱我，除了谈到他的工作和他的前女友会滔滔不绝之外，对我是爱搭不理。在五月的最后两三天，我们似乎默认就这样结束了。或许也没有开始，只是我还以为自己恋爱了呢。倒数第三天，我发现他好像真的骗了我；倒数第二天，他说了两句话，我说了一句话；最后一天，我们一句话都没有了。可能是他累了吧，厌烦我的这种行为了。我本来是等你的一句话，或者一个电话，结果你头也不回。谁都不愿意当舔狗，所以我们就这样over了。还记得刚开始的时候真的像恋爱一样，打个电话居然能让人兴奋得失眠。上课也在想你，看书也在想你，睡觉的时候也在想你。我也没想到，居然有一天我也会网恋，比初恋还更美好的感觉，可是后来你就渐渐地“忙”起来了，渐渐地烦了。开始很甜蜜，后来连晚安都没有了；刚开始是喜欢，后来只是习惯。我还是很幼稚，总会想明明是你追的我，为什么最后我却动心你就离开了；我还是很幼稚，注销了账号，卸载了那个我们认识的APP；我还是很幼稚，去翻看我们的聊天记录，看我给你画的涂鸦。我想你不爱我吧，从一开始就是骗人的，果然我喜欢会撩的男的呢。不过，我想告诉你，你真傻，真的错过了我这么好的女人，大概以后你再也找不到比现在的我更爱你的人了。我会收起所有的伤心，好好学习。毕竟什么都没脱贫重要。六月，好好学爬虫，好好考英语，好好准备期末考试，好好写简历，好好找实习。我爱学习！我爱学习！我爱学习！]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>学校</tag>
+        <tag>日记</tag>
+        <tag>心情</tag>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python中的赋值、浅拷贝和深拷贝]]></title>
     <url>%2F2019%2F05%2F21%2F11_Python%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%2F</url>
     <content type="text"><![CDATA[今天看了很多爬虫面试题，太尴尬了，几乎都不会，红红火火恍恍惚惚哈哈哈哈，所以我赶紧来查漏补缺了——学习Python中的拷贝啦！每天默念三遍：我爱学习！我爱学习！我爱学习！ Python中的赋值只是引用了变量，不会占用新的内存 浅拷贝有三种形式： 完全切片 list()函数 copy模块中的copy()函数 深拷贝：copy模块中的deepcopy()函数 import copya = [1,2,3,4,[‘x’,’y’]]b = a # 赋值# 浅拷贝c = a[:] # 1、切片d = list(a) # 2、工厂函数e = copy.copy(a) # 3、copy函数# 深拷贝f = copy.deepcopy(a)print(id(a),id(b),id(c),id(d),id(f),id(e))>>> 69613192 69613192 69613704 69614728 69613768 69614792a.append(5)print(a) # a添加了一个元素>>> [1, 2, 3, 4, [‘x’, ‘y’], 5]print(b) # b跟着添加了一个元素>>> [1, 2, 3, 4, [‘x’, ‘y’], 5]print(c) # c、d、e保持不变>>> [1, 2, 3, 4, [‘x’, ‘y’]]print(d)>>> [1, 2, 3, 4, [‘x’, ‘y’]]print(e)>>> [1, 2, 3, 4, [‘x’, ‘y’]]print(f) # f保持不变>>> [1, 2, 3, 4, [‘x’, ‘y’]] 我们在这里定义了一个列表a，a里面第五个元素嵌套了一个列表，使用a.append()函数给a添加了一个元素。被赋值的b跟着添加了一个元素，并打印了a、b的id，说明被赋值的b只是对a的引用，被浅拷贝的c、d、e和被深拷贝的f都没有发生变化。 print(‘*‘*30)a[4].append(‘z’)print(a) # a索引为4所在的列表内部添加了一个元素z>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’], 5]print(b) # b索引为4的元素内部跟着添加了一个元素z>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’], 5]print(c) # c、d、e的内部元素添加了元素z>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’]]print(d)>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’]]print(e)>>> [1, 2, 3, 4, [‘x’, ‘y’, ‘z’]]print(f) # f纹丝不动，没有添加任何值>>> [1, 2, 3, 4, [‘x’, ‘y’]]print(id(a),id(b),id(c),id(d),id(f),id(e)) 在这里，我们对a嵌套的列表进行了追加元素的操作，被赋值的b和被浅拷贝的c、d、e都发生了变化，而f依然保持不变。 总结： 不管是对变量外层还是内层进行操作，赋值都会跟着变化 只有对变量内层元素进行操作时，浅拷贝才会发生变化 无论原列表如何变化，深拷贝保持不变]]></content>
@@ -9,7 +83,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>拷贝</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -25,11 +99,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python爬取腾讯四川新闻]]></title>
-    <url>%2F2019%2F05%2F20%2F10-%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB%2F</url>
-    <content type="text"><![CDATA[周六我去参加初中英语教师资格的面试了，然而，我很怂，在结结巴巴答完结构化问题之后，居然告诉考官：我放弃！考官都震惊了！我真的很怂啊，我觉得我的教案写得非常巴适，可是当你站在讲台上的时候真的什么都讲不出来，也不是紧张，感觉就是很尴尬，匆匆说完原因后我就离场了，虽然我一大早就起床了，在大姨妈问候你的情况下，还排了很久的队，成为考场的最后一位考生。可能我真的不适合，或者又是因为我缺乏这种公开站在大家面前的锻炼。我妈说我只会纸上谈兵，我难得一次赞成她的观点。So much for that day！We should stop here and go to study ‘Python Spider’！在堕(受)落(到)了(hr)两(打)周(击)两周后，终于奋发图强，开始了正儿八经的学习！我爱学习！ 目标 为了练习Selenium和Beautiful Soup 为了爬取腾讯四川新闻 准备工作 在谷歌浏览器中打开网址 https://new.qq.com/d/cd 你会发现页面是通过ajax加载的，可以查看网页源代码发现并没有数据，这时可以你可以尝试找接口或者用selenium + chrome的方式来动态爬取页面数据，今天为了练习selenium，所以就用了selenium来爬取。]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[小舒的最近两天]]></title>
     <url>%2F2019%2F05%2F10%2F05_%E6%94%BE%E5%BC%83%E7%9A%84%E6%97%B6%E5%80%99%2F</url>
     <content type="text"><![CDATA[众生皆苦，我也苦暴躁小舒，在线怼人，连hr都怼了，我怕是不想活了。想了一下这篇博客的标题应该叫什么好，是“小舒与简历斗智斗勇”，还是“小舒与招聘网站殊死搏斗”，最后还是想了这个。啊，我真的好丧啊，从一大早就开始丧了。大多数时候，痛苦和悲哀都来自于家庭，我真的好想离他们远远的啊。我自己也很烦啊，摆脱就不要再给我传递这些令人头疼的消息了吧。我觉得我真的要放弃了，我做了这么久的努力都是白费的，在找实习的时候一个都找不到。我们本来就是普罗大众，谈什么改变命运，改变不了的。我不想再努力了，放弃的时候真的很舒服。一时堕落一时爽，一直堕落一直爽。你知道吗？我昨天玩屎了，想不到吧，哈哈哈，其实我就吃了个芒果，但是吃个芒果就跟他妈玩屎一样，弄得我一身都是。不过任何人都逃不过真香定律，虽然确实很恶心，但是真的好吃呀，我说的是芒果好吃。昨天和老王差点吵架了，他感觉我很幼稚，很无理取闹吧，但是他应该不知道我有多喜欢他吧。我很想他，上课想、看书想、睡觉也想，我想跟他说话，我也想跟他撒娇，明明我就不是这种人，遇到他居然变成这样了，我好讨厌自己啊啊啊啊。我买了四本故事书，本来是要寄给他让他给我讲睡前故事的，他肯定害怕我是女骗子，所以只有买来自己给他讲睡前故事了，这个男人坏的很呐。如果哪天我不愿意跟他撒娇了，那么他也和其他人没什么区别了，不过，现在，娘爱你（づ￣3￣）づ╭❤～]]></content>
@@ -37,9 +106,9 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>心情</tag>
         <tag>学校</tag>
         <tag>日记</tag>
+        <tag>心情</tag>
       </tags>
   </entry>
   <entry>
@@ -52,6 +121,7 @@
       <tags>
         <tag>学校</tag>
         <tag>日记</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -133,8 +203,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>学校</tag>
         <tag>杂谈</tag>
+        <tag>学校</tag>
       </tags>
   </entry>
 </search>
