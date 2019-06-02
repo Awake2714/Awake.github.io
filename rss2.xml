@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 01 Jun 2019 08:25:24 GMT</pubDate>
+    <pubDate>Sun, 02 Jun 2019 14:40:16 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Python爬取百度翻译</title>
+      <link>http://yoursite.com/2019/06/02/18_%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91/</link>
+      <guid>http://yoursite.com/2019/06/02/18_%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91/</guid>
+      <pubDate>Sun, 02 Jun 2019 14:40:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;今天来捣鼓了一下百度翻译&lt;br&gt;目标网址：&lt;a href=&quot;https://fanyi.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://fanyi.baidu.com&lt;/a&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>今天来捣鼓了一下百度翻译<br>目标网址：<a href="https://fanyi.baidu.com" target="_blank" rel="noopener">https://fanyi.baidu.com</a><a id="more"></a></p><ul><li>表单数据里面有个sign需要获取，这需要执行js代码。</li><li>表单数据里还有一个token，网上有些资料是从请求<a href="https://fanyi.baidu.com" target="_blank" rel="noopener">https://fanyi.baidu.com</a> 的源代码里用正则提取出来的，但是我试了不行。提取出来的和浏览器上看到的并不一样。卡了很久，发现他似乎是没有变的，所以直接给copy过来了。</li><li>请求头里面有个cookie，这个好像也是很久没有变的，So，可以直接从浏览器的开发者工具里面复制过来。</li></ul><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul><li>实现自动翻译</li><li>了解js代码的调试</li><li>熟悉pyexecjs库的基本操作</li></ul><h2 id="获取签名"><a href="#获取签名" class="headerlink" title="获取签名"></a>获取签名</h2><p>通过执行js代码获取sign<br>这一步需要使用到pyexecjs库，基本操作</p><blockquote><p>sign = execjs.compile(js).call(‘e’, word)<br>#执行js代码，将word传给函数e</p></blockquote><h2 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h2><p>我们在这里没有定义输入输出语种，仅设置表单数据里的“from”和“key”键的值为“auto”（自动）<br>需要对百度翻译的字符串解码后返回解析</p><blockquote><p>return r.text.encode(‘utf-8’).decode(‘unicode_escape’)</p></blockquote><h2 id="解析网页"><a href="#解析网页" class="headerlink" title="解析网页"></a>解析网页</h2><p>获取翻译后的内容，呈现给用户</p><p>定义了一个循环，当用户输入“n”时，退出程序，否则继续翻译</p><p>完整代码地址：<a href="https://github.com/Awake2714/BaiduFanyi" target="_blank" rel="noopener">https://github.com/Awake2714/BaiduFanyi</a> （喜欢的话给我一个小星星好吗(*^__^*) 嘻嘻……）<br>参考视频教程：<a href="https://www.bilibili.com/video/av25542134?t=1152" target="_blank" rel="noopener">https://www.bilibili.com/video/av25542134?t=1152</a></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/06/02/18_%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Python装饰器</title>
@@ -73,22 +89,6 @@
       <content:encoded><![CDATA[<p>map()是Python内置的高阶函数<a id="more"></a></p><ul><li>map函数的原型是map(function, iterable, …)，它返回一个列表</li><li>将function应用于iterable的每个元素，参数iterable是一个可迭代的对象，例如：列表，元祖，字符串</li><li>后面的省略号表示可以传很多个iterable，并行从这些参数中取元素，并调用function。</li></ul><ol><li>function为内置函数：将a的每个元素转化为字符串</li></ol><blockquote><p>a = [1, 2, 3, 4]<br>fruit = list(map(str, a))<br>print(fruit)<br>>&gt;&gt;[‘1’, ‘2’, ‘3’, ‘4’]</p></blockquote><ol start="2"><li>function为自定义函数：将a内的每个元素应用multiplication方法</li></ol><blockquote><p>def multiplication(a):<br>&nbsp;&nbsp;&nbsp;&nbsp;b = a*a<br>&nbsp;&nbsp;&nbsp;&nbsp;return b<br>results = list(map(multiplication, a))<br>print(results)<br>>&gt;&gt;[1, 4, 9, 16]</p></blockquote><ol start="3"><li>自定义函数传入多个参数：并行从x、y中取出元素，传入add函数中</li></ol><blockquote><p>x = [1, 2, 3]<br>y = [4, 5, 6]<br>def add(x, y):<br>&nbsp;&nbsp;&nbsp;&nbsp;return x+y<br>ending = list(map(add, x, y))<br>print(ending)<br>>&gt;&gt;[5, 7, 9]</p></blockquote><ol start="4"><li>传入的参数元素个数不一致，map函数按元素最少的参数返回值</li></ol><blockquote><p>x = [1, 2, 3]<br>y = [4, 5, 6, 7]<br>def x_y(x, y):<br>&nbsp;&nbsp;&nbsp;&nbsp;return x, y<br>outcome = list(map(x_y, x, y))<br>print(outcome)<br>>&gt;&gt;[(1, 4), (2, 5), (3, 6)]</p></blockquote>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/06/01/13_map%E5%87%BD%E6%95%B0/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>列表去重</title>
-      <link>http://yoursite.com/2019/06/01/12_%E5%88%97%E8%A1%A8%E5%8E%BB%E9%87%8D/</link>
-      <guid>http://yoursite.com/2019/06/01/12_%E5%88%97%E8%A1%A8%E5%8E%BB%E9%87%8D/</guid>
-      <pubDate>Sat, 01 Jun 2019 05:27:58 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;列表去重有这几种方法：&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>列表去重有这几种方法：<a id="more"></a></p><ol><li>使用内置的set去重</li></ol><blockquote><p>a = [‘b’, ‘a’, ‘b’, ‘d’, ‘c’, ‘a’]<br>b = list(set(a))<br>print(b)<br>>&gt;&gt;[‘a’, ‘b’, ‘c’, ‘d’]</p></blockquote><ol start="2"><li>使用字典</li></ol><blockquote><p>c = list({}.fromkeys(a).keys())<br>print(c)<br>>&gt;&gt;[‘a’, ‘b’, ‘c’, ‘d’]</p></blockquote><p>使用以上两种方法，可以观察到输出后的列表元素的顺序被打乱了，如果想要列表保持原来的顺序，可以这样做：</p><blockquote><p>b.sort(key=a.index)<br>print(‘排序后的b：’,b)<br>d = sorted(c, key=a.index)<br>print(‘排序后的c：’,d)<br>>&gt;&gt;排序后的b： [‘b’, ‘a’, ‘d’, ‘c’]<br>>&gt;&gt;排序后的c： [‘b’, ‘a’, ‘d’, ‘c’]</p></blockquote><ol start="3"><li>列表去重，不改变原列表的顺序</li></ol><blockquote><p>d = []<br>for x in a:<br>&nbsp;&nbsp;&nbsp;&nbsp;if not x in d:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d.append(x)<br>print(d)<br>>&gt;&gt;d： [‘b’, ‘a’, ‘d’, ‘c’]</p></blockquote><ol start="4"><li>列表推导式的写法</li></ol><blockquote><p>f = []<br>g = [f.append(y) for y in a if y not in f]<br>print(‘f:’,f)<br>>&gt;&gt;f: [‘b’, ‘a’, ‘d’, ‘c’]</p></blockquote>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/06/01/12_%E5%88%97%E8%A1%A8%E5%8E%BB%E9%87%8D/#disqus_thread</comments>
     </item>
     
   </channel>

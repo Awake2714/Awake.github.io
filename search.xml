@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python爬取百度翻译]]></title>
+    <url>%2F2019%2F06%2F02%2F18_%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91%2F</url>
+    <content type="text"><![CDATA[今天来捣鼓了一下百度翻译目标网址：https://fanyi.baidu.com 表单数据里面有个sign需要获取，这需要执行js代码。 表单数据里还有一个token，网上有些资料是从请求https://fanyi.baidu.com 的源代码里用正则提取出来的，但是我试了不行。提取出来的和浏览器上看到的并不一样。卡了很久，发现他似乎是没有变的，所以直接给copy过来了。 请求头里面有个cookie，这个好像也是很久没有变的，So，可以直接从浏览器的开发者工具里面复制过来。 目标 实现自动翻译 了解js代码的调试 熟悉pyexecjs库的基本操作 获取签名通过执行js代码获取sign这一步需要使用到pyexecjs库，基本操作 sign = execjs.compile(js).call(‘e’, word)#执行js代码，将word传给函数e 发起请求我们在这里没有定义输入输出语种，仅设置表单数据里的“from”和“key”键的值为“auto”（自动）需要对百度翻译的字符串解码后返回解析 return r.text.encode(‘utf-8’).decode(‘unicode_escape’) 解析网页获取翻译后的内容，呈现给用户 定义了一个循环，当用户输入“n”时，退出程序，否则继续翻译 完整代码地址：https://github.com/Awake2714/BaiduFanyi （喜欢的话给我一个小星星好吗(*^__^*) 嘻嘻……）参考视频教程：https://www.bilibili.com/video/av25542134?t=1152]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python装饰器]]></title>
     <url>%2F2019%2F06%2F01%2F16_%E8%A3%85%E9%A5%B0%E5%99%A8%2F</url>
     <content type="text"><![CDATA[Python的装饰器是在不影响原有函数的功能的基础上，还能添加新的功能如果理解到了闭包，那么就能很好理解装饰器了。要使用一个装饰器，就在函数上方添加一行代码：@装饰器 写一个装饰器函数 def func1(func): #外部闭包函数是被装饰的函数对象&nbsp;&nbsp;&nbsp;&nbsp;print(‘mua~’)&nbsp;&nbsp;&nbsp;&nbsp;def func2():&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘hi’)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func() #返回外部函数接受的被装饰函数的调用&nbsp;&nbsp;&nbsp;&nbsp;return func2 #返回了函数对象@func1def myprint():&nbsp;&nbsp;&nbsp;&nbsp;print(‘hello’)myprint() # func1(myprint)() #接受被装饰的函数作为参数，并继续调用一次>&gt;&gt;mua~>&gt;&gt;hi>&gt;&gt;hello 定义一个func1函数，内部嵌套func2并返回func2函数对象；在func2内部返回了对func()的调用在这里我们就对myprint函数使用了装饰器函数func1，@func1 相当于执行func1(myprint)()：将myprint函数对象作为参数传给func1并执行了一次调用，得到一条print语句和返回的func2对象，又执行了func2()，返回func()的调用，这里的func就是func1接受过来的参数myprint 这个装饰器除了执行被装饰的函数myprint的代码，还执行了func1内部的代码 带参数的装饰器函数 def func1(sex):&nbsp;&nbsp;&nbsp;&nbsp;def func2(func):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def func3():&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sex == ‘man’:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘不能生孩子’)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sex == ‘woman’:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘可以生孩子 ‘)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func3&nbsp;&nbsp;&nbsp;&nbsp;return func2@func1(sex=’man’)def man():&nbsp;&nbsp;&nbsp;&nbsp;print(‘好好上班’)@func1(sex=’woman’)def woman():&nbsp;&nbsp;&nbsp;&nbsp;print(‘好好上班’)man()woman()>&gt;&gt;不能生孩子>&gt;&gt;好好上班>&gt;&gt;可以生孩子>&gt;&gt;好好上班 如果要给装饰器函数传入参数，可以在上面所示的装饰器外部再写一个函数，这个函数用来接收参数 被装饰的函数带参数 def func1(func):&nbsp;&nbsp;&nbsp;&nbsp;def func2(a,b):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(a,b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a+=5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b+=5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func(a,b)&nbsp;&nbsp;&nbsp;&nbsp;return func2@func1def mysum(a,b):&nbsp;&nbsp;&nbsp;&nbsp;print(a+b)mysum(1, 2)>&gt;&gt;1 2>&gt;&gt;13 如果被装饰的函数需要带参数，只需要在最内部的函数传入参数即可 总结： 写一个普通的装饰器，最外部的函数用来接收函数对象，内部的函数不需要其他参数，用来返回函数调用； 写一个带参数的装饰器，在1的基础上再最外部封装一个函数，用来接收装饰器函数的参数； 写一个带参数的被装饰的函数的装饰器，最内的函数用来接收参数并返回函数的调用。我表达不好，推荐B站一个将闭包和装饰器讲得很好的教程：https://www.bilibili.com/video/av18586448?t=2207]]></content>
