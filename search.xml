@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[递归]]></title>
+    <url>%2F2019%2F06%2F13%2F20_%E9%80%92%E5%BD%92%2F</url>
+    <content type="text"><![CDATA[在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行 写一个递归 def sum_nums(num): print(num) sum_nums(num-1) sum_nums(3) &gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object 这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出 将代码改良 def nums(num): print(num) if num==1: return nums(num-1) nums(3) &gt;&gt;&gt;3 2 1 给递归指定了一个出口，当num=1时，就直接return ###递归累加求和：1+2+3+…+n def sum_nums(num): if num==1: return 1 temp = num-1 return num+sum_nums(temp) results = sum_nums(3) print(results) &gt;&gt;&gt;6 同理，累乘：1*2*3*…*n def sum_nums(num): if num==1: return 1 temp = num-1 return num*sum_nums(temp) results = sum_nums(5) print(results) &gt;&gt;&gt;120 推荐教程：https://www.bilibili.com/video/av14184325/?p=357 今天也是努力的一天 ↖(^ω^)↗]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[单例设计模式]]></title>
+    <url>%2F2019%2F06%2F13%2F19_%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[这两天在看面试资料，发现有好多东西都忘了，开始查漏补缺，终于弄懂了单例设计模式是个什么鬼我们知道__init__方法是初始化方法，那么__new__方法呢？__new__方法在创建对象时会自动调用，作用是为创建对象，对象分配空间单例模式就是让类创建的对象在系统中只有唯一一个实例，即每次返回的对象的内存地址是相同的 没有用到单例模式时的输出 class MusicPlayer(object): def __init__(self): print(&apos;初始化方法&apos;) player1 = MusicPlayer() player2 = MusicPlayer() print(player1) print(player2) #创建两个对象，那么返回的内存地址是不一样的，输出 &gt;&gt;&gt;初始化方法 初始化方法 &lt;__main__.MusicPlayer object at 0x0000000000B1B278&gt; &lt;__main__.MusicPlayer object at 0x0000000000B1B2E8&gt; 那么如何让两个对象的内存地址一样呢，这就要用到单例模式，要写一个单例模式就要用到__new__方法 写一个单例模式 class MusicPlayer(object): def __new__(cls, *args,**kwargs): print(&apos;创建对象，分配空间&apos;) instance = super().__new__(cls) #调用父类的方法，为对象分配空间 return instance #返回对象保存在内存空间的引用，一定要返回，否则__init__接收不到 def __init__(self): print(&apos;初始化方法&apos;) player1 = MusicPlayer() print(player1) player2 = MusicPlayer() print(player2) &gt;&gt;&gt;创建对象，分配空间 初始化方法 &lt;__main__.MusicPlayer object at 0x000000000105B2E8&gt; 创建对象，分配空间 初始化方法 &lt;__main__.MusicPlayer object at 0x00000000010FCE80&gt; 如果__new__没有返回对象的引用会发生什么呢？ 如果没有return instance会发生什么？ class MusicPlayer(object): def __new__(cls, *args,**kwargs): print(&apos;创建对象，分配空间&apos;) super().__new__(cls) #调用父类的方法，为对象分配空间 def __init__(self): print(&apos;初始化方法&apos;) player1 = MusicPlayer() print(player1) &gt;&gt;&gt;创建对象，分配空间 None 诶，我们可以看到，如果没有return instance，__init__方法就不会执行，所以一定要返回对象的引用。 单例模式的完善现在将这个代码完善一下，让他如果是第一个对象就为他分配空间，否则，就直接沿用上一个对象的分配空间 class MusicPlayer(object): instance = None #定义一个类属性为空对象 def __new__(cls, *args,**kwargs): if cls.instance is None: #判断instance是否为空对象 cls.instance = super().__new__(cls) #如果是空对象，那么就为对象分配空间，保存在instance中 return cls.instance #返回对象的引用 player = MusicPlayer() print(player) player2 = MusicPlayer() print(player2) &gt;&gt;&gt;&lt;__main__.MusicPlayer object at 0x0000000000A7B240&gt; &lt;__main__.MusicPlayer object at 0x0000000000A7B240&gt; 初始化动作只执行一次在上面的代码中我们可以看到，如果有两个player对象，单例模式返回相同的内存地址，但是，创建了两个对象就执行了两次__init__，那么怎么让代码只执行一次呢？ class MusicPlayer(object): instance = None init_flag = False #定义一个是否执行初始化动作的标记，设置为False def __new__(cls, *args,**kwargs): print(&apos;创建对象、分配空间&apos;) if cls.instance is None: cls.instance = super().__new__(cls) return cls.instance def __init__(self): if self.init_flag: #如果执行了则直接返回 return print(&apos;初始化方法&apos;) #如果没有执行，则执行初始化动作 self.init_flag = True #修改初始化标记 player = MusicPlayer() print(player) player2 = MusicPlayer() print(player2) &gt;&gt;&gt;创建对象、分配空间 初始化方法 &lt;__main__.MusicPlayer object at 0x0000000000A7B240&gt; 创建对象、分配空间 &lt;__main__.MusicPlayer object at 0x0000000000A7B240&gt;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python爬取百度翻译]]></title>
     <url>%2F2019%2F06%2F02%2F18_%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91%2F</url>
     <content type="text"><![CDATA[今天来捣鼓了一下百度翻译目标网址：https://fanyi.baidu.com 表单数据里面有个sign需要获取，这需要执行js代码。 表单数据里还有一个token，网上有些资料是从请求https://fanyi.baidu.com 的源代码里用正则提取出来的，但是我试了不行。提取出来的和浏览器上看到的并不一样。卡了很久，发现他似乎是没有变的，所以直接给copy过来了。 请求头里面有个cookie，这个好像也是很久没有变的，So，可以直接从浏览器的开发者工具里面复制过来。 目标 实现自动翻译 了解js代码的调试 熟悉pyexecjs库的基本操作 获取签名通过执行js代码获取sign这一步需要使用到pyexecjs库，基本操作 sign = execjs.compile(js).call(‘e’, word)#执行js代码，将word传给函数e 发起请求我们在这里没有定义输入输出语种，仅设置表单数据里的“from”和“key”键的值为“auto”（自动）需要对百度翻译的字符串解码后返回解析 return r.text.encode(‘utf-8’).decode(‘unicode_escape’) 解析网页获取翻译后的内容，呈现给用户 定义了一个循环，当用户输入“n”时，退出程序，否则继续翻译 完整代码地址：https://github.com/Awake2714/BaiduFanyi （喜欢的话给我一个小星星好吗(*^__^*) 嘻嘻……）参考视频教程：https://www.bilibili.com/video/av25542134?t=1152]]></content>

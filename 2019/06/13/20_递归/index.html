@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Python,笔记,">
 
 
 
@@ -92,13 +92,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Awake&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/爬虫/index.html">
+<meta name="description" content="在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行">
+<meta name="keywords" content="Python,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归">
+<meta property="og:url" content="http://yoursite.com/2019/06/13/20_递归/index.html">
 <meta property="og:site_name" content="Awake&#39;s Blog">
+<meta property="og:description" content="在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-13T10:10:56.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Awake&#39;s Blog">
+<meta name="twitter:title" content="递归">
+<meta name="twitter:description" content="在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行">
 
 
 
@@ -128,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/爬虫/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/13/20_递归/">
 
 
 
 
 
-  <title>标签: 爬虫 | Awake's Blog</title>
+  <title>递归 | Awake's Blog</title>
   
 
 
@@ -153,7 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,182 +304,278 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>爬虫<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/13/20_递归/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Awake">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/awake_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Awake's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/02/18_百度翻译/" itemprop="url">
-              
-                <span itemprop="name">Python爬取百度翻译</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">递归</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-02T22:40:00+08:00" content="2019-06-02">
-          06-02
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-13T18:10:22+08:00">
+                2019-06-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/06/13/20_递归/" class="leancloud_visitors" data-flag-title="递归">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/20/10_腾讯新闻爬虫/" itemprop="url">
-              
-                <span itemprop="name">Python爬取腾讯四川新闻</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-20T22:21:44+08:00" content="2019-05-20">
-          05-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <p>在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归<br>递归的出口：当函数满足某一条件时不再执行<a id="more"></a></p>
+<h3 id="写一个递归"><a href="#写一个递归" class="headerlink" title="写一个递归"></a>写一个递归</h3><blockquote>
+</blockquote>
+<pre><code>def sum_nums(num):
+    print(num)
+    sum_nums(num-1)
+sum_nums(3)
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+&gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object
+</code></pre><p>这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出</p>
+<h3 id="将代码改良"><a href="#将代码改良" class="headerlink" title="将代码改良"></a>将代码改良</h3><blockquote>
+</blockquote>
+<pre><code>def nums(num):
+    print(num)
+    if num==1:
+        return
+    nums(num-1)
+nums(3)
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/02/08_网易云单曲评论/" itemprop="url">
-              
-                <span itemprop="name">网易云单曲评论</span>
-              
-            </a>
-        
-      </h2>
+&gt;&gt;&gt;3
+   2
+   1
+</code></pre><p>给递归指定了一个出口，当num=1时，就直接return</p>
+<p>###递归累加求和：1+2+3+…+n</p>
+<blockquote>
+</blockquote>
+<pre><code>def sum_nums(num):
+    if num==1:
+        return 1
+    temp = num-1
+    return num+sum_nums(temp)
+results = sum_nums(3)
+print(results)
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-02T19:05:14+08:00" content="2019-05-02">
-          05-02
-        </time>
-      </div>
+&gt;&gt;&gt;6
+</code></pre><h3 id="同理，累乘：1-2-3-…-n"><a href="#同理，累乘：1-2-3-…-n" class="headerlink" title="同理，累乘：1*2*3*…*n"></a>同理，累乘：1*2*3*…*n</h3><blockquote>
+</blockquote>
+<pre><code>def sum_nums(num):
+    if num==1:
+        return 1
+    temp = num-1
+    return num*sum_nums(temp)
+results = sum_nums(5)
+print(results)
 
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/18/07_jandan/" itemprop="url">
-              
-                <span itemprop="name">利用scrapy框架下载煎蛋网图片</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-18T21:21:30+08:00" content="2019-04-18">
-          04-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/11/03_爬虫设置随机请求头和代理/" itemprop="url">
-              
-                <span itemprop="name">爬虫设置随机请求头和代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-11T21:55:39+08:00" content="2019-04-11">
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/11/04_scrapy爬取某宝商品信息/" itemprop="url">
-              
-                <span itemprop="name">scrapy爬取某宝商品信息</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-11T21:00:52+08:00" content="2019-04-11">
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+&gt;&gt;&gt;120
+</code></pre><p>推荐教程：<a href="https://www.bilibili.com/video/av14184325/?p=357" target="_blank" rel="noopener">https://www.bilibili.com/video/av14184325/?p=357</a></p>
+<p>今天也是努力的一天  ↖(^ω^)↗</p>
 
       
     </div>
+    
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------------- END--THANKS-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/13/19_单例设计模式/" rel="next" title="单例设计模式">
+                <i class="fa fa-chevron-left"></i> 单例设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -482,6 +583,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -502,8 +607,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -593,6 +707,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个递归"><span class="nav-number">1.</span> <span class="nav-text">写一个递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将代码改良"><span class="nav-number">2.</span> <span class="nav-text">将代码改良</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同理，累乘：1-2-3-…-n"><span class="nav-number">3.</span> <span class="nav-text">同理，累乘：1*2*3*…*n</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -755,6 +885,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
