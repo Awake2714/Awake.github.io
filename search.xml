@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[递归]]></title>
     <url>%2F2019%2F06%2F13%2F20_%E9%80%92%E5%BD%92%2F</url>
-    <content type="text"><![CDATA[在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行 写一个递归 def sum_nums(num): print(num) sum_nums(num-1) sum_nums(3) &gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object 这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出 将代码改良 def nums(num): print(num) if num==1: return nums(num-1) nums(3) &gt;&gt;&gt;3 2 1 给递归指定了一个出口，当num=1时，就直接return ###递归累加求和：1+2+3+…+n def sum_nums(num): if num==1: return 1 temp = num-1 return num+sum_nums(temp) results = sum_nums(3) print(results) &gt;&gt;&gt;6 同理，累乘：1*2*3*…*n def sum_nums(num): if num==1: return 1 temp = num-1 return num*sum_nums(temp) results = sum_nums(5) print(results) &gt;&gt;&gt;120 推荐教程：https://www.bilibili.com/video/av14184325/?p=357 今天也是努力的一天 ↖(^ω^)↗]]></content>
+    <content type="text"><![CDATA[在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行 写一个递归 def sum_nums(num): print(num) sum_nums(num-1) sum_nums(3) &gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object 这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出 将代码改良 def nums(num): print(num) if num==1: return nums(num-1) nums(3) &gt;&gt;&gt;3 2 1 给递归指定了一个出口，当num=1时，就直接return 递归累加求和：1+2+3+…+n def sum_nums(num): if num==1: return 1 temp = num-1 return num+sum_nums(temp) results = sum_nums(3) print(results) &gt;&gt;&gt;6 同理，累乘：1*2*3*…*n def sum_nums(num): if num==1: return 1 temp = num-1 return num*sum_nums(temp) results = sum_nums(5) print(results) &gt;&gt;&gt;120 推荐教程：https://www.bilibili.com/video/av14184325/?p=357 今天也是努力的一天 ↖(^ω^)↗]]></content>
       <categories>
         <category>学习</category>
       </categories>

@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 13 Jun 2019 10:10:56 GMT</pubDate>
+    <pubDate>Thu, 13 Jun 2019 10:12:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -22,7 +22,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<p>在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归<br>递归的出口：当函数满足某一条件时不再执行<a id="more"></a></p><h3 id="写一个递归"><a href="#写一个递归" class="headerlink" title="写一个递归"></a>写一个递归</h3><blockquote></blockquote><pre><code>def sum_nums(num):    print(num)    sum_nums(num-1)sum_nums(3)&gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object</code></pre><p>这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出</p><h3 id="将代码改良"><a href="#将代码改良" class="headerlink" title="将代码改良"></a>将代码改良</h3><blockquote></blockquote><pre><code>def nums(num):    print(num)    if num==1:        return    nums(num-1)nums(3)&gt;&gt;&gt;3   2   1</code></pre><p>给递归指定了一个出口，当num=1时，就直接return</p><p>###递归累加求和：1+2+3+…+n</p><blockquote></blockquote><pre><code>def sum_nums(num):    if num==1:        return 1    temp = num-1    return num+sum_nums(temp)results = sum_nums(3)print(results)&gt;&gt;&gt;6</code></pre><h3 id="同理，累乘：1-2-3-…-n"><a href="#同理，累乘：1-2-3-…-n" class="headerlink" title="同理，累乘：1*2*3*…*n"></a>同理，累乘：1*2*3*…*n</h3><blockquote></blockquote><pre><code>def sum_nums(num):    if num==1:        return 1    temp = num-1    return num*sum_nums(temp)results = sum_nums(5)print(results)&gt;&gt;&gt;120</code></pre><p>推荐教程：<a href="https://www.bilibili.com/video/av14184325/?p=357" target="_blank" rel="noopener">https://www.bilibili.com/video/av14184325/?p=357</a></p><p>今天也是努力的一天  ↖(^ω^)↗</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归<br>递归的出口：当函数满足某一条件时不再执行<a id="more"></a></p><h3 id="写一个递归"><a href="#写一个递归" class="headerlink" title="写一个递归"></a>写一个递归</h3><blockquote></blockquote><pre><code>def sum_nums(num):    print(num)    sum_nums(num-1)sum_nums(3)&gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object</code></pre><p>这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出</p><h3 id="将代码改良"><a href="#将代码改良" class="headerlink" title="将代码改良"></a>将代码改良</h3><blockquote></blockquote><pre><code>def nums(num):    print(num)    if num==1:        return    nums(num-1)nums(3)&gt;&gt;&gt;3   2   1</code></pre><p>给递归指定了一个出口，当num=1时，就直接return</p><h3 id="递归累加求和：1-2-3-…-n"><a href="#递归累加求和：1-2-3-…-n" class="headerlink" title="递归累加求和：1+2+3+…+n"></a>递归累加求和：1+2+3+…+n</h3><blockquote></blockquote><pre><code>def sum_nums(num):    if num==1:        return 1    temp = num-1    return num+sum_nums(temp)results = sum_nums(3)print(results)&gt;&gt;&gt;6</code></pre><h3 id="同理，累乘：1-2-3-…-n"><a href="#同理，累乘：1-2-3-…-n" class="headerlink" title="同理，累乘：1*2*3*…*n"></a>同理，累乘：1*2*3*…*n</h3><blockquote></blockquote><pre><code>def sum_nums(num):    if num==1:        return 1    temp = num-1    return num*sum_nums(temp)results = sum_nums(5)print(results)&gt;&gt;&gt;120</code></pre><p>推荐教程：<a href="https://www.bilibili.com/video/av14184325/?p=357" target="_blank" rel="noopener">https://www.bilibili.com/video/av14184325/?p=357</a></p><p>今天也是努力的一天  ↖(^ω^)↗</p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/06/13/20_%E9%80%92%E5%BD%92/#disqus_thread</comments>
     </item>
