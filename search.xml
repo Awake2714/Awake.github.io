@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[钗头凤]]></title>
+    <url>%2F2019%2F06%2F19%2F22_%E9%92%97%E5%A4%B4%E5%87%A4%2F</url>
+    <content type="text"><![CDATA[果然，还是喜欢这首诗 ❤ 陆游红酥手，黄藤酒，满城春色宫墙柳；东风恶，欢情薄，一杯愁绪，几年离索，错！错！错！春如旧，人空瘦，泪痕红浥鲛绡透；桃花落，闲池阁，山盟虽在，锦书难托，莫！莫！莫！ 唐婉世情薄，人情恶，雨送黄昏花易落；晓风乾，泪痕残，欲笺心事，独语斜阑，难！难！难！人成各，今非昨，病魂常似秋千索；角声寒，夜阑珊，怕人寻问，咽泪妆欢，瞒！瞒！瞒！]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[这个杀手不太冷]]></title>
+    <url>%2F2019%2F06%2F19%2F21_%E6%97%A0%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[春水春池满，春时春草生。春人饮春酒，春鸟弄春声。君生我未生，我生君已老。君恨我生迟，我恨君生早。人归万里外，意在一杯中。只虑前程远，开帆待好风。自入长信宫，每对孤灯泣。闺门镇不开，梦从何处入。一别行千里，来时未有期。月中三十日，无夜不相思。]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+        <tag>心情</tag>
+        <tag>电影</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[递归]]></title>
     <url>%2F2019%2F06%2F13%2F20_%E9%80%92%E5%BD%92%2F</url>
     <content type="text"><![CDATA[在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归递归的出口：当函数满足某一条件时不再执行 写一个递归 def sum_nums(num): print(num) sum_nums(num-1) sum_nums(3) &gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object 这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出 将代码改良 def nums(num): print(num) if num==1: return nums(num-1) nums(3) &gt;&gt;&gt;3 2 1 给递归指定了一个出口，当num=1时，就直接return 递归累加求和：1+2+3+…+n def sum_nums(num): if num==1: return 1 temp = num-1 return num+sum_nums(temp) results = sum_nums(3) print(results) &gt;&gt;&gt;6 同理，累乘：1*2*3*…*n def sum_nums(num): if num==1: return 1 temp = num-1 return num*sum_nums(temp) results = sum_nums(5) print(results) &gt;&gt;&gt;120 推荐教程：https://www.bilibili.com/video/av14184325/?p=357 今天也是努力的一天 ↖(^ω^)↗]]></content>
@@ -239,8 +264,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>杂谈</tag>
         <tag>学校</tag>
+        <tag>杂谈</tag>
       </tags>
   </entry>
 </search>

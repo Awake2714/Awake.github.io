@@ -8,8 +8,40 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 13 Jun 2019 10:12:49 GMT</pubDate>
+    <pubDate>Wed, 19 Jun 2019 13:44:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>钗头凤</title>
+      <link>http://yoursite.com/2019/06/19/22_%E9%92%97%E5%A4%B4%E5%87%A4/</link>
+      <guid>http://yoursite.com/2019/06/19/22_%E9%92%97%E5%A4%B4%E5%87%A4/</guid>
+      <pubDate>Wed, 19 Jun 2019 13:32:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;果然，还是喜欢这首诗 &lt;span style=&quot;color: red&quot;&gt;❤&lt;/span&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>果然，还是喜欢这首诗 <span style="color: red">❤</span><a id="more"></a></p><p>陆游<br>红酥手，黄藤酒，满城春色宫墙柳；<br>东风恶，欢情薄，一杯愁绪，几年离索，错！错！错！<br>春如旧，人空瘦，泪痕红浥鲛绡透；<br>桃花落，闲池阁，山盟虽在，锦书难托，莫！莫！莫！</p><p>唐婉<br>世情薄，人情恶，雨送黄昏花易落；<br>晓风乾，泪痕残，欲笺心事，独语斜阑，难！难！难！<br>人成各，今非昨，病魂常似秋千索；<br>角声寒，夜阑珊，怕人寻问，咽泪妆欢，瞒！瞒！瞒！</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/06/19/22_%E9%92%97%E5%A4%B4%E5%87%A4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>这个杀手不太冷</title>
+      <link>http://yoursite.com/2019/06/19/21_%E6%97%A0%E9%A2%98/</link>
+      <guid>http://yoursite.com/2019/06/19/21_%E6%97%A0%E9%A2%98/</guid>
+      <pubDate>Wed, 19 Jun 2019 13:23:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;img src=&quot;/2019/06/19/21_无题/1.png&quot;&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><img src="/2019/06/19/21_无题/1.png"><a id="more"></a><br>春水春池满，春时春草生。<br>春人饮春酒，春鸟弄春声。<br>君生我未生，我生君已老。<br>君恨我生迟，我恨君生早。<br>人归万里外，意在一杯中。<br>只虑前程远，开帆待好风。<br>自入长信宫，每对孤灯泣。<br>闺门镇不开，梦从何处入。<br>一别行千里，来时未有期。<br>月中三十日，无夜不相思。</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/06/19/21_%E6%97%A0%E9%A2%98/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>递归</title>
@@ -57,38 +89,6 @@
       <content:encoded><![CDATA[<p>今天来捣鼓了一下百度翻译<br>目标网址：<a href="https://fanyi.baidu.com" target="_blank" rel="noopener">https://fanyi.baidu.com</a><a id="more"></a></p><ul><li>表单数据里面有个sign需要获取，这需要执行js代码。</li><li>表单数据里还有一个token，网上有些资料是从请求<a href="https://fanyi.baidu.com" target="_blank" rel="noopener">https://fanyi.baidu.com</a> 的源代码里用正则提取出来的，但是我试了不行。提取出来的和浏览器上看到的并不一样。卡了很久，发现他似乎是没有变的，所以直接给copy过来了。</li><li>请求头里面有个cookie，这个好像也是很久没有变的，So，可以直接从浏览器的开发者工具里面复制过来。</li></ul><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul><li>实现自动翻译</li><li>了解js代码的调试</li><li>熟悉pyexecjs库的基本操作</li></ul><h2 id="获取签名"><a href="#获取签名" class="headerlink" title="获取签名"></a>获取签名</h2><p>通过执行js代码获取sign<br>这一步需要使用到pyexecjs库，基本操作</p><blockquote><p>sign = execjs.compile(js).call(‘e’, word)<br>#执行js代码，将word传给函数e</p></blockquote><h2 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h2><p>我们在这里没有定义输入输出语种，仅设置表单数据里的“from”和“key”键的值为“auto”（自动）<br>需要对百度翻译的字符串解码后返回解析</p><blockquote><p>return r.text.encode(‘utf-8’).decode(‘unicode_escape’)</p></blockquote><h2 id="解析网页"><a href="#解析网页" class="headerlink" title="解析网页"></a>解析网页</h2><p>获取翻译后的内容，呈现给用户</p><p>定义了一个循环，当用户输入“n”时，退出程序，否则继续翻译</p><p>完整代码地址：<a href="https://github.com/Awake2714/BaiduFanyi" target="_blank" rel="noopener">https://github.com/Awake2714/BaiduFanyi</a> （喜欢的话给我一个小星星好吗(*^__^*) 嘻嘻……）<br>参考视频教程：<a href="https://www.bilibili.com/video/av25542134?t=1152" target="_blank" rel="noopener">https://www.bilibili.com/video/av25542134?t=1152</a></p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/06/02/18_%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Python装饰器</title>
-      <link>http://yoursite.com/2019/06/01/16_%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
-      <guid>http://yoursite.com/2019/06/01/16_%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
-      <pubDate>Sat, 01 Jun 2019 07:29:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Python的装饰器是在不影响原有函数的功能的基础上，还能添加新的功能&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Python的装饰器是在不影响原有函数的功能的基础上，还能添加新的功能<a id="more"></a><br>如果理解到了闭包，那么就能很好理解装饰器了。<br>要使用一个装饰器，就在函数上方添加一行代码：@装饰器</p><ol><li>写一个装饰器函数</li></ol><blockquote><p>def func1(func): #外部闭包函数是被装饰的函数对象<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘mua~’)<br>&nbsp;&nbsp;&nbsp;&nbsp;def func2():<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘hi’)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func() #返回外部函数接受的被装饰函数的调用<br>&nbsp;&nbsp;&nbsp;&nbsp;return func2 #返回了函数对象<br>@func1<br>def myprint():<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘hello’)<br>myprint() # func1(myprint)() #接受被装饰的函数作为参数，并继续调用一次<br>>&gt;&gt;mua~<br>>&gt;&gt;hi<br>>&gt;&gt;hello</p></blockquote><ul><li>定义一个func1函数，内部嵌套func2并返回func2函数对象；在func2内部返回了对func()的调用<br>在这里我们就对myprint函数使用了装饰器函数func1，@func1 相当于执行func1(myprint)()：将myprint函数对象作为参数传给func1并执行了一次调用，得到一条print语句和返回的func2对象，又执行了func2()，返回func()的调用，这里的func就是func1接受过来的参数myprint</li><li>这个装饰器除了执行被装饰的函数myprint的代码，还执行了func1内部的代码</li></ul><ol start="2"><li>带参数的装饰器函数</li></ol><blockquote><p>def func1(sex):<br>&nbsp;&nbsp;&nbsp;&nbsp;def func2(func):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def func3():<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sex == ‘man’:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘不能生孩子’)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sex == ‘woman’:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘可以生孩子 ‘)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func3<br>&nbsp;&nbsp;&nbsp;&nbsp;return func2<br>@func1(sex=’man’)<br>def man():<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘好好上班’)<br>@func1(sex=’woman’)<br>def woman():<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘好好上班’)<br>man()<br>woman()<br>>&gt;&gt;不能生孩子<br>>&gt;&gt;好好上班<br>>&gt;&gt;可以生孩子<br>>&gt;&gt;好好上班</p></blockquote><ul><li>如果要给装饰器函数传入参数，可以在上面所示的装饰器外部再写一个函数，这个函数用来接收参数</li></ul><ol start="3"><li>被装饰的函数带参数</li></ol><blockquote><p>def func1(func):<br>&nbsp;&nbsp;&nbsp;&nbsp;def func2(a,b):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(a,b)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a+=5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b+=5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func(a,b)<br>&nbsp;&nbsp;&nbsp;&nbsp;return func2<br>@func1<br>def mysum(a,b):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(a+b)<br>mysum(1, 2)<br>>&gt;&gt;1 2<br>>&gt;&gt;13</p></blockquote><ul><li>如果被装饰的函数需要带参数，只需要在最内部的函数传入参数即可</li></ul><hr><p>总结：</p><ul><li>写一个普通的装饰器，最外部的函数用来接收函数对象，内部的函数不需要其他参数，用来返回函数调用；</li><li>写一个带参数的装饰器，在1的基础上再最外部封装一个函数，用来接收装饰器函数的参数；</li><li>写一个带参数的被装饰的函数的装饰器，最内的函数用来接收参数并返回函数的调用。<br>我表达不好，推荐B站一个将闭包和装饰器讲得很好的教程：<a href="https://www.bilibili.com/video/av18586448?t=2207" target="_blank" rel="noopener">https://www.bilibili.com/video/av18586448?t=2207</a></li></ul>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/06/01/16_%E8%A3%85%E9%A5%B0%E5%99%A8/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Python函数闭包</title>
-      <link>http://yoursite.com/2019/06/01/15_%E9%97%AD%E5%8C%85/</link>
-      <guid>http://yoursite.com/2019/06/01/15_%E9%97%AD%E5%8C%85/</guid>
-      <pubDate>Sat, 01 Jun 2019 07:13:44 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;函数闭包是内部函数对外部函数作用域里的变量的引用&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>函数闭包是内部函数对外部函数作用域里的变量的引用<a id="more"></a></p><ul><li>函数内的属性都是有生命周期的，都是在函数执行期间</li><li>闭包内的闭包函数私有化了变量，完成了数据的封装，类似于面向对象</li></ul><blockquote><p>def func(): #外部函数<br>&nbsp;&nbsp;&nbsp;&nbsp;a = 1 #外部函数作用域里的变量<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘this is func’)<br>&nbsp;&nbsp;&nbsp;&nbsp;def func1(num): #内部函数<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘this is func1’)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num+a)<br>&nbsp;&nbsp;&nbsp;&nbsp;return func1 #函数<br>var = func() #运行外部函数，内部函数就被创建<br>var(2)<br>>&gt;&gt;this is func<br>>&gt;&gt;this is func1<br>>&gt;&gt;3</p></blockquote><p>在func里嵌套了一个func1，将func()函数的调用赋值给var，执行一条print语句，并接收func返回的func1函数对象，这时的var就相当于func1，var(2)传入参数2，调用func1，执行func1内部的代码</p><blockquote><p>mylist = [1,2,3,4,5]<br>def func(obj):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘func:’, obj)<br>&nbsp;&nbsp;&nbsp;&nbsp;def func1():<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj[0] += 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘func1:’, obj)<br>&nbsp;&nbsp;&nbsp;&nbsp;return func1<br>var = func(mylist)<br>var()<br>var()<br>var()<br>>&gt;&gt;func: [1, 2, 3, 4, 5]<br>>&gt;&gt;func1: [2, 2, 3, 4, 5]<br>>&gt;&gt;func1: [3, 2, 3, 4, 5]<br>>&gt;&gt;func1: [4, 2, 3, 4, 5]</p></blockquote><p>在这里，首先我们定义了一个mylist列表；其次定义了一个func函数，传入参数obj，执行一条print语句，在函数内部嵌套了一个func1，并将func1对象返回。在func1里，改变object索引为0的值，接着打印了obj。<br>将mylist作为参数传给func，这里的var如上面的例子一样，相当于func1，接着调用了三次var()，可以看到每一次调用后打印的obj都在上一次调用的基础上加了1.<br>我表达不好，推荐B站一个将闭包和装饰器讲得很好的教程：<a href="https://www.bilibili.com/video/av18586448?t=2207" target="_blank" rel="noopener">https://www.bilibili.com/video/av18586448?t=2207</a></p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/06/01/15_%E9%97%AD%E5%8C%85/#disqus_thread</comments>
     </item>
     
   </channel>
