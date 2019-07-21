@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Python,笔记,">
+  <meta name="keywords" content="前端,css,">
 
 
 
@@ -92,18 +92,21 @@
 
 
 
-<meta name="description" content="map()是Python内置的高阶函数">
-<meta name="keywords" content="Python,笔记">
+<meta name="description" content="上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。加油啊，小舒舒 ↖(^ω^)↗">
+<meta name="keywords" content="前端,css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="map()函数">
-<meta property="og:url" content="http://yoursite.com/2019/06/01/13_map函数/index.html">
+<meta property="og:title" content="前端——CSS学习">
+<meta property="og:url" content="http://yoursite.com/2019/07/21/26_css学习/index.html">
 <meta property="og:site_name" content="Awake&#39;s Blog">
-<meta property="og:description" content="map()是Python内置的高阶函数">
+<meta property="og:description" content="上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。加油啊，小舒舒 ↖(^ω^)↗">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-01T06:55:53.706Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/21/26_css学习/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/21/26_css学习/CSS.jpg">
+<meta property="og:updated_time" content="2019-07-21T13:43:32.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="map()函数">
-<meta name="twitter:description" content="map()是Python内置的高阶函数">
+<meta name="twitter:title" content="前端——CSS学习">
+<meta name="twitter:description" content="上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。加油啊，小舒舒 ↖(^ω^)↗">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/21/26_css学习/1.jpg">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/01/13_map函数/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/21/26_css学习/">
 
 
 
 
 
-  <title>map()函数 | Awake's Blog</title>
+  <title>前端——CSS学习 | Awake's Blog</title>
   
 
 
@@ -318,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/13_map函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/26_css学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Awake">
@@ -335,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">map()函数</h1>
+          <h1 class="post-title" itemprop="name headline">前端——CSS学习</h1>
         
 
         <div class="post-meta">
@@ -347,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T14:00:00+08:00">
-                2019-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-21T21:23:48+08:00">
+                2019-07-21
               </time>
             
 
@@ -387,7 +390,7 @@
 
           
           
-             <span id="/2019/06/01/13_map函数/" class="leancloud_visitors" data-flag-title="map()函数">
+             <span id="/2019/07/21/26_css学习/" class="leancloud_visitors" data-flag-title="前端——CSS学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,36 +421,7 @@
       
 
       
-        <p>map()是Python内置的高阶函数<a id="more"></a></p>
-<ul>
-<li>map函数的原型是map(function, iterable, …)，它返回一个列表</li>
-<li>将function应用于iterable的每个元素，参数iterable是一个可迭代的对象，例如：列表，元祖，字符串</li>
-<li>后面的省略号表示可以传很多个iterable，并行从这些参数中取元素，并调用function。</li>
-</ul>
-<ol>
-<li>function为内置函数：将a的每个元素转化为字符串</li>
-</ol>
-<blockquote>
-<p>a = [1, 2, 3, 4]<br>fruit = list(map(str, a))<br>print(fruit)<br>>&gt;&gt;[‘1’, ‘2’, ‘3’, ‘4’]</p>
-</blockquote>
-<ol start="2">
-<li>function为自定义函数：将a内的每个元素应用multiplication方法</li>
-</ol>
-<blockquote>
-<p>def multiplication(a):<br>&nbsp;&nbsp;&nbsp;&nbsp;b = a*a<br>&nbsp;&nbsp;&nbsp;&nbsp;return b<br>results = list(map(multiplication, a))<br>print(results)<br>>&gt;&gt;[1, 4, 9, 16]</p>
-</blockquote>
-<ol start="3">
-<li>自定义函数传入多个参数：并行从x、y中取出元素，传入add函数中</li>
-</ol>
-<blockquote>
-<p>x = [1, 2, 3]<br>y = [4, 5, 6]<br>def add(x, y):<br>&nbsp;&nbsp;&nbsp;&nbsp;return x+y<br>ending = list(map(add, x, y))<br>print(ending)<br>>&gt;&gt;[5, 7, 9]</p>
-</blockquote>
-<ol start="4">
-<li>传入的参数元素个数不一致，map函数按元素最少的参数返回值</li>
-</ol>
-<blockquote>
-<p>x = [1, 2, 3]<br>y = [4, 5, 6, 7]<br>def x_y(x, y):<br>&nbsp;&nbsp;&nbsp;&nbsp;return x, y<br>outcome = list(map(x_y, x, y))<br>print(outcome)<br>>&gt;&gt;[(1, 4), (2, 5), (3, 6)]</p>
-</blockquote>
+        <p>上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。<br>加油啊，小舒舒 ↖(^ω^)↗<a id="more"></a><br>说实话，这前端里面的坑还真的多啊<br><img src="/2019/07/21/26_css学习/1.jpg" alt><br>不过，在我呕心沥血之后，终于搞出了这么个思维导图，谨以此祭奠我。。。痛并流淌的大姨妈。<br><img src="/2019/07/21/26_css学习/CSS.jpg" alt></p>
 
       
     </div>
@@ -476,9 +450,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
         </div>
       
@@ -491,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/01/12_列表去重/" rel="next" title="列表去重">
-                <i class="fa fa-chevron-left"></i> 列表去重
+              <a href="/2019/07/21/25_html标签学习/" rel="next" title="前端——html标签学习">
+                <i class="fa fa-chevron-left"></i> 前端——html标签学习
               </a>
             
           </div>
@@ -500,10 +474,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/01/14_lambda匿名函数/" rel="prev" title="lambda匿名函数">
-                lambda匿名函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

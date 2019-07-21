@@ -8,8 +8,40 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 15 Jul 2019 14:17:39 GMT</pubDate>
+    <pubDate>Sun, 21 Jul 2019 13:43:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>前端——CSS学习</title>
+      <link>http://yoursite.com/2019/07/21/26_css%E5%AD%A6%E4%B9%A0/</link>
+      <guid>http://yoursite.com/2019/07/21/26_css%E5%AD%A6%E4%B9%A0/</guid>
+      <pubDate>Sun, 21 Jul 2019 13:23:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。&lt;br&gt;加油啊，小舒舒 ↖(^ω^)↗&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。<br>加油啊，小舒舒 ↖(^ω^)↗<a id="more"></a><br>说实话，这前端里面的坑还真的多啊<br><img src="/2019/07/21/26_css学习/1.jpg" alt><br>不过，在我呕心沥血之后，终于搞出了这么个思维导图，谨以此祭奠我。。。痛并流淌的大姨妈。<br><img src="/2019/07/21/26_css学习/CSS.jpg" alt></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/07/21/26_css%E5%AD%A6%E4%B9%A0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>前端——html标签学习</title>
+      <link>http://yoursite.com/2019/07/21/25_html%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/</link>
+      <guid>http://yoursite.com/2019/07/21/25_html%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/</guid>
+      <pubDate>Sun, 21 Jul 2019 13:17:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;img src=&quot;/2019/07/21/25_html标签学习/2.gif&quot; alt&gt;&lt;br&gt;做人就要不怕困难，终身学习。&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><img src="/2019/07/21/25_html标签学习/2.gif" alt><br>做人就要不怕困难，终身学习。<a id="more"></a><br>在我们口号的推动下(……)，最近开始了学习前端，才发现在学校学到的东西真的很少啊。（小声逼逼：其实是我没有认真上课）<br><img src="/2019/07/21/25_html标签学习/1.jpg" alt><br>为了不断提升自己的（economy）实力，我开始补课了<br>下面这张图是我在学习html标签时的一个思维导图，留给自己复习用。<br><img src="/2019/07/21/25_html标签学习/3.jpg" alt></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/07/21/25_html%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>哦买噶！这也太难了吧！</title>
@@ -57,38 +89,6 @@
       <content:encoded><![CDATA[<p>果然，还是喜欢这首诗 <span style="color: red">❤</span><a id="more"></a></p><p>陆游<br>红酥手，黄藤酒，满城春色宫墙柳；<br>东风恶，欢情薄，一杯愁绪，几年离索，错！错！错！<br>春如旧，人空瘦，泪痕红浥鲛绡透；<br>桃花落，闲池阁，山盟虽在，锦书难托，莫！莫！莫！</p><p>唐婉<br>世情薄，人情恶，雨送黄昏花易落；<br>晓风乾，泪痕残，欲笺心事，独语斜阑，难！难！难！<br>人成各，今非昨，病魂常似秋千索；<br>角声寒，夜阑珊，怕人寻问，咽泪妆欢，瞒！瞒！瞒！</p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/06/19/22_%E9%92%97%E5%A4%B4%E5%87%A4/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>这个杀手不太冷</title>
-      <link>http://yoursite.com/2019/06/19/21_%E6%97%A0%E9%A2%98/</link>
-      <guid>http://yoursite.com/2019/06/19/21_%E6%97%A0%E9%A2%98/</guid>
-      <pubDate>Wed, 19 Jun 2019 13:23:48 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;img src=&quot;/2019/06/19/21_无题/1.png&quot;&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p><img src="/2019/06/19/21_无题/1.png"><a id="more"></a><br>春水春池满，春时春草生。<br>春人饮春酒，春鸟弄春声。<br>君生我未生，我生君已老。<br>君恨我生迟，我恨君生早。<br>人归万里外，意在一杯中。<br>只虑前程远，开帆待好风。<br>自入长信宫，每对孤灯泣。<br>闺门镇不开，梦从何处入。<br>一别行千里，来时未有期。<br>月中三十日，无夜不相思。</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/06/19/21_%E6%97%A0%E9%A2%98/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>递归</title>
-      <link>http://yoursite.com/2019/06/13/20_%E9%80%92%E5%BD%92/</link>
-      <guid>http://yoursite.com/2019/06/13/20_%E9%80%92%E5%BD%92/</guid>
-      <pubDate>Thu, 13 Jun 2019 10:10:22 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归&lt;br&gt;递归的出口：当函数满足某一条件时不再执行&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>在一个函数内部可以调用其他函数，也可以自己调用自己，在函数内部自己调用自己就叫做递归<br>递归的出口：当函数满足某一条件时不再执行<a id="more"></a></p><h3 id="写一个递归"><a href="#写一个递归" class="headerlink" title="写一个递归"></a>写一个递归</h3><blockquote></blockquote><pre><code>def sum_nums(num):    print(num)    sum_nums(num-1)sum_nums(3)&gt;&gt;&gt;RecursionError: maximum recursion depth exceeded while calling a Python object</code></pre><p>这样的输出会报错，为什么呢？因为我们说递归是有出口的，递归有深度，如果没有出口就会溢出</p><h3 id="将代码改良"><a href="#将代码改良" class="headerlink" title="将代码改良"></a>将代码改良</h3><blockquote></blockquote><pre><code>def nums(num):    print(num)    if num==1:        return    nums(num-1)nums(3)&gt;&gt;&gt;3   2   1</code></pre><p>给递归指定了一个出口，当num=1时，就直接return</p><h3 id="递归累加求和：1-2-3-…-n"><a href="#递归累加求和：1-2-3-…-n" class="headerlink" title="递归累加求和：1+2+3+…+n"></a>递归累加求和：1+2+3+…+n</h3><blockquote></blockquote><pre><code>def sum_nums(num):    if num==1:        return 1    temp = num-1    return num+sum_nums(temp)results = sum_nums(3)print(results)&gt;&gt;&gt;6</code></pre><h3 id="同理，累乘：1-2-3-…-n"><a href="#同理，累乘：1-2-3-…-n" class="headerlink" title="同理，累乘：1*2*3*…*n"></a>同理，累乘：1*2*3*…*n</h3><blockquote></blockquote><pre><code>def sum_nums(num):    if num==1:        return 1    temp = num-1    return num*sum_nums(temp)results = sum_nums(5)print(results)&gt;&gt;&gt;120</code></pre><p>推荐教程：<a href="https://www.bilibili.com/video/av14184325/?p=357" target="_blank" rel="noopener">https://www.bilibili.com/video/av14184325/?p=357</a></p><p>今天也是努力的一天  ↖(^ω^)↗</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/06/13/20_%E9%80%92%E5%BD%92/#disqus_thread</comments>
     </item>
     
   </channel>
