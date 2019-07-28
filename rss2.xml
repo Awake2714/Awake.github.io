@@ -8,87 +8,87 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 25 Jul 2019 13:49:19 GMT</pubDate>
+    <pubDate>Sun, 28 Jul 2019 09:46:20 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>努力生活</title>
-      <link>http://yoursite.com/2019/07/25/27_%E5%8A%AA%E5%8A%9B%E7%94%9F%E6%B4%BB/</link>
-      <guid>http://yoursite.com/2019/07/25/27_%E5%8A%AA%E5%8A%9B%E7%94%9F%E6%B4%BB/</guid>
-      <pubDate>Thu, 25 Jul 2019 14:08:48 GMT</pubDate>
+      <title>JavaScript—Math对象</title>
+      <link>http://yoursite.com/2019/07/28/34_Math%E5%AF%B9%E8%B1%A1/</link>
+      <guid>http://yoursite.com/2019/07/28/34_Math%E5%AF%B9%E8%B1%A1/</guid>
+      <pubDate>Sun, 28 Jul 2019 09:46:07 GMT</pubDate>
       <description>
       
-        &lt;p&gt;小舒上班已经快两周了，这两周仿佛在渡劫。&lt;/p&gt;
+        &lt;p&gt;Math对象&lt;/p&gt;
       
       </description>
       
-      <content:encoded><![CDATA[<p>小舒上班已经快两周了，这两周仿佛在渡劫。<a id="more"></a><br>在我这个年纪，出现了不该有的多愁善感。<br>在路上看到老爷爷老奶奶，会想起在天堂的爷爷和独自在家的奶奶；下班偶尔聊起工作，总感觉自己力不从心、微不足道；和好久没有联系的室友聊聊天，就会想起我们在宿舍的点点滴滴，仿佛暑假过后我都没有开心过了。<br>下周五是我21岁的生日，我以前总是希望在我生日的时候希望有个蛋糕；而这次生日，我渴望的不是蛋糕，也不是三岁以上就能吃的果冻，而是多么希望小野能来陪我。她不是什么特别的人，我们在一起的时候也有不愉快，可是，她总能让我感到开心。我甚至祈求她能出现，似乎像是一棵救命稻草！<br>我还是努力调解自己的情绪，安慰自己：<span style="color: darkred">有时,生活是可以将就的</span>。抱怨过后，还是继续努力，继续努力生活，努力开心。</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>Math对象<a id="more"></a></p><pre><code>var a = 10.6;</code></pre><ol><li>floor 地板函数：向下取整<pre><code>var aa = Math.floor(a);document.write(aa);  //10</code></pre></li><li>ceil 天花板函数：向上取整<pre><code>var bb = Math.ceil(a);document.write(&apos;&lt;br&gt;&apos;+bb);  //11</code></pre></li><li>max 最大值<pre><code>var cc = Math.max(aa,bb);document.write(&apos;&lt;br&gt;&apos;+cc);  //11</code></pre></li><li>min 最小值<pre><code>var dd = Math.min(12,15);document.write(&apos;&lt;br&gt;&apos;+dd);  //12</code></pre></li><li>round 四舍五入<pre><code>var ee = Math.round(a);document.write(&apos;&lt;br&gt;&apos;+ee);  //11</code></pre></li><li>random 随机数 0-1<pre><code>//生成0-1之间的随机数var x = Math.random();document.write(&apos;&lt;br&gt;&apos;+x);  //0.7075256283328961//生成指定范围内的随机数：min+Math.random()*(max-min)var y = 100+Math.random()*(500-100);  //生成100-500之间的随机数document.write(&apos;&lt;br&gt;&apos;+y);  //445.1153017063139</code></pre></li><li>其他函数：<br> abs（绝对值）、sin（正弦）、cos（余弦）、tan（正切）、exp（指数）、pow（幂）、log（对数）、sqrt（平方根）……</li></ol>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/07/25/27_%E5%8A%AA%E5%8A%9B%E7%94%9F%E6%B4%BB/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/07/28/34_Math%E5%AF%B9%E8%B1%A1/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>前端——CSS学习</title>
-      <link>http://yoursite.com/2019/07/21/26_css%E5%AD%A6%E4%B9%A0/</link>
-      <guid>http://yoursite.com/2019/07/21/26_css%E5%AD%A6%E4%B9%A0/</guid>
-      <pubDate>Sun, 21 Jul 2019 13:23:48 GMT</pubDate>
+      <title>JavaScript—日期对象</title>
+      <link>http://yoursite.com/2019/07/28/33_Date%E5%AF%B9%E8%B1%A1/</link>
+      <guid>http://yoursite.com/2019/07/28/33_Date%E5%AF%B9%E8%B1%A1/</guid>
+      <pubDate>Sun, 28 Jul 2019 09:31:24 GMT</pubDate>
       <description>
       
-        &lt;p&gt;上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。&lt;br&gt;加油啊，小舒舒 ↖(^ω^)↗&lt;/p&gt;
+        &lt;p&gt;Date()日期对象&lt;/p&gt;
       
       </description>
       
-      <content:encoded><![CDATA[<p>上班已经一周了，今天也算是结束了对html和css的学习，算是一个小小的终点，同时，也是新的起点。<br>加油啊，小舒舒 ↖(^ω^)↗<a id="more"></a><br>说实话，这前端里面的坑还真的多啊<br><img src="/2019/07/21/26_css学习/1.jpg" alt><br>不过，在我呕心沥血之后，终于搞出了这么个思维导图，谨以此祭奠我。。。痛并流淌的大姨妈。<br><img src="/2019/07/21/26_css学习/CSS.jpg" alt></p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>Date()日期对象<a id="more"></a></p><ol><li>getDate()：获取月份中的天数</li><li>getMonth()：获取月份 0-11</li><li>getFullYear()：获取年份</li><li>getDay()：获取一周中的天数 0-6</li><li>getHours()：获取小时数</li><li>getMinutes()：获取分钟数</li><li>getSeconds()：获取秒</li><li>Date()：获取完整的时间 年月日时分秒<pre><code>var mydate = new Date();console.log(mydate.getDate());  //28console.log(mydate.getMonth());  //6console.log(mydate.getFullYear());  //2019console.log(mydate.getDay());  //0console.log(mydate.getHours());  //17console.log(mydate.getMinutes());  //29console.log(mydate.getSeconds());  //15console.log(mydate);  //Sun Jul 28 2019 17:29:15 GMT+0800 (中国标准时间)</code></pre></li></ol>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/07/21/26_css%E5%AD%A6%E4%B9%A0/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/07/28/33_Date%E5%AF%B9%E8%B1%A1/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>前端——html标签学习</title>
-      <link>http://yoursite.com/2019/07/21/25_html%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/</link>
-      <guid>http://yoursite.com/2019/07/21/25_html%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/</guid>
-      <pubDate>Sun, 21 Jul 2019 13:17:48 GMT</pubDate>
+      <title>JavaScript—数组</title>
+      <link>http://yoursite.com/2019/07/28/32_%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</link>
+      <guid>http://yoursite.com/2019/07/28/32_%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Sun, 28 Jul 2019 09:21:53 GMT</pubDate>
       <description>
       
-        &lt;p&gt;&lt;img src=&quot;/2019/07/21/25_html标签学习/2.gif&quot; alt&gt;&lt;br&gt;做人就要不怕困难，终身学习。&lt;/p&gt;
+        &lt;p&gt;Array的创建和方法&lt;/p&gt;
       
       </description>
       
-      <content:encoded><![CDATA[<p><img src="/2019/07/21/25_html标签学习/2.gif" alt><br>做人就要不怕困难，终身学习。<a id="more"></a><br>在我们口号的推动下(……)，最近开始了学习前端，才发现在学校学到的东西真的很少啊。（小声逼逼：其实是我没有认真上课）<br><img src="/2019/07/21/25_html标签学习/1.jpg" alt><br>为了不断提升自己的（economy）实力，我开始补课了<br>下面这张图是我在学习html标签时的一个思维导图，留给自己复习用。<br><img src="/2019/07/21/25_html标签学习/3.jpg" alt></p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>Array的创建和方法<a id="more"></a></p><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ol><li><p>字面量创建</p><pre><code>var array_a = [];array_a[0] = 123;array_a[1] = 456;console.log(array_a);---var array_c = [1,2,3,4,5];for (var i = array_c.length - 1; i &gt;= 0; i++) {    document.write(array_c[i]+&apos;&lt;br&gt;&apos;);}</code></pre></li><li><p>构造函数创建</p><pre><code>var array_b = new Array();array_b[0] = &apos;傻逼&apos;;array_b[1] = &apos;憨批&apos;;array_b[2] = &apos;宝批龙&apos;;console.log(array_b);</code></pre></li></ol><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><pre><code>var a = [&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;];var b = [&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;,&apos;！&apos;];</code></pre><ol><li>concat：合并两个数组<pre><code>console.log(a.concat(b)); //[&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;,&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;,&apos;！&apos;]</code></pre></li><li>join：用字符连接数组，返回字符串<pre><code>var c = a.join(&apos; &apos;);console.log(c);  //你 是 一个 宝批龙 ！</code></pre></li><li>slice：切片  左闭右开<pre><code>var d = a.slice(2,4);console.log(d);  //[&apos;一个&apos;,&apos;宝批龙&apos;]</code></pre></li><li>pop：删除最后一个元素<pre><code>b.pop();console.log(b);  //[&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;]</code></pre></li><li>push：在数组最后添加元素<pre><code>b.push(&apos;！！！&apos;);console.log(b);  //[&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;,&apos;！&apos;];</code></pre></li><li>shift：在数组第一个位置删除<pre><code>a.shift();console.log(a);  //[&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;]</code></pre></li><li>unshift：在数组第一个位置添加元素<pre><code>a.unshift(&apos;他&apos;);console.log(a);  //[&apos;他&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;]</code></pre></li><li>reverse：翻转元素<pre><code>a.reverse();console.log(a);  //[&apos;！&apos;,&apos;宝批龙&apos;,&apos;一个&apos;,&apos;是&apos;,&apos;他&apos;]</code></pre></li><li>sort：排序<pre><code>b.sort();console.log(b);  //[&quot;一个&quot;, &quot;你&quot;, &quot;大傻逼&quot;, &quot;是&quot;, &quot;！！！&quot;]</code></pre></li></ol>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/07/21/25_html%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/07/28/32_%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>哦买噶！这也太难了吧！</title>
-      <link>http://yoursite.com/2019/07/15/24_%E8%BF%99%E4%B9%9F%E5%A4%AA%E9%9A%BE%E4%BA%86%E5%90%A7/</link>
-      <guid>http://yoursite.com/2019/07/15/24_%E8%BF%99%E4%B9%9F%E5%A4%AA%E9%9A%BE%E4%BA%86%E5%90%A7/</guid>
-      <pubDate>Mon, 15 Jul 2019 14:08:48 GMT</pubDate>
+      <title>JavaScript—字符串</title>
+      <link>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</link>
+      <guid>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Sun, 28 Jul 2019 09:06:38 GMT</pubDate>
       <description>
       
-        &lt;p&gt;没有想象中的那么激动、兴奋，反而狼狈、难受、想捅人。&lt;br&gt;&lt;img src=&quot;/2019/07/15/24_这也太难了吧/1.jpg&quot; style=&quot;width: 400px;&quot;&gt;&lt;br&gt;滴~&lt;br&gt;&lt;/p&gt;
+        &lt;p&gt;String的创建和方法&lt;/p&gt;
       
       </description>
       
-      <content:encoded><![CDATA[<p>没有想象中的那么激动、兴奋，反而狼狈、难受、想捅人。<br><img src="/2019/07/15/24_这也太难了吧/1.jpg" style="width: 400px;"><br>滴~<br><a id="more"></a><br>今天也算是我入职的第一天吧，莫名其妙的就入了职，没有什么准备也没有什么反抗<br>早上去的时候还好，直到下午…<br>直到…<br>经理说：明天记得带电脑（我：可以<br>经理说：以后你可以每天带电脑回去，也可以周五的时候带回去（我：…<br>经理说：这儿还是挺安全的（我：…<br>艹，劳资以后上班要从成都北门背电脑背到南门，然后又从南门背回北门吗？？？<br>还笑嘻嘻给我来一句还是挺安全的，谁TM给你笑嘻嘻了啊？你TM下班回家不用电脑啊？？<br>你TM欺负实习生是吧？明明新员工指引清单上面说好的电脑！！！现在给我搞没了？？<br>你说气人不气人？？<br>你觉得这样就够惨了是吗？NO！出门小雨变大雨，是不是再得配上一首悲伤一点的背景音乐？手里捧着窝窝头，菜里没有一滴油<br><img src="/2019/07/15/24_这也太难了吧/2.gif"><br>在天府三街刚好冲进1号线，深刻的感受了站车站到人去车空的感觉；到了火车北站，又急急忙忙地打开导航去站公交。不知道今年是咋滴了，天天下雨，穿的粗跟凉鞋，感觉自己都要滑倒了，不，感觉我的凉鞋都要脱胶了。跨过天桥，我，终于来到了公交站，挤上了一辆小小的24路公交车，再次体验了一把从起点站到终点的感觉，啊！就这个feel倍儿爽！<br>在车上就开始了我无止境的抱怨和难过，操这麻蛋的人生，最后总结出我的痛苦都来源于家到公司的距离太远了，表象就是没有租房，深层次的原因就是：<br><img src="/2019/07/15/24_这也太难了吧/3.jpg"><br>对的，一定是这样的！所以我今天回家用了整整两个小时！所以以后不配电脑的话，我要背着15.6英寸的电脑横贯成都！<br><img src="/2019/07/15/24_这也太难了吧/4.jpg" width="400px"><br>啊！变有钱，我变有钱！</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>String的创建和方法<a id="more"></a></p><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ol><li>字面量创建<pre><code>var b = &apos;这是一个字符串&apos;;document.write(b);</code></pre></li><li>构造函数创建<pre><code>var a = new String();a = &apos;这是一个蛤蟆皮&apos;;document.write(a);</code></pre></li></ol><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>charAt  &gt; 根据索引查找字符<pre><code>console.log(a.charAt(1));  //是</code></pre></li><li>indexOf &gt; 根据字符查找索引<pre><code>console.log(a.indexOf(&apos;个&apos;));  //3</code></pre></li><li>concat &gt; 连接两个字符串<pre><code>console.log(a.concat(b));  //这是一个蛤蟆皮这是一个字符串</code></pre></li><li>slice 切片 左闭右开<pre><code>var c = b.slice(2,7);console.log(c);  //一个字符串</code></pre></li><li>split 分割<pre><code>var d = b.split(&apos;一个&apos;);console.log(d);  //[&apos;这是&apos;,&apos;字符串&apos;]</code></pre></li><li>replace 替换<pre><code>var e = a.replace(&apos;蛤蟆皮&apos;,&apos;大傻逼&apos;);console.log(e);  //这是一个大傻逼</code></pre></li><li>toLowerCase 转小写<pre><code>var f = &apos;I LOVE YOU&apos;;var m = f.toLowerCase();console.log(m)  //i love you</code></pre></li><li>toUpperCase 转大写<pre><code>var f = &apos;i love you&apos;;var n = f.toUpperCase();console.log(n)  //I LOVE YOU</code></pre></li></ol>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/07/15/24_%E8%BF%99%E4%B9%9F%E5%A4%AA%E9%9A%BE%E4%BA%86%E5%90%A7/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>七月的你</title>
-      <link>http://yoursite.com/2019/07/10/23_%E4%B8%83%E6%9C%88%E7%9A%84%E4%BD%A0/</link>
-      <guid>http://yoursite.com/2019/07/10/23_%E4%B8%83%E6%9C%88%E7%9A%84%E4%BD%A0/</guid>
-      <pubDate>Wed, 10 Jul 2019 14:05:48 GMT</pubDate>
+      <title>JavaScript—运算符</title>
+      <link>http://yoursite.com/2019/07/28/30_%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <guid>http://yoursite.com/2019/07/28/30_%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <pubDate>Sun, 28 Jul 2019 08:42:53 GMT</pubDate>
       <description>
       
-        &lt;p&gt;回学校参加了期末考试，已经很久很久没有更博了。&lt;/p&gt;
+        &lt;p&gt;JavaScript的运算符有这么这么多&lt;br&gt;&lt;/p&gt;
       
       </description>
       
-      <content:encoded><![CDATA[<p>回学校参加了期末考试，已经很久很久没有更博了。<a id="more"></a><br>最近经历的事真多，很匆忙，又很充实，有欢乐，也有别离。<br>回学校参加完第一场考试后，朋友说去重庆玩，我们就去了。像一场说走就走的旅行，没有带好看的衣服，也没有化妖艳的妆。<br>第一天傍晚我们去了磁器口，第二天去了李子坝→解放碑→梵高星空艺术馆→科技馆→朝天门火锅→洪崖洞，第三天去了海底世界<br>说实话，重庆留给我的印象并不没有那么好，磁器口、洪崖洞全是卖东西的；海底世界全是小孩，虽然去之前我们也安慰自己要有一颗童心，可是真的真jb难耍啊；吃了一家叫做朝天门火锅的火锅，真没有咱成都的好吃；我只会感叹重庆轻轨的工程师们太牛逼了！<br>我不喜欢重庆，我只是喜欢和朋友一起的时光，毕竟至少和她一起睡觉的时候，我睡得很安稳 ପ( ˘ᵕ˘ ) ੭ ☆<br><img src="/2019/07/10/23_七月的你/2.jpg" style="width: 400px;"><br>回来第三天进行了最后一场考试，班长说开完班会后，大家留下来照个相，因为爸爸妈妈要来接我，所以我逃了。<br>坐在车上的时候最容易胡思乱想，想着想着居然有些难过。宿舍被搬得空唠唠的，明明是大三，却搞得像大四毕业一样。不过我会想我的331的，有钱江湖再见，欢迎他们来成都请我吃火锅！^o^<br>难过又觉得好幸福，世界对我深深的恶意都不见了。<br>好像爸爸妈妈都好爱我，好像有这么些室友也挺开心，好像一切都很平静<br><img src="/2019/07/10/23_七月的你/1.jpg" style="width: 400px;"></p><p></p><p style="text-align: center;">大自然也太美了吧</p><br>我是不想回老家的，老家的蚊子可真多啊！<br>今天一大早，门前那棵大树被锯倒了。奶奶说这棵树有20年了，还是我出生那年栽的。她说，爷爷以前说种棵树在这里，看它长得直不直。爷爷走了四年了，今天陪我长大的这棵树也倒了。【以前爷爷挑粪，我撵他的路，他走一步我跟一步，他就把我捆在这颗树上哈哈哈哈<br>以前最不耐烦的就是老年人的念叨。和奶奶摆着龙门阵，她看着我，突然就来一句，你多吃点嘛，好瘦啊，在家待了一天我至少听了四五遍。我想说我不瘦啊，有一种瘦，叫做奶奶以为你瘦[允悲.jpg]<br><img src="/2019/07/10/23_七月的你/3.jpg" style="width: 400px;"><p></p><p></p><p style="text-align: center;">我爷爷年轻的时候一定很帅吧嘿嘿嘿</p><br>最近有人问我眼睛周围是怎么回事，其实我无所谓啦。妈妈说以前小时候没有，怎么长大了就现出来了；奶奶说眼睛里面有朵云；爷爷说生下来的胎记，免得你走错人家了；知乎说，这是被天使吻过的痕迹，不是每一个人都能被天使亲吻的。我觉得没有什么大不了的，并不妨碍我的生活，我一点也不自卑，我觉得挺好的。<span style="color: pink;">❤</span><br>我有一个小小的愿望，就是挣很多很多的钱哈哈哈哈，然后给我朋友买车票，让他们来请我吃火锅；给奶奶买车票，让她和我一起长胖。<p></p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>JavaScript的运算符有这么这么多<br><a id="more"></a></p><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>+(加) -(减) *(乘) /(除) %(取余) ++(自增) –(自减)</p><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p>= += -= /= %=</p><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>&amp;&amp;：and<br>||：or<br>!：not</p><blockquote></blockquote><pre><code>var c = 4, d = 8;if (c&lt;10 &amp;&amp; d&lt;10) {    console.log(&apos;&amp;&amp;  and运算符&apos;);}if (c&lt;5 || d&lt;7) {    console.log(&apos;||  or运算符&apos;);}if (!(c&gt;d)) {    console.log(&apos;!  not运算符&apos;);}</code></pre><h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><p>==：比较的是值<br>===：比较的值和数据类型<br>!=：比较的值<br>!==：比较的值和数据类型<br>><br>&lt;<br>>=<br>&lt;=</p><blockquote></blockquote><pre><code>var a = 1, b = &apos;1&apos;;console.log(a==b);  //trueconsole.log(a===b); //falseconsole.log(a!=b); //falseconsole.log(a!==b); //true</code></pre>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/07/10/23_%E4%B8%83%E6%9C%88%E7%9A%84%E4%BD%A0/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/07/28/30_%E8%BF%90%E7%AE%97%E7%AC%A6/#disqus_thread</comments>
     </item>
     
   </channel>
