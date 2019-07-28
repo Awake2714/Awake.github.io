@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 28 Jul 2019 09:46:20 GMT</pubDate>
+    <pubDate>Sun, 28 Jul 2019 13:11:42 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>JavaScript—流程控制</title>
+      <link>http://yoursite.com/2019/07/28/35_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+      <guid>http://yoursite.com/2019/07/28/35_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <pubDate>Sun, 28 Jul 2019 13:11:47 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;今天来学习学习JavaScript的条件语句、switch语句、for循环、while循环、以及break和continue关键字&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>今天来学习学习JavaScript的条件语句、switch语句、for循环、while循环、以及break和continue关键字<a id="more"></a></p><ol><li>if…else if…else…</li></ol><ul><li>语法<pre><code>if (condition1) {    条件1满足时执行的代码块;}else if (condition2) {    条件2满足时执行的代码块;}else{    条件1和条件2都不满足时执行的代码块;}</code></pre></li><li>举例<pre><code>var mydate = new Date();if (mydate.getHours()&lt;8) {    console.log(&apos;Good Morning&apos;);}else if (mydate.getHours()&lt;20) {    console.log(&apos;Good Day&apos;);}else{    console.log(&apos;Good Evening&apos;);}</code></pre></li></ul><ol start="2"><li>switch语句</li></ol><ul><li>语法<pre><code>switch () {    case condition1: condition1成立时执行的代码;    break;    case condition2: condition2成立时执行的代码;    break;    default:    匹配都不存在时执行的代码;}</code></pre></li><li>举例<pre><code>var a = new Date(), b = a.getDay();switch (b) {    case 0: console.log(&apos;今天星期天&apos;);  //与case匹配    break;  //阻止代码向下一个case语句执行    case 6: console.log(&apos;今天星期六&apos;);    break;    default:  //匹配不存在时执行的代码块    console.log(&apos;老子今天要上班&apos;);}</code></pre></li></ul><ol start="3"><li>for循环</li></ol><ul><li>语法<pre><code>for ( ; ; ;) {    代码块;}</code></pre></li><li>举例<pre><code>//循环输出var names = [&apos;傻逼&apos;,&apos;憨批&apos;,&apos;瓜娃儿&apos;,&apos;二货&apos;,&apos;胎神&apos;];for (var i=0; i&lt;5; i++) {    document.write(names[i]+&apos; &apos;);}var i=0, names = [&apos;傻逼&apos;,&apos;憨批&apos;,&apos;瓜娃儿&apos;,&apos;二货&apos;,&apos;胎神&apos;];for (; i&lt;5; i++) {    document.write(names[i]+&apos; &apos;);}//遍历var ids = {&apos;name&apos;: &apos;sb&apos;,&apos;gender&apos;: &apos;man&apos;,&apos;age&apos;: &apos;40&apos;}for (x in ids) {    console.log(x+ &apos;：&apos;+ ids[x]);}for (name in names) {    console.log(name+ &apos;：&apos;+ names[name]);}</code></pre></li></ul><ol start="4"><li>while循环</li></ol><ul><li>语法<pre><code>while () {    代码块;}</code></pre></li><li>举例<pre><code>//whilevar y = 0;while (y&lt;5) {    document.write(y);    y++;}//do...while...var m = 0;do {    document.write(&apos;无论是否满足条件都会执行&apos;);}while (m&gt;1) </code></pre></li></ul><ol start="5"><li>break语句：跳出循环<pre><code>for (var n=0; n&lt;5; n++) {    if (n==3) {        document.write(&apos;&lt;br&gt;&apos;+&apos;n==3跳出循环&apos;);        break; //如果代码块只有一条语句，{}可以省略    }    document.write(&apos;&lt;br&gt;&apos;+n);}</code></pre></li><li>continue语句：跳过循环<pre><code>for (var j=0; j&lt;5; j++) {    if (j==3) continue;    document.write(&apos;&lt;hr&gt;&apos;+j);}</code></pre></li></ol>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/07/28/35_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>JavaScript—Math对象</title>
@@ -73,22 +89,6 @@
       <content:encoded><![CDATA[<p>String的创建和方法<a id="more"></a></p><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ol><li>字面量创建<pre><code>var b = &apos;这是一个字符串&apos;;document.write(b);</code></pre></li><li>构造函数创建<pre><code>var a = new String();a = &apos;这是一个蛤蟆皮&apos;;document.write(a);</code></pre></li></ol><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>charAt  &gt; 根据索引查找字符<pre><code>console.log(a.charAt(1));  //是</code></pre></li><li>indexOf &gt; 根据字符查找索引<pre><code>console.log(a.indexOf(&apos;个&apos;));  //3</code></pre></li><li>concat &gt; 连接两个字符串<pre><code>console.log(a.concat(b));  //这是一个蛤蟆皮这是一个字符串</code></pre></li><li>slice 切片 左闭右开<pre><code>var c = b.slice(2,7);console.log(c);  //一个字符串</code></pre></li><li>split 分割<pre><code>var d = b.split(&apos;一个&apos;);console.log(d);  //[&apos;这是&apos;,&apos;字符串&apos;]</code></pre></li><li>replace 替换<pre><code>var e = a.replace(&apos;蛤蟆皮&apos;,&apos;大傻逼&apos;);console.log(e);  //这是一个大傻逼</code></pre></li><li>toLowerCase 转小写<pre><code>var f = &apos;I LOVE YOU&apos;;var m = f.toLowerCase();console.log(m)  //i love you</code></pre></li><li>toUpperCase 转大写<pre><code>var f = &apos;i love you&apos;;var n = f.toUpperCase();console.log(n)  //I LOVE YOU</code></pre></li></ol>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>JavaScript—运算符</title>
-      <link>http://yoursite.com/2019/07/28/30_%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
-      <guid>http://yoursite.com/2019/07/28/30_%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
-      <pubDate>Sun, 28 Jul 2019 08:42:53 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;JavaScript的运算符有这么这么多&lt;br&gt;&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>JavaScript的运算符有这么这么多<br><a id="more"></a></p><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>+(加) -(减) *(乘) /(除) %(取余) ++(自增) –(自减)</p><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p>= += -= /= %=</p><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>&amp;&amp;：and<br>||：or<br>!：not</p><blockquote></blockquote><pre><code>var c = 4, d = 8;if (c&lt;10 &amp;&amp; d&lt;10) {    console.log(&apos;&amp;&amp;  and运算符&apos;);}if (c&lt;5 || d&lt;7) {    console.log(&apos;||  or运算符&apos;);}if (!(c&gt;d)) {    console.log(&apos;!  not运算符&apos;);}</code></pre><h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><p>==：比较的是值<br>===：比较的值和数据类型<br>!=：比较的值<br>!==：比较的值和数据类型<br>><br>&lt;<br>>=<br>&lt;=</p><blockquote></blockquote><pre><code>var a = 1, b = &apos;1&apos;;console.log(a==b);  //trueconsole.log(a===b); //falseconsole.log(a!=b); //falseconsole.log(a!==b); //true</code></pre>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/07/28/30_%E8%BF%90%E7%AE%97%E7%AC%A6/#disqus_thread</comments>
     </item>
     
   </channel>
