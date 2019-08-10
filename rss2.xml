@@ -8,8 +8,56 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 28 Jul 2019 13:11:42 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2019 10:54:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>jquery事件</title>
+      <link>http://yoursite.com/2019/08/10/38_jquery%E4%BA%8B%E4%BB%B6/</link>
+      <guid>http://yoursite.com/2019/08/10/38_jquery%E4%BA%8B%E4%BB%B6/</guid>
+      <pubDate>Sat, 10 Aug 2019 10:54:03 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;事件分类&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>事件分类<a id="more"></a></p><h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><ul><li>click</li><li>dbclick</li><li>mouseenter</li><li>mouseleave</li><li><p>hover</p><pre><code>&lt;button class=&quot;btn&quot;&gt;点击&lt;/button&gt;&lt;script type=&quot;text/javascript&quot;&gt;    $(document).ready(function(){        $(&apos;button.btn&apos;).click(function(){            alert(&apos;点击事件&apos;);        })    })&lt;/script&gt;</code></pre></li></ul><h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><ul><li>keypress</li><li>keydown</li><li>keyup</li></ul><h2 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h2><ul><li>submit</li><li>change</li><li>focus</li><li>blur</li></ul><h2 id="文档-窗口事件"><a href="#文档-窗口事件" class="headerlink" title="文档/窗口事件"></a>文档/窗口事件</h2><ul><li>load</li><li>unload</li><li>resize</li><li>scroll</li></ul>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/08/10/38_jquery%E4%BA%8B%E4%BB%B6/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>jquery选择器</title>
+      <link>http://yoursite.com/2019/08/10/37_jquery%E9%80%89%E6%8B%A9%E5%99%A8/</link>
+      <guid>http://yoursite.com/2019/08/10/37_jquery%E9%80%89%E6%8B%A9%E5%99%A8/</guid>
+      <pubDate>Sat, 10 Aug 2019 10:42:03 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;jquery选择器和js选择器类似，主要分为：&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>jquery选择器和js选择器类似，主要分为：<a id="more"></a></p><ul><li>基本选择器</li><li>层级选择器</li><li>属性选择器</li><li>过滤选择器</li><li>筛选选择器</li></ul><p>以下代码适用于下面所有示例</p><pre><code>&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;&lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;&lt;div id=&quot;content&quot;&gt;    &lt;ul&gt;        &lt;li&gt;html&lt;/li&gt;        &lt;li&gt;javascript&lt;/li&gt;        &lt;li&gt;jquery&lt;/li&gt;    &lt;/ul&gt;&lt;/div&gt;&lt;p&gt;JQUERY&lt;/p&gt;&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;&lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;</code></pre><h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><ul><li>id选择器 #</li><li>类选择器 .</li><li>标签选择器 Element</li><li>并集选择器 ,</li><li><p>通配符选择器 *</p><pre><code>// 类选择器console.log($(&apos;.box&apos;));// id选择器console.log($(&apos;#content&apos;));// 并集选择器console.log($(&apos;div,p&apos;));</code></pre></li></ul><h2 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h2><ul><li>后代选择器  (空格)</li><li>子代选择器 &gt;</li><li>紧邻选择器 +</li><li><p>兄弟选择器 ~</p><pre><code>// 后代选择器console.log($(&apos;#content ul&apos;));// 子代选择器console.log($(&apos;ul&gt;li&apos;));// 紧邻选择器console.log($(&apos;.box+div&apos;));// 兄弟选择器console.log($(&apos;.box~div&apos;));</code></pre></li></ul><h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><pre><code>console.log($(&apos;input[type=&quot;text&quot;]&apos;));  //选取所有type为text的input标签console.log($(&apos;*[class]&apos;))  // 选取所有带有class属性的元素</code></pre><h2 id="基本过滤选择器"><a href="#基本过滤选择器" class="headerlink" title="基本过滤选择器"></a>基本过滤选择器</h2><ul><li>:eq(index) 匹配的索引为index的元素</li><li>:first() 匹配的第一个元素</li><li>:last() 匹配的最后一个元素</li><li>:gt() 大于xxx</li><li>:lt() 小于xxx</li><li>:odd() 索引为奇数</li><li>:even() 索引为偶数</li><li><p>:not(selector) 除selector以外的元素</p><pre><code>// :eq(index)选取索引为index的元素console.log($(&apos;ul&gt;li:eq(2)&apos;).text());// :first()选择匹配的第一个元素console.log($(&apos;ul&gt;li:first()&apos;).text());// :last()选择匹配的最后一个元素console.log($(&apos;div:last()&apos;));</code></pre></li></ul><h2 id="筛选选择器"><a href="#筛选选择器" class="headerlink" title="筛选选择器"></a>筛选选择器</h2><ul><li>find() 查找指定元素的后代元素</li><li>parent() 查找直接父元素</li><li>children() 所有子代元素</li><li>siblings() 所有兄弟元素</li><li><p>eq(index) 索引为index的元素</p><pre><code>// find()查找指定元素所有的后代元素console.log($(&apos;body&apos;).find(&apos;div&apos;));  // 查找body的所有div后代标签// children()查找指定元素所有的子代元素console.log($(&apos;body&apos;).children());  //查找body的所有直接子元素// siblings()查找所有的兄弟元素console.log($(&apos;#content&apos;).siblings(&apos;input&apos;));  // 查找id为content的兄弟元素为input的所有元素// parent()查找父元素console.log($(&apos;li&apos;).parent());// eq(index)查找匹配的索引为index的元素console.log($(&apos;li&apos;).eq(2));</code></pre></li></ul>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/08/10/37_jquery%E9%80%89%E6%8B%A9%E5%99%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>初识jquery-write less do more</title>
+      <link>http://yoursite.com/2019/08/10/36_%E5%88%9D%E8%AF%86jquery/</link>
+      <guid>http://yoursite.com/2019/08/10/36_%E5%88%9D%E8%AF%86jquery/</guid>
+      <pubDate>Sat, 10 Aug 2019 09:22:07 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;终于到了jquery的学习，我太难了我&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>终于到了jquery的学习，我太难了我<a id="more"></a><br>然后却发现js的博客已经停更好久了啊，呜呜呜</p><h2 id="下载jquery："><a href="#下载jquery：" class="headerlink" title="下载jquery："></a>下载jquery：</h2><p><a href="https://jquery.com/download/" target="_blank" rel="noopener">https://jquery.com/download/</a><br>一个是用于生产环境的，一个是用于开发环境的<br><img src="/2019/08/10/36_初识jquery/1.png"></p><h2 id="jquery的引用"><a href="#jquery的引用" class="headerlink" title="jquery的引用"></a>jquery的引用</h2><pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-3.4.1.js&quot;&gt;&lt;/script&gt;</code></pre><h2 id="入口函数"><a href="#入口函数" class="headerlink" title="入口函数"></a>入口函数</h2><pre><code>$(document).ready(function(){    console.log($(document));    })</code></pre><p>……<br>我还是个弟弟，写不出来啦。。。</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/08/10/36_%E5%88%9D%E8%AF%86jquery/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>JavaScript—流程控制</title>
@@ -41,54 +89,6 @@
       <content:encoded><![CDATA[<p>Math对象<a id="more"></a></p><pre><code>var a = 10.6;</code></pre><ol><li>floor 地板函数：向下取整<pre><code>var aa = Math.floor(a);document.write(aa);  //10</code></pre></li><li>ceil 天花板函数：向上取整<pre><code>var bb = Math.ceil(a);document.write(&apos;&lt;br&gt;&apos;+bb);  //11</code></pre></li><li>max 最大值<pre><code>var cc = Math.max(aa,bb);document.write(&apos;&lt;br&gt;&apos;+cc);  //11</code></pre></li><li>min 最小值<pre><code>var dd = Math.min(12,15);document.write(&apos;&lt;br&gt;&apos;+dd);  //12</code></pre></li><li>round 四舍五入<pre><code>var ee = Math.round(a);document.write(&apos;&lt;br&gt;&apos;+ee);  //11</code></pre></li><li>random 随机数 0-1<pre><code>//生成0-1之间的随机数var x = Math.random();document.write(&apos;&lt;br&gt;&apos;+x);  //0.7075256283328961//生成指定范围内的随机数：min+Math.random()*(max-min)var y = 100+Math.random()*(500-100);  //生成100-500之间的随机数document.write(&apos;&lt;br&gt;&apos;+y);  //445.1153017063139</code></pre></li><li>其他函数：<br> abs（绝对值）、sin（正弦）、cos（余弦）、tan（正切）、exp（指数）、pow（幂）、log（对数）、sqrt（平方根）……</li></ol>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/07/28/34_Math%E5%AF%B9%E8%B1%A1/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>JavaScript—日期对象</title>
-      <link>http://yoursite.com/2019/07/28/33_Date%E5%AF%B9%E8%B1%A1/</link>
-      <guid>http://yoursite.com/2019/07/28/33_Date%E5%AF%B9%E8%B1%A1/</guid>
-      <pubDate>Sun, 28 Jul 2019 09:31:24 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Date()日期对象&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Date()日期对象<a id="more"></a></p><ol><li>getDate()：获取月份中的天数</li><li>getMonth()：获取月份 0-11</li><li>getFullYear()：获取年份</li><li>getDay()：获取一周中的天数 0-6</li><li>getHours()：获取小时数</li><li>getMinutes()：获取分钟数</li><li>getSeconds()：获取秒</li><li>Date()：获取完整的时间 年月日时分秒<pre><code>var mydate = new Date();console.log(mydate.getDate());  //28console.log(mydate.getMonth());  //6console.log(mydate.getFullYear());  //2019console.log(mydate.getDay());  //0console.log(mydate.getHours());  //17console.log(mydate.getMinutes());  //29console.log(mydate.getSeconds());  //15console.log(mydate);  //Sun Jul 28 2019 17:29:15 GMT+0800 (中国标准时间)</code></pre></li></ol>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/07/28/33_Date%E5%AF%B9%E8%B1%A1/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>JavaScript—数组</title>
-      <link>http://yoursite.com/2019/07/28/32_%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</link>
-      <guid>http://yoursite.com/2019/07/28/32_%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</guid>
-      <pubDate>Sun, 28 Jul 2019 09:21:53 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Array的创建和方法&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Array的创建和方法<a id="more"></a></p><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ol><li><p>字面量创建</p><pre><code>var array_a = [];array_a[0] = 123;array_a[1] = 456;console.log(array_a);---var array_c = [1,2,3,4,5];for (var i = array_c.length - 1; i &gt;= 0; i++) {    document.write(array_c[i]+&apos;&lt;br&gt;&apos;);}</code></pre></li><li><p>构造函数创建</p><pre><code>var array_b = new Array();array_b[0] = &apos;傻逼&apos;;array_b[1] = &apos;憨批&apos;;array_b[2] = &apos;宝批龙&apos;;console.log(array_b);</code></pre></li></ol><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><pre><code>var a = [&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;];var b = [&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;,&apos;！&apos;];</code></pre><ol><li>concat：合并两个数组<pre><code>console.log(a.concat(b)); //[&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;,&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;,&apos;！&apos;]</code></pre></li><li>join：用字符连接数组，返回字符串<pre><code>var c = a.join(&apos; &apos;);console.log(c);  //你 是 一个 宝批龙 ！</code></pre></li><li>slice：切片  左闭右开<pre><code>var d = a.slice(2,4);console.log(d);  //[&apos;一个&apos;,&apos;宝批龙&apos;]</code></pre></li><li>pop：删除最后一个元素<pre><code>b.pop();console.log(b);  //[&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;]</code></pre></li><li>push：在数组最后添加元素<pre><code>b.push(&apos;！！！&apos;);console.log(b);  //[&apos;你&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;大傻逼&apos;,&apos;！&apos;];</code></pre></li><li>shift：在数组第一个位置删除<pre><code>a.shift();console.log(a);  //[&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;]</code></pre></li><li>unshift：在数组第一个位置添加元素<pre><code>a.unshift(&apos;他&apos;);console.log(a);  //[&apos;他&apos;,&apos;是&apos;,&apos;一个&apos;,&apos;宝批龙&apos;,&apos;！&apos;]</code></pre></li><li>reverse：翻转元素<pre><code>a.reverse();console.log(a);  //[&apos;！&apos;,&apos;宝批龙&apos;,&apos;一个&apos;,&apos;是&apos;,&apos;他&apos;]</code></pre></li><li>sort：排序<pre><code>b.sort();console.log(b);  //[&quot;一个&quot;, &quot;你&quot;, &quot;大傻逼&quot;, &quot;是&quot;, &quot;！！！&quot;]</code></pre></li></ol>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/07/28/32_%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>JavaScript—字符串</title>
-      <link>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</link>
-      <guid>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/</guid>
-      <pubDate>Sun, 28 Jul 2019 09:06:38 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;String的创建和方法&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>String的创建和方法<a id="more"></a></p><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ol><li>字面量创建<pre><code>var b = &apos;这是一个字符串&apos;;document.write(b);</code></pre></li><li>构造函数创建<pre><code>var a = new String();a = &apos;这是一个蛤蟆皮&apos;;document.write(a);</code></pre></li></ol><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>charAt  &gt; 根据索引查找字符<pre><code>console.log(a.charAt(1));  //是</code></pre></li><li>indexOf &gt; 根据字符查找索引<pre><code>console.log(a.indexOf(&apos;个&apos;));  //3</code></pre></li><li>concat &gt; 连接两个字符串<pre><code>console.log(a.concat(b));  //这是一个蛤蟆皮这是一个字符串</code></pre></li><li>slice 切片 左闭右开<pre><code>var c = b.slice(2,7);console.log(c);  //一个字符串</code></pre></li><li>split 分割<pre><code>var d = b.split(&apos;一个&apos;);console.log(d);  //[&apos;这是&apos;,&apos;字符串&apos;]</code></pre></li><li>replace 替换<pre><code>var e = a.replace(&apos;蛤蟆皮&apos;,&apos;大傻逼&apos;);console.log(e);  //这是一个大傻逼</code></pre></li><li>toLowerCase 转小写<pre><code>var f = &apos;I LOVE YOU&apos;;var m = f.toLowerCase();console.log(m)  //i love you</code></pre></li><li>toUpperCase 转大写<pre><code>var f = &apos;i love you&apos;;var n = f.toUpperCase();console.log(n)  //I LOVE YOU</code></pre></li></ol>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/07/28/31_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%96%B9%E6%B3%95/#disqus_thread</comments>
     </item>
     
   </channel>
