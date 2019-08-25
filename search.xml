@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[堕落的八月]]></title>
+    <url>%2F2019%2F08%2F25%2F39_%E5%85%AB%E6%9C%88%2F</url>
+    <content type="text"><![CDATA[今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。八月，仿佛发生了很多事，不过好多都是不开心的事。八月，和小野度过了我的21岁生日；八月，适应了每天坐四个小时的车上下班；八月，弟弟回老家了；八月，从五楼搬到了六楼；八月，大概和方敏见了最后一面。八月也不全是不开心，算是有得有失吧。因为上班每天都得坐四个小时的车，搞得我郁郁寡欢，可是小野来了，她来了，真的解救了我，心里好很多了。因为爸妈经常吵架，妈妈经常因为一点小事就骂弟弟，所以弟弟受不了，独自回家了，回到了那个我喜欢的脏兮兮的老房子。因为部门人太多，因为我们是实习生，所以我们从五楼搬到了六楼，虽然我也安慰自己楼上挺好的，还没有领导，可就是有一种被抛弃的感觉，不开心。因为方敏要去实习了，很远很远的地方，所以在她走之前，我们见了最后一面，我们一起睡觉，聊了好久，有一个人陪你聊天、让你真正的开心，这种感觉真的很好。因为心动了，八月变成了柠檬精女孩，好羡慕人家甜甜的恋爱，可是听说人的一生会遇到很多心动的人，可能会误以为那是喜欢，其实也不过是某一刻的好感，可毕竟心动不是答案，心定才是。可能是因为上班了，聊天的人变少了，所以感到快乐的时候也少了，是不是长大就是这样啊。我不想长大，长大没有红包，没有疼爱，连快乐都没有，我不想长大。我也不想努力，不想去想那么多，我也想和其他女孩纸一样，天真无邪，什么都不用管。可生活还是要继续啊，你还是要长大啊，你还是要努力啊，真想从明天开始，莫谈爱情，继续学习！总之，八月是一个随便听一首歌都想放声大哭的日子。]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+        <tag>日记</tag>
+        <tag>心情</tag>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[jquery事件]]></title>
     <url>%2F2019%2F08%2F10%2F38_jquery%E4%BA%8B%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[事件分类 鼠标事件 click dbclick mouseenter mouseleave hover &lt;button class=&quot;btn&quot;&gt;点击&lt;/button&gt; &lt;script type=&quot;text/javascript&quot;&gt; $(document).ready(function(){ $(&apos;button.btn&apos;).click(function(){ alert(&apos;点击事件&apos;); }) }) &lt;/script&gt; 键盘事件 keypress keydown keyup 表单事件 submit change focus blur 文档/窗口事件 load unload resize scroll]]></content>

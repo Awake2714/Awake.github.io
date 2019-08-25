@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Python,笔记,">
+  <meta name="keywords" content="杂谈,日记,心情,总结,">
 
 
 
@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="函数闭包是内部函数对外部函数作用域里的变量的引用">
-<meta name="keywords" content="Python,笔记">
+<meta name="description" content="今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。">
+<meta name="keywords" content="杂谈,日记,心情,总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python函数闭包">
-<meta property="og:url" content="http://yoursite.com/2019/06/01/15_闭包/index.html">
+<meta property="og:title" content="堕落的八月">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/39_八月/index.html">
 <meta property="og:site_name" content="Awake&#39;s Blog">
-<meta property="og:description" content="函数闭包是内部函数对外部函数作用域里的变量的引用">
+<meta property="og:description" content="今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-01T08:25:38.515Z">
+<meta property="og:updated_time" content="2019-08-25T08:32:43.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python函数闭包">
-<meta name="twitter:description" content="函数闭包是内部函数对外部函数作用域里的变量的引用">
+<meta name="twitter:title" content="堕落的八月">
+<meta name="twitter:description" content="今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/01/15_闭包/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/25/39_八月/">
 
 
 
 
 
-  <title>Python函数闭包 | Awake's Blog</title>
+  <title>堕落的八月 | Awake's Blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/15_闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/39_八月/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Awake">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python函数闭包</h1>
+          <h1 class="post-title" itemprop="name headline">堕落的八月</h1>
         
 
         <div class="post-meta">
@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T15:13:44+08:00">
-                2019-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T16:32:17+08:00">
+                2019-08-25
               </time>
             
 
@@ -370,8 +370,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
                   </a>
                 </span>
 
@@ -387,7 +387,7 @@
 
           
           
-             <span id="/2019/06/01/15_闭包/" class="leancloud_visitors" data-flag-title="Python函数闭包">
+             <span id="/2019/08/25/39_八月/" class="leancloud_visitors" data-flag-title="堕落的八月">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,19 +418,7 @@
       
 
       
-        <p>函数闭包是内部函数对外部函数作用域里的变量的引用<a id="more"></a></p>
-<ul>
-<li>函数内的属性都是有生命周期的，都是在函数执行期间</li>
-<li>闭包内的闭包函数私有化了变量，完成了数据的封装，类似于面向对象</li>
-</ul>
-<blockquote>
-<p>def func(): #外部函数<br>&nbsp;&nbsp;&nbsp;&nbsp;a = 1 #外部函数作用域里的变量<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘this is func’)<br>&nbsp;&nbsp;&nbsp;&nbsp;def func1(num): #内部函数<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘this is func1’)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(num+a)<br>&nbsp;&nbsp;&nbsp;&nbsp;return func1 #函数<br>var = func() #运行外部函数，内部函数就被创建<br>var(2)<br>>&gt;&gt;this is func<br>>&gt;&gt;this is func1<br>>&gt;&gt;3</p>
-</blockquote>
-<p>在func里嵌套了一个func1，将func()函数的调用赋值给var，执行一条print语句，并接收func返回的func1函数对象，这时的var就相当于func1，var(2)传入参数2，调用func1，执行func1内部的代码</p>
-<blockquote>
-<p>mylist = [1,2,3,4,5]<br>def func(obj):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(‘func:’, obj)<br>&nbsp;&nbsp;&nbsp;&nbsp;def func1():<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj[0] += 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(‘func1:’, obj)<br>&nbsp;&nbsp;&nbsp;&nbsp;return func1<br>var = func(mylist)<br>var()<br>var()<br>var()<br>>&gt;&gt;func: [1, 2, 3, 4, 5]<br>>&gt;&gt;func1: [2, 2, 3, 4, 5]<br>>&gt;&gt;func1: [3, 2, 3, 4, 5]<br>>&gt;&gt;func1: [4, 2, 3, 4, 5]</p>
-</blockquote>
-<p>在这里，首先我们定义了一个mylist列表；其次定义了一个func函数，传入参数obj，执行一条print语句，在函数内部嵌套了一个func1，并将func1对象返回。在func1里，改变object索引为0的值，接着打印了obj。<br>将mylist作为参数传给func，这里的var如上面的例子一样，相当于func1，接着调用了三次var()，可以看到每一次调用后打印的obj都在上一次调用的基础上加了1.<br>我表达不好，推荐B站一个将闭包和装饰器讲得很好的教程：<a href="https://www.bilibili.com/video/av18586448?t=2207" target="_blank" rel="noopener">https://www.bilibili.com/video/av18586448?t=2207</a></p>
+        <p>今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。<a id="more"></a><br>八月，仿佛发生了很多事，不过好多都是不开心的事。<br>八月，和小野度过了我的21岁生日；八月，适应了每天坐四个小时的车上下班；八月，弟弟回老家了；八月，从五楼搬到了六楼；八月，大概和方敏见了最后一面。<br>八月也不全是不开心，算是有得有失吧。<br>因为上班每天都得坐四个小时的车，搞得我郁郁寡欢，可是小野来了，她来了，真的解救了我，心里好很多了。<br>因为爸妈经常吵架，妈妈经常因为一点小事就骂弟弟，所以弟弟受不了，独自回家了，回到了那个我喜欢的脏兮兮的老房子。<br>因为部门人太多，因为我们是实习生，所以我们从五楼搬到了六楼，虽然我也安慰自己楼上挺好的，还没有领导，可就是有一种被抛弃的感觉，不开心。<br>因为方敏要去实习了，很远很远的地方，所以在她走之前，我们见了最后一面，我们一起睡觉，聊了好久，有一个人陪你聊天、让你真正的开心，这种感觉真的很好。<br>因为心动了，八月变成了柠檬精女孩，好羡慕人家甜甜的恋爱，可是听说人的一生会遇到很多心动的人，可能会误以为那是喜欢，其实也不过是某一刻的好感，可毕竟心动不是答案，心定才是。<br>可能是因为上班了，聊天的人变少了，所以感到快乐的时候也少了，是不是长大就是这样啊。我不想长大，长大没有红包，没有疼爱，连快乐都没有，我不想长大。我也不想努力，不想去想那么多，我也想和其他女孩纸一样，天真无邪，什么都不用管。<br>可生活还是要继续啊，你还是要长大啊，你还是要努力啊，真想从明天开始，莫谈爱情，继续学习！<br>总之，八月是一个随便听一首歌都想放声大哭的日子。</p>
 
       
     </div>
@@ -459,9 +447,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/杂谈/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+            <a href="/tags/日记/" rel="tag"><i class="fa fa-tag"></i> 日记</a>
+          
+            <a href="/tags/心情/" rel="tag"><i class="fa fa-tag"></i> 心情</a>
+          
+            <a href="/tags/总结/" rel="tag"><i class="fa fa-tag"></i> 总结</a>
           
         </div>
       
@@ -474,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/01/14_lambda匿名函数/" rel="next" title="lambda匿名函数">
-                <i class="fa fa-chevron-left"></i> lambda匿名函数
+              <a href="/2019/08/10/38_jquery事件/" rel="next" title="jquery事件">
+                <i class="fa fa-chevron-left"></i> jquery事件
               </a>
             
           </div>
@@ -483,10 +475,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/01/16_装饰器/" rel="prev" title="Python装饰器">
-                Python装饰器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
