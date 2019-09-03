@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pyppeteer]]></title>
+    <url>%2F2019%2F09%2F03%2F41_pypetter%2F</url>
+    <content type="text"><![CDATA[今天发现了一个很厉害的东西，Puppeteer和pyppeteer 简介puppeteer是Google基于Node.js开发的一个工具，有了它可以通过JavaScript来控制Chrome浏览器的一些操作。而pyppeteer是基于puppeteer对python版本功能的实现。有点像selenium进行自动化操作，具有以下功能： 生成页面的截图和PDF。 抓取SPA(单页应用程序)并渲染页面 自动提交表单，UI测试，键盘输入等。 创建一个最新的自动化测试环境，使用最新的JavaScript和浏览器特性，在最新版本的Chrome中直接运行测试。 捕捉异常跟踪堆栈来帮助诊断性能问题。 测试Chrome扩展 其他：js注入、模拟操作、异步执行、伪装 安装： 下载 Nodejs：https://nodejs.org/en/ node版本至少v6.4.0 安装 puppeteer： npm i puppeteer 安装 chromium：https://npm.taobao.org/mirrors/chromium-browser-snapshots 安装 pyppeteer：pip install pyppeteer 测试是否安装好了：建立一个tmp.js文件，将以下代码copy到文件中，执行node tmp.js12345678const puppeteer = require('puppeteer');(async () =&gt; &#123;const browser = await puppeteer.launch(&#123;headless:false&#125;);const page = await browser.newPage();await page.goto('https://example.com');await page.screenshot(&#123;path: 'example.png'&#125;);await browser.close();&#125;)(); 官方示例 demo.py12345678910import asynciofrom pyppeteer import launchasync def main(): browser = await launch(&#123;'headless':False, 'executablePath':'/MAC/Study/27.Puppeteer/node_modules/puppeteer/.local-chromium/mac-609904/chrome-mac/Chromium.app/Contents/MacOS/Chromium'&#125;) page = await browser.newPage() await page.goto('http://example.com') await page.screenshot(&#123;'path':'example.png'&#125;) await browser.close()asyncio.get_event_loop().run_until_complete(main()) 初步使用开始学习pyppeteer，我用它模拟登陆了豆瓣，代码如下：1234567891011121314151617181920212223242526import asynciofrom pyppeteer import launchimport timeasync def main(): browser = await launch(&#123; 'headless':False, 'autoClose': False, #设置底部和右侧的空白区域 'args': ['-no-sandbox', '-window-size=1366,850'], 'slowMo': 5 &#125;) page = await browser.newPage() await page.setViewport(&#123;'width': 1366, 'height': 768&#125;) #设置窗口大小 await page.goto('https://accounts.douban.com/passport/login') #请求url await page.click('.account-tab-account') #点击某元素 await page.type('#username', '12345135112') #点击某元素并输入内容 time.sleep(2) await page.type('#password', 'afq12143vr') await page.click('.account-form &gt; .account-form-field-submit ') await page.waitFor(3000) #设置页面等待时间 await page.screenshot(&#123;'path':'example.png'&#125;) #截屏 # await page.evaluate('window.scrollTo(0,document.body.scrollHeight)') #拖动滚轮 # await page.pdf(path='./exm.pdf') # await browser.close() asyncio.get_event_loop().run_until_complete(main()) newPage()：生成一个新的对象，相当于再打开一个标签页 setViewport()：设置窗口大小，传入一个字典 goto()：请求url click()：点击某个元素 type()：找到某个元素，并输入文本，接收选择器和传入的文本 waitFor()：设置页面等待时间 screenshot()：截屏 evaluate()：注入js代码 pdf()：将页面内容保存为pdf格式 close()：关闭浏览器 今天就简单地了解了一下pyppeteer，明天继续学习啊！加油加油，争取月薪过万今天小舒也要十分努力芽~]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[今天小舒也要十分努力呀]]></title>
+    <url>%2F2019%2F08%2F25%2F40_%E4%BB%8A%E5%A4%A9%E5%B0%8F%E8%88%92%E4%B9%9F%E8%A6%81%E5%8D%81%E5%88%86%E5%8A%AA%E5%8A%9B%E5%91%80%2F</url>
+    <content type="text"><![CDATA[我觉得一点小事就能让人很开心比如，突然接到很久没联系的室友的视频电话，和331聊了好久好久，一上班就会很怀念学校的日子，宿舍的时光真的让人十分怀念呀所以，小舒想通了，放不下的就慢慢放下，不要去在意他，然后继续努力，重振旗鼓，加油↖(^ω^)↗今天学了一丢丢的Django，我的妈呀，光是视频我都看了几遍了，可还是没学会，又去学了前端，现在俺又回来了，希望这次能够好好学了！ 文件目录： mysite mysite \__init__.py settings.py urls.py wsgi.py manage.py template static Django的创建步骤： 可以通过命令或者pycharm创建django-admin startproject mysite 修改配置文件，有三个地方需要修改 模板TEMPLATES：&#39;DIRS&#39;: [os.path.join(BASE_DIR, &#39;templates&#39;)] 静态文件：STATICFILES_DIRS = ( os.path.join(BASE_DIR, &#39;static&#39;), ) MIDDLEWARE注释# &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, 路由from django.shortcuts import HttpResponse, render, redirect函数参数：request request.method request.GET request.POST函数返回值： HttpResponse：返回一个字符串 redirect：重定向，一个url render：第一个参数为request，第二参数为模板，第三个参数可选，向模板传递的参数模板渲染：特殊字符的使用]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+        <tag>Python</tag>
+        <tag>日记</tag>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[堕落的八月]]></title>
     <url>%2F2019%2F08%2F25%2F39_%E5%85%AB%E6%9C%88%2F</url>
     <content type="text"><![CDATA[今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。八月，仿佛发生了很多事，不过好多都是不开心的事。八月，和小野度过了我的21岁生日；八月，适应了每天坐四个小时的车上下班；八月，弟弟回老家了；八月，从五楼搬到了六楼；八月，大概和方敏见了最后一面。八月也不全是不开心，算是有得有失吧。因为上班每天都得坐四个小时的车，搞得我郁郁寡欢，可是小野来了，她来了，真的解救了我，心里好很多了。因为爸妈经常吵架，妈妈经常因为一点小事就骂弟弟，所以弟弟受不了，独自回家了，回到了那个我喜欢的脏兮兮的老房子。因为部门人太多，因为我们是实习生，所以我们从五楼搬到了六楼，虽然我也安慰自己楼上挺好的，还没有领导，可就是有一种被抛弃的感觉，不开心。因为方敏要去实习了，很远很远的地方，所以在她走之前，我们见了最后一面，我们一起睡觉，聊了好久，有一个人陪你聊天、让你真正的开心，这种感觉真的很好。因为心动了，八月变成了柠檬精女孩，好羡慕人家甜甜的恋爱，可是听说人的一生会遇到很多心动的人，可能会误以为那是喜欢，其实也不过是某一刻的好感，可毕竟心动不是答案，心定才是。可能是因为上班了，聊天的人变少了，所以感到快乐的时候也少了，是不是长大就是这样啊。我不想长大，长大没有红包，没有疼爱，连快乐都没有，我不想长大。我也不想努力，不想去想那么多，我也想和其他女孩纸一样，天真无邪，什么都不用管。可生活还是要继续啊，你还是要长大啊，你还是要努力啊，真想从明天开始，莫谈爱情，继续学习！总之，八月是一个随便听一首歌都想放声大哭的日子。]]></content>
