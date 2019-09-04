@@ -417,43 +417,14 @@
 
       
         
-          
-            <p>今天发现了一个很厉害的东西，Puppeteer和pyppeteer</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>puppeteer是Google基于Node.js开发的一个工具，有了它可以通过JavaScript来控制Chrome浏览器的一些操作。而pyppeteer是基于puppeteer对python版本功能的实现。有点像selenium进行自动化操作，具有以下功能：</p>
-<ul>
-<li>生成页面的截图和PDF。</li>
-<li>抓取SPA(单页应用程序)并渲染页面</li>
-<li>自动提交表单，UI测试，键盘输入等。</li>
-<li>创建一个最新的自动化测试环境，使用最新的JavaScript和浏览器特性，在最新版本的Chrome中直接运行测试。</li>
-<li>捕捉异常跟踪堆栈来帮助诊断性能问题。</li>
-<li>测试Chrome扩展</li>
-<li>其他：js注入、模拟操作、异步执行、伪装</li>
-</ul>
-<h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><ol>
-<li>下载 Nodejs：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>  node版本至少v6.4.0</li>
-<li>安装 puppeteer： <code>npm i puppeteer</code></li>
-<li>安装 chromium：<a href="https://npm.taobao.org/mirrors/chromium-browser-snapshots" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/chromium-browser-snapshots</a></li>
-<li>安装 pyppeteer：<code>pip install pyppeteer</code></li>
-<li>测试是否安装好了：<br>建立一个tmp.js文件，将以下代码copy到文件中，执行<code>node tmp.js</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">'puppeteer'</span>);</span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch(&#123;<span class="attr">headless</span>:<span class="literal">false</span>&#125;);</span><br><span class="line"><span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</span><br><span class="line"><span class="keyword">await</span> page.goto(<span class="string">'https://example.com'</span>);</span><br><span class="line"><span class="keyword">await</span> page.screenshot(&#123;<span class="attr">path</span>: <span class="string">'example.png'</span>&#125;);</span><br><span class="line"><span class="keyword">await</span> browser.close();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="官方示例-demo-py"><a href="#官方示例-demo-py" class="headerlink" title="官方示例 demo.py"></a>官方示例 demo.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> pyppeteer <span class="keyword">import</span> launch</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	browser = <span class="keyword">await</span> launch(&#123;<span class="string">'headless'</span>:<span class="literal">False</span>,</span><br><span class="line">		<span class="string">'executablePath'</span>:<span class="string">'/MAC/Study/27.Puppeteer/node_modules/puppeteer/.local-chromium/mac-609904/chrome-mac/Chromium.app/Contents/MacOS/Chromium'</span>&#125;)</span><br><span class="line">	page = <span class="keyword">await</span> browser.newPage()</span><br><span class="line">	<span class="keyword">await</span> page.goto(<span class="string">'http://example.com'</span>)</span><br><span class="line">	<span class="keyword">await</span> page.screenshot(&#123;<span class="string">'path'</span>:<span class="string">'example.png'</span>&#125;)</span><br><span class="line">	<span class="keyword">await</span> browser.close()</span><br><span class="line">asyncio.get_event_loop().run_until_complete(main())</span><br></pre></td></tr></table></figure>
-<h2 id="初步使用"><a href="#初步使用" class="headerlink" title="初步使用"></a>初步使用</h2><p>开始学习pyppeteer，我用它模拟登陆了豆瓣，代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> pyppeteer <span class="keyword">import</span> launch</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	browser = <span class="keyword">await</span> launch(&#123;</span><br><span class="line">		<span class="string">'headless'</span>:<span class="literal">False</span>,</span><br><span class="line">		<span class="string">'autoClose'</span>: <span class="literal">False</span>,     <span class="comment">#设置底部和右侧的空白区域</span></span><br><span class="line">		<span class="string">'args'</span>: [<span class="string">'-no-sandbox'</span>, <span class="string">'-window-size=1366,850'</span>],</span><br><span class="line">		<span class="string">'slowMo'</span>: <span class="number">5</span></span><br><span class="line">	&#125;)</span><br><span class="line">	page = <span class="keyword">await</span> browser.newPage()</span><br><span class="line">	<span class="keyword">await</span> page.setViewport(&#123;<span class="string">'width'</span>: <span class="number">1366</span>, <span class="string">'height'</span>: <span class="number">768</span>&#125;)   <span class="comment">#设置窗口大小</span></span><br><span class="line">	<span class="keyword">await</span> page.goto(<span class="string">'https://accounts.douban.com/passport/login'</span>)   <span class="comment">#请求url</span></span><br><span class="line">	<span class="keyword">await</span> page.click(<span class="string">'.account-tab-account'</span>)   <span class="comment">#点击某元素</span></span><br><span class="line">	<span class="keyword">await</span> page.type(<span class="string">'#username'</span>, <span class="string">'12345135112'</span>)   <span class="comment">#点击某元素并输入内容</span></span><br><span class="line">	time.sleep(<span class="number">2</span>)</span><br><span class="line">	<span class="keyword">await</span> page.type(<span class="string">'#password'</span>, <span class="string">'afq12143vr'</span>)</span><br><span class="line">	<span class="keyword">await</span> page.click(<span class="string">'.account-form &gt; .account-form-field-submit '</span>)</span><br><span class="line">	<span class="keyword">await</span> page.waitFor(<span class="number">3000</span>)   <span class="comment">#设置页面等待时间</span></span><br><span class="line">	<span class="keyword">await</span> page.screenshot(&#123;<span class="string">'path'</span>:<span class="string">'example.png'</span>&#125;)   <span class="comment">#截屏</span></span><br><span class="line">	<span class="comment"># await page.evaluate('window.scrollTo(0,document.body.scrollHeight)')   #拖动滚轮</span></span><br><span class="line">	<span class="comment"># await page.pdf(path='./exm.pdf')</span></span><br><span class="line">	<span class="comment"># await browser.close()</span></span><br><span class="line">	</span><br><span class="line">asyncio.get_event_loop().run_until_complete(main())</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>newPage()：生成一个新的对象，相当于再打开一个标签页</li>
-<li>setViewport()：设置窗口大小，传入一个字典</li>
-<li>goto()：请求url</li>
-<li>click()：点击某个元素</li>
-<li>type()：找到某个元素，并输入文本，接收选择器和传入的文本</li>
-<li>waitFor()：设置页面等待时间</li>
-<li>screenshot()：截屏</li>
-<li>evaluate()：注入js代码</li>
-<li>pdf()：将页面内容保存为pdf格式</li>
-<li>close()：关闭浏览器</li>
-</ul>
-<p>今天就简单地了解了一下pyppeteer，明天继续学习啊！加油加油，争取月薪过万<br>今天小舒也要十分努力芽~</p>
-
-          
+          <p>今天发现了一个很厉害的东西，Puppeteer和pyppeteer</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/03/41_pypetter/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2024,7 +1995,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
