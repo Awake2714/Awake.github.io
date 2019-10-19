@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[小舒的纠结]]></title>
+    <url>%2F2019%2F10%2F19%2F43_%E5%B0%8F%E8%88%92%E7%9A%84%E7%BA%A0%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[今天10.19号了，在10.15号的时候我就已经实习了整整三个月了，三个月的时间过得还挺快。虽然每天有四个小时的车程，早晨六点二十就得起床，但是这些对于我来说都不算什么，因为我已经习惯了。刚开始的时候，真的会觉得坐车很累，后来慢慢地给自己找了一些事做，比如：看剧啊，听歌啊，学习啊，发呆啊，我甚至很享受这个过程。有时，坐在公交车上发呆的时候甚至到站了不想下车。公司福利也不错啊，还会一起聚餐，虽然这显然是为了广大的男同事们，但能蹭吃蹭喝还不错啊。还会一起看电影，就连可乐和爆米花都已经为我们准备好了，虽然我没有去啊。和同事相处得好像也挺不错，可能因为大多是异性，大概男生天生会比女生的心大一些，所以自然也会好相处一些。有时，我们也会加班，开始我很烦，其实也不是那么烦。因为一般加班的话，我们就会去五楼和他们坐在一起加班。平时我们在六楼，很少能见到，加班仿佛还能增加和他们聊天的机会。呃呃呃，好吧，其实我说的是组长啦。其实组长真的是一个好人啊。他好像每天都很忙，几乎每天都在加班，但是好像每天都精力充沛。我们总是一起说说笑笑，我开始不理解他，因为他老是不回消息，但后来才知道他好像真的为我做了很多。比如知道我急着回家，会急忙从一楼跑上六楼来给我解决问题，即便是累得气喘吁吁。我走路的时候，他会叫我不要玩手机。他好像也不抽烟。他每周都会回家陪父母，比如，现在还在陪妈妈逛街。组长真的是一个很好的人啊。我还以为他喜欢我呢，虽然大家好像都那么暗示我，结果我也不确定啊。要去确定这件事真的太南啦！虽然这里千好万好，但是好像真的学不到什么东西。从开始实习到现在，就写过一次代码。就连在公司学习也是偷偷摸摸的(因为自己太菜，不好意思啊)。有时我甚至在怀疑自己能不能做好这件事，还要不要继续做这件事，当然我现在也没有答案。我又开始看招聘，想要辞职重新找一份工作，又怕找不到，而且我真的很舍不得离开公(组)司(长)。呜呜呜~我要怎么办嘛，好纠结啊！]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Scrapyd的学习]]></title>
+    <url>%2F2019%2F10%2F19%2F43_scrapyd%2F</url>
+    <content type="text"><![CDATA[前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。Scrapyd是用来部署和运行爬虫，看官方文档上对他的介绍 Scrapyd is an application for deploying and running Scrapy spiders. It enables you to deploy (upload) your projects and control their spiders using a JSON API. 安装 pip install scrapydpip install scrapyd-client 修改scrapy.cfg123[deploy:demo]url = http://localhost:6800/project = Myproject 开启scrapyd服务 scrapyd 将项目部署到scrapyd scrapyd-deploy demo -p Myproject 查看服务器的状态 curl http://localhost:6800/daemonstatus.json 启动爬虫 curl http://localhost:6800/schedule.json -d project=projectName -d spider=spiderName 列出所有项目 curl http://localhost:6800/listprojects.json 列出项目的所有版本 curl http://localhost:6800/listversions.json?project=projectName 列出项目的所有爬虫 curl http://localhost:6800/listspiders.json?project=projectName 删除项目的某一版本 curl http://localhost:6800/delversion.json -d project=projectName -d version=r99 删除项目 curl http://localhost:6800/delproject.json -d project=projectName 最后想说一下，我在部署的时候遇到的问题： 安装，Windows上缺少scrapyd-deploy.bat文件，解决方法可参考https://www.jianshu.com/p/ddd28f8b47fb 在scrapyd-deploy demo -p Myproject爬虫就已经运行起来了 在scrapyd的web端没有日志输出 找了半天也没找到后面两个的解决方法，咋子办嘛]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[若能避开猛烈的欢喜，自然不会有悲痛来袭]]></title>
-    <url>%2F2019%2F10%2F14%2F42_%E5%B0%8F%E8%88%92%E7%BB%88%E4%BA%8E%E9%86%92%E6%82%9F%E5%95%A6%2F</url>
+    <url>%2F2019%2F10%2F14%2F42_%E8%8B%A5%E8%83%BD%E9%81%BF%E5%BC%80%E7%8C%9B%E7%83%88%E7%9A%84%E6%AC%A2%E5%96%9C%2F</url>
     <content type="text"><![CDATA[若能避开猛烈的欢喜，自然不会有悲痛来袭偶然得到这么一句话，很是喜欢，若能避开猛烈的欢喜，自然不会有悲痛来袭已经好久没有写过计划了，也好久没有认真写过日记了，也很久没有总结了。上半年来，我几乎每个月都会写总结，自从上班后，这件事也就渐渐地忘了。这两天忽然反应过来，最近我不仅没有什么进步，反而越来越堕落了。我也好久没有看书了，看过的书还没有我的年龄多。刷微博的时候看到一句话，你的痛苦大都来源于读书太少了。想到最近的不开心，忽然觉得很有道理。前段时间也是很不开心，但是我却用看剧来消磨时光。虽然我很不喜欢高中班主任，可从他那里学到的印象最深的只有两个字：浮躁。后来，这两个字一直伴随着我，且无法消除。我收到过的最好的夸奖就是：你是个好女生。我不知道他所说的好，和我理解的好是不是一个意思。我以为的是我还是像原来那样，总是谦虚、努力的。暂且认为就是我理解的那样吧。我听到过的最美的告白是：因为你对人笑都是真的。虽然只有一个人告白，虽然从来就没有假的笑。今天依旧是黑色星期一，坐在办公室里昏昏沉沉。突然，就想振作起来了1. 早睡：23点前躺下2. 保持平静：切忌大喜大悲3. 坚持看书：书能使人平静4. 坚持学习：人一刻也不能停止学习5. 管理好脸蛋和身材，提升审美6. 继续写博客东想西想，吃些不长；开开心心，没有脑筋；没心没肺，活着不累。今天小舒也要努力芽！]]></content>
       <categories>
         <category>生活</category>

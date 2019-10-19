@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,前端,">
+  <meta name="keywords" content="爬虫,Python,">
 
 
 
@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="JavaScript的数据类型包含值类型和引用数据类型">
-<meta name="keywords" content="JavaScript,前端">
+<meta name="description" content="前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。">
+<meta name="keywords" content="爬虫,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript—数据类型">
-<meta property="og:url" content="http://yoursite.com/2019/07/28/29_数据类型/index.html">
+<meta property="og:title" content="Scrapyd的学习">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/43_scrapyd/index.html">
 <meta property="og:site_name" content="Awake&#39;s Blog">
-<meta property="og:description" content="JavaScript的数据类型包含值类型和引用数据类型">
+<meta property="og:description" content="前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T08:27:25.748Z">
+<meta property="og:updated_time" content="2019-10-19T07:28:51.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript—数据类型">
-<meta name="twitter:description" content="JavaScript的数据类型包含值类型和引用数据类型">
+<meta name="twitter:title" content="Scrapyd的学习">
+<meta name="twitter:description" content="前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/28/29_数据类型/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/19/43_scrapyd/">
 
 
 
 
 
-  <title>JavaScript—数据类型 | Awake's Blog</title>
+  <title>Scrapyd的学习 | Awake's Blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/29_数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/43_scrapyd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Awake">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript—数据类型</h1>
+          <h1 class="post-title" itemprop="name headline">Scrapyd的学习</h1>
         
 
         <div class="post-meta">
@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T16:27:18+08:00">
-                2019-07-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T15:28:14+08:00">
+                2019-10-19
               </time>
             
 
@@ -387,7 +387,7 @@
 
           
           
-             <span id="/2019/07/28/29_数据类型/" class="leancloud_visitors" data-flag-title="JavaScript—数据类型">
+             <span id="/2019/10/19/43_scrapyd/" class="leancloud_visitors" data-flag-title="Scrapyd的学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,19 +418,58 @@
       
 
       
-        <p>JavaScript的数据类型包含值类型和引用数据类型<br><a id="more"></a></p>
-<h2 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h2><ul>
-<li>数字：number</li>
-<li>字符串：string</li>
-<li>布尔型：boolean</li>
-<li>对空：null</li>
-<li>未定义：undefined</li>
-</ul>
-<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><ul>
-<li>数组：array</li>
-<li>对象：object</li>
-<li>函数：function<br>在后面的文章中，会细细地来学习每种数据类型[幽灵.emoji]</li>
-</ul>
+        <p>前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。<a id="more"></a><br>Scrapyd是用来部署和运行爬虫，看官方文档上对他的介绍</p>
+<blockquote>
+<p>Scrapyd is an application for deploying and running Scrapy spiders. It enables you to deploy (upload) your projects and control their spiders using a JSON API.</p>
+</blockquote>
+<p>安装</p>
+<blockquote>
+<p>pip install scrapyd<br>pip install scrapyd-client</p>
+</blockquote>
+<p>修改scrapy.cfg<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[deploy:demo]</span><br><span class="line">url = http://localhost:<span class="number">6800</span>/</span><br><span class="line">project = Myproject</span><br></pre></td></tr></table></figure></p>
+<p>开启scrapyd服务</p>
+<blockquote>
+<p>scrapyd</p>
+</blockquote>
+<p>将项目部署到scrapyd</p>
+<blockquote>
+<p>scrapyd-deploy demo -p Myproject</p>
+</blockquote>
+<p>查看服务器的状态</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/daemonstatus.json" target="_blank" rel="noopener">http://localhost:6800/daemonstatus.json</a></p>
+</blockquote>
+<p>启动爬虫</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/schedule.json" target="_blank" rel="noopener">http://localhost:6800/schedule.json</a> -d project=projectName -d spider=spiderName</p>
+</blockquote>
+<p>列出所有项目</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/listprojects.json" target="_blank" rel="noopener">http://localhost:6800/listprojects.json</a></p>
+</blockquote>
+<p>列出项目的所有版本</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/listversions.json?project=projectName" target="_blank" rel="noopener">http://localhost:6800/listversions.json?project=projectName</a></p>
+</blockquote>
+<p>列出项目的所有爬虫</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/listspiders.json?project=projectName" target="_blank" rel="noopener">http://localhost:6800/listspiders.json?project=projectName</a></p>
+</blockquote>
+<p>删除项目的某一版本</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/delversion.json" target="_blank" rel="noopener">http://localhost:6800/delversion.json</a> -d project=projectName -d version=r99</p>
+</blockquote>
+<p>删除项目</p>
+<blockquote>
+<p>curl <a href="http://localhost:6800/delproject.json" target="_blank" rel="noopener">http://localhost:6800/delproject.json</a> -d project=projectName</p>
+</blockquote>
+<p>最后想说一下，我在部署的时候遇到的问题：</p>
+<ol>
+<li>安装，Windows上缺少scrapyd-deploy.bat文件，解决方法可参考<a href="https://www.jianshu.com/p/ddd28f8b47fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ddd28f8b47fb</a></li>
+<li>在scrapyd-deploy demo -p Myproject爬虫就已经运行起来了</li>
+<li>在scrapyd的web端没有日志输出</li>
+</ol>
+<p>找了半天也没找到后面两个的解决方法，咋子办嘛</p>
 
       
     </div>
@@ -459,9 +498,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
           
-            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -474,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/28/28_变量/" rel="next" title="JavaScript—变量">
-                <i class="fa fa-chevron-left"></i> JavaScript—变量
+              <a href="/2019/10/14/42_若能避开猛烈的欢喜/" rel="next" title="若能避开猛烈的欢喜，自然不会有悲痛来袭">
+                <i class="fa fa-chevron-left"></i> 若能避开猛烈的欢喜，自然不会有悲痛来袭
               </a>
             
           </div>
@@ -484,8 +523,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/28/30_运算符/" rel="prev" title="JavaScript—运算符">
-                JavaScript—运算符 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/19/43_小舒的纠结/" rel="prev" title="小舒的纠结">
+                小舒的纠结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,17 +615,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -676,22 +706,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#值类型"><span class="nav-number">1.</span> <span class="nav-text">值类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用数据类型"><span class="nav-number">2.</span> <span class="nav-text">引用数据类型</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

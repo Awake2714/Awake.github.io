@@ -8,13 +8,45 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 14 Oct 2019 02:23:44 GMT</pubDate>
+    <pubDate>Sat, 19 Oct 2019 07:52:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
+      <title>小舒的纠结</title>
+      <link>http://yoursite.com/2019/10/19/43_%E5%B0%8F%E8%88%92%E7%9A%84%E7%BA%A0%E7%BB%93/</link>
+      <guid>http://yoursite.com/2019/10/19/43_%E5%B0%8F%E8%88%92%E7%9A%84%E7%BA%A0%E7%BB%93/</guid>
+      <pubDate>Sat, 19 Oct 2019 07:52:57 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;今天10.19号了，在10.15号的时候我就已经实习了整整三个月了，三个月的时间过得还挺快。&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>今天10.19号了，在10.15号的时候我就已经实习了整整三个月了，三个月的时间过得还挺快。<a id="more"></a><br>虽然每天有四个小时的车程，早晨六点二十就得起床，但是这些对于我来说都不算什么，因为我已经习惯了。<br>刚开始的时候，真的会觉得坐车很累，后来慢慢地给自己找了一些事做，比如：看剧啊，听歌啊，学习啊，发呆啊，我甚至很享受这个过程。有时，坐在公交车上发呆的时候甚至到站了不想下车。<br>公司福利也不错啊，还会一起聚餐，虽然这显然是为了广大的男同事们，但能蹭吃蹭喝还不错啊。<br>还会一起看电影，就连可乐和爆米花都已经为我们准备好了，虽然我没有去啊。<br>和同事相处得好像也挺不错，可能因为大多是异性，大概男生天生会比女生的心大一些，所以自然也会好相处一些。<br>有时，我们也会加班，开始我很烦，其实也不是那么烦。因为一般加班的话，我们就会去五楼和他们坐在一起加班。平时我们在六楼，很少能见到，加班仿佛还能增加和他们聊天的机会。呃呃呃，好吧，其实我说的是组长啦。<br>其实组长真的是一个好人啊。他好像每天都很忙，几乎每天都在加班，但是好像每天都精力充沛。<br>我们总是一起说说笑笑，我开始不理解他，因为他老是不回消息，但后来才知道他好像真的为我做了很多。比如知道我急着回家，会急忙从一楼跑上六楼来给我解决问题，即便是累得气喘吁吁。<br>我走路的时候，他会叫我不要玩手机。<br>他好像也不抽烟。<br>他每周都会回家陪父母，比如，现在还在陪妈妈逛街。<br>组长真的是一个很好的人啊。<br>我还以为他喜欢我呢，虽然大家好像都那么暗示我，结果我也不确定啊。<br>要去确定这件事真的太南啦！<br>虽然这里千好万好，但是好像真的学不到什么东西。从开始实习到现在，就写过一次代码。就连在公司学习也是偷偷摸摸的(因为自己太菜，不好意思啊)。有时我甚至在怀疑自己能不能做好这件事，还要不要继续做这件事，当然我现在也没有答案。<br>我又开始看招聘，想要辞职重新找一份工作，又怕找不到，而且我真的很舍不得离开公(组)司(长)。呜呜呜~我要怎么办嘛，好纠结啊！</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/10/19/43_%E5%B0%8F%E8%88%92%E7%9A%84%E7%BA%A0%E7%BB%93/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Scrapyd的学习</title>
+      <link>http://yoursite.com/2019/10/19/43_scrapyd/</link>
+      <guid>http://yoursite.com/2019/10/19/43_scrapyd/</guid>
+      <pubDate>Sat, 19 Oct 2019 07:28:14 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>前段时间公司叫我们实习生写了一个爬虫，但是最后是由正式员工来部署的，感觉大家真的都好厉害啊。我这个小菜鸡很久都没有学习了，所以也来学习学习了。<a id="more"></a><br>Scrapyd是用来部署和运行爬虫，看官方文档上对他的介绍</p><blockquote><p>Scrapyd is an application for deploying and running Scrapy spiders. It enables you to deploy (upload) your projects and control their spiders using a JSON API.</p></blockquote><p>安装</p><blockquote><p>pip install scrapyd<br>pip install scrapyd-client</p></blockquote><p>修改scrapy.cfg<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[deploy:demo]</span><br><span class="line">url = http://localhost:<span class="number">6800</span>/</span><br><span class="line">project = Myproject</span><br></pre></td></tr></table></figure></p><p>开启scrapyd服务</p><blockquote><p>scrapyd</p></blockquote><p>将项目部署到scrapyd</p><blockquote><p>scrapyd-deploy demo -p Myproject</p></blockquote><p>查看服务器的状态</p><blockquote><p>curl <a href="http://localhost:6800/daemonstatus.json" target="_blank" rel="noopener">http://localhost:6800/daemonstatus.json</a></p></blockquote><p>启动爬虫</p><blockquote><p>curl <a href="http://localhost:6800/schedule.json" target="_blank" rel="noopener">http://localhost:6800/schedule.json</a> -d project=projectName -d spider=spiderName</p></blockquote><p>列出所有项目</p><blockquote><p>curl <a href="http://localhost:6800/listprojects.json" target="_blank" rel="noopener">http://localhost:6800/listprojects.json</a></p></blockquote><p>列出项目的所有版本</p><blockquote><p>curl <a href="http://localhost:6800/listversions.json?project=projectName" target="_blank" rel="noopener">http://localhost:6800/listversions.json?project=projectName</a></p></blockquote><p>列出项目的所有爬虫</p><blockquote><p>curl <a href="http://localhost:6800/listspiders.json?project=projectName" target="_blank" rel="noopener">http://localhost:6800/listspiders.json?project=projectName</a></p></blockquote><p>删除项目的某一版本</p><blockquote><p>curl <a href="http://localhost:6800/delversion.json" target="_blank" rel="noopener">http://localhost:6800/delversion.json</a> -d project=projectName -d version=r99</p></blockquote><p>删除项目</p><blockquote><p>curl <a href="http://localhost:6800/delproject.json" target="_blank" rel="noopener">http://localhost:6800/delproject.json</a> -d project=projectName</p></blockquote><p>最后想说一下，我在部署的时候遇到的问题：</p><ol><li>安装，Windows上缺少scrapyd-deploy.bat文件，解决方法可参考<a href="https://www.jianshu.com/p/ddd28f8b47fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ddd28f8b47fb</a></li><li>在scrapyd-deploy demo -p Myproject爬虫就已经运行起来了</li><li>在scrapyd的web端没有日志输出</li></ol><p>找了半天也没找到后面两个的解决方法，咋子办嘛</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/10/19/43_scrapyd/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>若能避开猛烈的欢喜，自然不会有悲痛来袭</title>
-      <link>http://yoursite.com/2019/10/14/42_%E5%B0%8F%E8%88%92%E7%BB%88%E4%BA%8E%E9%86%92%E6%82%9F%E5%95%A6/</link>
-      <guid>http://yoursite.com/2019/10/14/42_%E5%B0%8F%E8%88%92%E7%BB%88%E4%BA%8E%E9%86%92%E6%82%9F%E5%95%A6/</guid>
+      <link>http://yoursite.com/2019/10/14/42_%E8%8B%A5%E8%83%BD%E9%81%BF%E5%BC%80%E7%8C%9B%E7%83%88%E7%9A%84%E6%AC%A2%E5%96%9C/</link>
+      <guid>http://yoursite.com/2019/10/14/42_%E8%8B%A5%E8%83%BD%E9%81%BF%E5%BC%80%E7%8C%9B%E7%83%88%E7%9A%84%E6%AC%A2%E5%96%9C/</guid>
       <pubDate>Mon, 14 Oct 2019 02:20:03 GMT</pubDate>
       <description>
       
@@ -24,7 +56,7 @@
       
       <content:encoded><![CDATA[<section data-role="outer" label="Powered by 135editor.com" style="font-size:16px;"><section class="article135" style="box-sizing: border-box; padding: 0px 20px;"><p style="letter-spacing: 2px;"><span style="font-size: 14px; color: #595959;">若能避开猛烈的欢喜，自然不会有悲痛来袭</span></p><a id="more"></a><p style="letter-spacing: 2px;"><span style="font-size: 14px; color: #595959;">偶然得到这么一句话，很是喜欢，若能避开猛烈的欢喜，自然不会有悲痛来袭</span></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">已经好久没有写过计划了，也好久没有认真写过日记了，也很久没有总结了。上半年来，我几乎每个月都会写总结，自从上班后，这件事也就渐渐地忘了。</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">这两天忽然反应过来，最近我不仅没有什么进步，反而越来越堕落了。我也好久没有看书了，看过的书还没有我的年龄多。</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">刷微博的时候看到一句话，你的痛苦大都来源于读书太少了。想到最近的不开心，忽然觉得很有道理。前段时间也是很不开心，但是我却用看剧来消磨时光。<br></span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">虽然我很不喜欢高中班主任，可从他那里学到的印象最深的只有两个字：浮躁。后来，这两个字一直伴随着我，且无法消除。</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">我收到过的最好的夸奖就是：你是个好女生。我不知道他所说的好，和我理解的好是不是一个意思。我以为的是我还是像原来那样，总是谦虚、努力的。暂且认为就是我理解的那样吧。</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">我听到过的最美的告白是：因为你对人笑都是真的。虽然只有一个人告白，虽然从来就没有假的笑。</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">今天依旧是黑色星期一，坐在办公室里昏昏沉沉。</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">突然，就想振作起来了</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">1. 早睡：23点前躺下</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">2. 保持平静：切忌大喜大悲</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">3. 坚持看书：书能使人平静</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">4. 坚持学习：人一刻也不能停止学习</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">5. 管理好脸蛋和身材，提升审美</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">6. 继续写博客</span></font></p><p style="letter-spacing: 2px;"><font color="#595959"><span style="font-size: 14px;">东想西想，吃些不长；开开心心，没有脑筋；没心没肺，活着不累。<br>今天小舒也要努力芽！</span></font></p></section></section>]]></content:encoded>
       
-      <comments>http://yoursite.com/2019/10/14/42_%E5%B0%8F%E8%88%92%E7%BB%88%E4%BA%8E%E9%86%92%E6%82%9F%E5%95%A6/#disqus_thread</comments>
+      <comments>http://yoursite.com/2019/10/14/42_%E8%8B%A5%E8%83%BD%E9%81%BF%E5%BC%80%E7%8C%9B%E7%83%88%E7%9A%84%E6%AC%A2%E5%96%9C/#disqus_thread</comments>
     </item>
     
     <item>
@@ -57,38 +89,6 @@
       <content:encoded><![CDATA[<p>我觉得一点小事就能让人很开心<a id="more"></a><br>比如，突然接到很久没联系的室友的视频电话，和331聊了好久好久，一上班就会很怀念学校的日子，宿舍的时光真的让人十分怀念呀<br>所以，小舒想通了，放不下的就慢慢放下，不要去在意他，然后继续努力，重振旗鼓，加油↖(^ω^)↗<br>今天学了一丢丢的Django，我的妈呀，光是视频我都看了几遍了，可还是没学会，又去学了前端，现在俺又回来了，希望这次能够好好学了！</p><h1 id="文件目录："><a href="#文件目录：" class="headerlink" title="文件目录："></a>文件目录：</h1><blockquote></blockquote><pre><code>mysite    mysite        \__init__.py        settings.py        urls.py        wsgi.py    manage.py    template    static</code></pre><h1 id="Django的创建步骤："><a href="#Django的创建步骤：" class="headerlink" title="Django的创建步骤："></a>Django的创建步骤：</h1><ol><li>可以通过命令或者pycharm创建<br><code>django-admin startproject mysite</code></li><li>修改配置文件，有三个地方需要修改</li></ol><ul><li>模板<br><code>TEMPLATES：&#39;DIRS&#39;: [os.path.join(BASE_DIR, &#39;templates&#39;)]</code></li><li>静态文件：<br><code>STATICFILES_DIRS = (  os.path.join(BASE_DIR, &#39;static&#39;),)</code></li><li>MIDDLEWARE<br>注释<br><code># &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,</code></li></ul><ol start="3"><li>路由<br><code>from django.shortcuts import HttpResponse, render, redirect</code><br>函数参数：<br>request<br> request.method<br> request.GET<br> request.POST<br>函数返回值：</li></ol><ul><li>HttpResponse：返回一个字符串</li><li>redirect：重定向，一个url</li><li>render：第一个参数为request，第二参数为模板，第三个参数可选，向模板传递的参数<br>模板渲染：<br>特殊字符的使用</li></ul>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/08/25/40_%E4%BB%8A%E5%A4%A9%E5%B0%8F%E8%88%92%E4%B9%9F%E8%A6%81%E5%8D%81%E5%88%86%E5%8A%AA%E5%8A%9B%E5%91%80/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>堕落的八月</title>
-      <link>http://yoursite.com/2019/08/25/39_%E5%85%AB%E6%9C%88/</link>
-      <guid>http://yoursite.com/2019/08/25/39_%E5%85%AB%E6%9C%88/</guid>
-      <pubDate>Sun, 25 Aug 2019 08:32:17 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>今天又是8月25号了，不知不觉，又过去这么久了，又接近了八月的尾声。<a id="more"></a><br>八月，仿佛发生了很多事，不过好多都是不开心的事。<br>八月，和小野度过了我的21岁生日；八月，适应了每天坐四个小时的车上下班；八月，弟弟回老家了；八月，从五楼搬到了六楼；八月，大概和方敏见了最后一面。<br>八月也不全是不开心，算是有得有失吧。<br>因为上班每天都得坐四个小时的车，搞得我郁郁寡欢，可是小野来了，她来了，真的解救了我，心里好很多了。<br>因为爸妈经常吵架，妈妈经常因为一点小事就骂弟弟，所以弟弟受不了，独自回家了，回到了那个我喜欢的脏兮兮的老房子。<br>因为部门人太多，因为我们是实习生，所以我们从五楼搬到了六楼，虽然我也安慰自己楼上挺好的，还没有领导，可就是有一种被抛弃的感觉，不开心。<br>因为方敏要去实习了，很远很远的地方，所以在她走之前，我们见了最后一面，我们一起睡觉，聊了好久，有一个人陪你聊天、让你真正的开心，这种感觉真的很好。<br>因为心动了，八月变成了柠檬精女孩，好羡慕人家甜甜的恋爱，可是听说人的一生会遇到很多心动的人，可能会误以为那是喜欢，其实也不过是某一刻的好感，可毕竟心动不是答案，心定才是。<br>可能是因为上班了，聊天的人变少了，所以感到快乐的时候也少了，是不是长大就是这样啊。我不想长大，长大没有红包，没有疼爱，连快乐都没有，我不想长大。我也不想努力，不想去想那么多，我也想和其他女孩纸一样，天真无邪，什么都不用管。<br>可生活还是要继续啊，你还是要长大啊，你还是要努力啊，真想从明天开始，莫谈爱情，继续学习！<br>总之，八月是一个随便听一首歌都想放声大哭的日子。</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/08/25/39_%E5%85%AB%E6%9C%88/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>jquery事件</title>
-      <link>http://yoursite.com/2019/08/10/38_jquery%E4%BA%8B%E4%BB%B6/</link>
-      <guid>http://yoursite.com/2019/08/10/38_jquery%E4%BA%8B%E4%BB%B6/</guid>
-      <pubDate>Sat, 10 Aug 2019 10:54:03 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;事件分类&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>事件分类<a id="more"></a></p><h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><ul><li>click</li><li>dbclick</li><li>mouseenter</li><li>mouseleave</li><li><p>hover</p><pre><code>&lt;button class=&quot;btn&quot;&gt;点击&lt;/button&gt;&lt;script type=&quot;text/javascript&quot;&gt;    $(document).ready(function(){        $(&apos;button.btn&apos;).click(function(){            alert(&apos;点击事件&apos;);        })    })&lt;/script&gt;</code></pre></li></ul><h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><ul><li>keypress</li><li>keydown</li><li>keyup</li></ul><h2 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h2><ul><li>submit</li><li>change</li><li>focus</li><li>blur</li></ul><h2 id="文档-窗口事件"><a href="#文档-窗口事件" class="headerlink" title="文档/窗口事件"></a>文档/窗口事件</h2><ul><li>load</li><li>unload</li><li>resize</li><li>scroll</li></ul>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/08/10/38_jquery%E4%BA%8B%E4%BB%B6/#disqus_thread</comments>
     </item>
     
   </channel>
