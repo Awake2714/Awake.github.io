@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="time.time()：返回当前时间的时间戳12time.time()1572248254.9169276 time.localtime([secs])：将一个时间戳转换为当前时区的struct_time。secs参数未提供，则以当前时间为准1234time.localtime()time.struct_time(tm_year=2019, tm_mon=10, tm_mday=28, tm_ho">
+<meta name="description" content="time.time()：返回当前时间的时间戳">
 <meta name="keywords" content="爬虫,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="time模块学习">
 <meta property="og:url" content="http://yoursite.com/2019/10/28/46_time模块/index.html">
 <meta property="og:site_name" content="Awake&#39;s Blog">
-<meta property="og:description" content="time.time()：返回当前时间的时间戳12time.time()1572248254.9169276 time.localtime([secs])：将一个时间戳转换为当前时区的struct_time。secs参数未提供，则以当前时间为准1234time.localtime()time.struct_time(tm_year=2019, tm_mon=10, tm_mday=28, tm_ho">
+<meta property="og:description" content="time.time()：返回当前时间的时间戳">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-28T08:36:27.363Z">
+<meta property="og:updated_time" content="2019-11-19T06:07:12.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="time模块学习">
-<meta name="twitter:description" content="time.time()：返回当前时间的时间戳12time.time()1572248254.9169276 time.localtime([secs])：将一个时间戳转换为当前时区的struct_time。secs参数未提供，则以当前时间为准1234time.localtime()time.struct_time(tm_year=2019, tm_mon=10, tm_mday=28, tm_ho">
+<meta name="twitter:description" content="time.time()：返回当前时间的时间戳">
 
 
 
@@ -418,7 +418,7 @@
       
 
       
-        <p>time.time()：返回当前时间的时间戳<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.time()</span><br><span class="line"><span class="number">1572248254.9169276</span></span><br></pre></td></tr></table></figure></p>
+        <p>time.time()：返回当前时间的时间戳<a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.time()</span><br><span class="line"><span class="number">1572248254.9169276</span></span><br></pre></td></tr></table></figure></p>
 <p>time.localtime([secs])：将一个时间戳转换为当前时区的struct_time。secs参数未提供，则以当前时间为准<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">time.localtime()</span><br><span class="line">time.struct_time(tm_year=<span class="number">2019</span>, tm_mon=<span class="number">10</span>, tm_mday=<span class="number">28</span>, tm_hour=<span class="number">15</span>, tm_min=<span class="number">37</span>, tm_sec=<span class="number">49</span>, tm_wday=<span class="number">0</span>, tm_yday=<span class="number">301</span>, tm_isdst=<span class="number">0</span>)</span><br><span class="line">time.localtime(time.time())</span><br><span class="line">time.struct_time(tm_year=<span class="number">2019</span>, tm_mon=<span class="number">10</span>, tm_mday=<span class="number">28</span>, tm_hour=<span class="number">15</span>, tm_min=<span class="number">39</span>, tm_sec=<span class="number">20</span>, tm_wday=<span class="number">0</span>, tm_yday=<span class="number">301</span>, tm_isdst=<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
 <p>time.gmtime([secs])：和localtime()方法类似，gmtime()方法是将一个时间戳转换为UTC时区（0时区）的struct_time。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.gmtime()</span><br><span class="line">time.struct_time(tm_year=<span class="number">2019</span>, tm_mon=<span class="number">10</span>, tm_mday=<span class="number">28</span>, tm_hour=<span class="number">7</span>, tm_min=<span class="number">40</span>, tm_sec=<span class="number">4</span>, tm_wday=<span class="number">0</span>, tm_yday=<span class="number">301</span>, tm_isdst=<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
 <p>time.mktime(t)：将一个struct_time转化为时间戳。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.mktime(time.localtime())</span><br><span class="line"><span class="number">1572248465.0</span></span><br></pre></td></tr></table></figure></p>
